@@ -1,3 +1,13 @@
+**Basic setup for Intro Pictures website:**
+
+- bundle install
+- rake db:create
+- rake db:migrate
+- rake db:seed
+
+
+Design: https://marvelapp.com/1bb7che
+
 == README
 
 This README would normally document whatever steps are necessary to get the

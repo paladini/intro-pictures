@@ -14,6 +14,15 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Devise to manage users
+gem 'devise'
+
+# Administrative portal
+gem 'activeadmin', github: 'activeadmin'
+
+# Globalize, to translate model rows to other languages.
+# gem 'globalize', '~> 5.0', '>= 5.0.1'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

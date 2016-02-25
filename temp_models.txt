@@ -1,0 +1,29 @@
+###################
+###   Formato   ###
+###################
+#
+# <tabela>:
+#	- <campo1>
+#	- <campo2>
+#	- ...
+#
+###################
+
+
+Job:
+   - url_youtube:string
+   - sinopse:text
+   - <ficha_tecnica_preciso_dos_dados>
+   - senha:string (se for em branco, é público)
+   - 
+
+Company:
+	- resumo:text
+	- endereço:text
+	- email:string
+	- telefone:string
+	- has_many :Empregado (cuidado, pois todos os "empregados" pertencem à mesma empresa.
+
+Employee:
+	- name:string
+	- role:string
