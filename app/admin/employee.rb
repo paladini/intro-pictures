@@ -7,30 +7,35 @@ ActiveAdmin.register Employee, as: "empregado" do
 	before_build do |obj|
 		obj.company = Company.first
 	end
+	before_save do |obj|
+		if !obj.valid?
+			flash[:error] = "Dados não atualizados! Algum campo não foi preenchido corretamente."
+	    end
+	end
 	
 	#
 	# Label-related stuff
 	#
-	filter :name, label: "Nome"
-	filter :role_pt, label: "Cargo"
-	filter :role_en, label: "Cargo (Inglês)"
-	filter :role_es, label: "Cargo (Espanhol)"
+	filter :name
+	filter :role_pt
+	filter :role_en
+	filter :role_es
 
 	index do
-		column "Nome", :name
-		column "Cargo", :role_pt
-		column "Cargo (Inglês)", :role_en
-		column "Cargo (Espanhol)", :role_es
+		column :name
+		column :role_pt
+		column :role_en
+		column :role_es
 		actions
 	end
 
 	# Custom form for translated labels
 	form do |f|
 	    inputs do
-	        input :name, label: "Nome"
-		    input :role_pt, label: "Cargo"
-		    input :role_en, label: "Cargo (Inglês)"
-		    input :role_es, label: "Cargo (Espanhol)"
+	        input :name
+		    input :role_pt
+		    input :role_en
+		    input :role_es
 	    end
 	    actions
 	end
@@ -39,12 +44,12 @@ ActiveAdmin.register Employee, as: "empregado" do
 	show do
 	    attributes_table do
 	    	row :id
-	      	row("Nome"){ empregado.name }
-	      	row("Cargo"){ empregado.role_pt }
-	      	row("Cargo (Inglês)"){ empregado.role_en }
-	      	row("Cargo (Espanhol)"){ empregado.role_es }
-	      	row("Criado em"){ empregado.created_at }
-	      	row("Atualizado em"){ empregado.updated_at }
+	      	row :name
+	      	row :role_pt
+	      	row :role_en
+	      	row :role_es
+	      	row :created_at 
+	      	row :updated_at
 	    end
 	end
 

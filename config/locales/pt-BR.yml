@@ -2,9 +2,39 @@ pt-BR:
   time:
     formats:
       long: "%d-%m-%Y %H:%M:%S"
-  formtastic:
-    update: "Atualizar"
-    create: "Criar"
+  # formtastic:
+    # update: "Atualizar"
+    # create: "Criar"
+  errors:
+    messages:
+      blank: "Campo não pode estar em branco."
+
+  activerecord:
+    models:
+      employee:
+        one: empregado
+      company:
+        one: empresa
+    attributes:
+      employee:
+        name: "Nome"
+        role_pt: "Cargo"
+        role_en: "Cargo (Inglês)"
+        role_es: "Cargo (Espanhol)"
+        created_at: "Data criação"
+        updated_at: "Data atualização"
+      company:
+        summary_pt: "Resumo"
+        summary_en: "Resumo (Inglês)"
+        summary_es: "Resumo (Espanhol)"
+        address_pt: "Endereço"
+        address_en: "Endereço (Inglês)"
+        address_es: "Endereço (Espanhol)"
+        email: "Email"
+        telephone: "Telefone"
+        created_at: "Data criação"
+        updated_at: "Data atualização"
+
   active_admin:
     dashboard: "Painel Administrativo"
     dashboard_welcome:
