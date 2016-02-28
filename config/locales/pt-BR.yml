@@ -6,6 +6,12 @@ pt-BR:
     messages:
       blank: "Campo não pode estar em branco."
 
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: "Verificação anti-spam falhou, tente novamente."
+      recaptcha_unreachable: "Verificação anti-spam falhou, tente novamente."
+      verification_failed: "Verificação anti-spam falhou, tente novamente."
+
   activerecord:
     models:
       employee:

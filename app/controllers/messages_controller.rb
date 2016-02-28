@@ -3,11 +3,11 @@ class MessagesController < ApplicationController
   	def new
   		@message = Message.new
  	end
-
+ 	
 	def create
 	    @message = Message.new(message_params)
 
-	    if @message.valid?
+	    if verify_recaptcha(model: @message) && @message.valid?
 	      	MessageMailer.message_me(@message).deliver_now
 	      	redirect_to new_message_path, notice: "Thank you for your message."
 	    else

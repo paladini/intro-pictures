@@ -22,6 +22,7 @@ gem 'activeadmin', github: 'activeadmin'
 
 # Contact Form
 gem 'mail_form'
+gem "recaptcha", require: "recaptcha/rails" # captcha for anti-flood reasons
 
 # Globalize, to translate model rows to other languages.
 # gem 'globalize', '~> 5.0', '>= 5.0.1'
