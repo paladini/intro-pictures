@@ -39,6 +39,17 @@ Rails.application.configure do
   # Needed by Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # SMTP settings for mailgun
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => "sandbox5a9771af01044b3190e1deedd919437f.mailgun.org",
+    :user_name => "postmaster@sandbox5a9771af01044b3190e1deedd919437f.mailgun.org",
+    :password => "f3f5e7587b24ace0ef402cb4bfbf2327"
+  }
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

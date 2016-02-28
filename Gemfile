@@ -20,6 +20,9 @@ gem 'devise'
 # Administrative portal
 gem 'activeadmin', github: 'activeadmin'
 
+# Contact Form
+gem 'mail_form'
+
 # Globalize, to translate model rows to other languages.
 # gem 'globalize', '~> 5.0', '>= 5.0.1'
 

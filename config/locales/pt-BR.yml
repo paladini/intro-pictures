@@ -2,9 +2,6 @@ pt-BR:
   time:
     formats:
       long: "%d-%m-%Y %H:%M:%S"
-  # formtastic:
-    # update: "Atualizar"
-    # create: "Criar"
   errors:
     messages:
       blank: "Campo não pode estar em branco."

@@ -2,8 +2,12 @@
 
 one:
   name: MyString
-  role: MyString
+  role_pt: MyString
+  role_en: MyString
+  role_es: MyString
 
 two:
   name: MyString
-  role: MyString
+  role_pt: MyString
+  role_en: MyString
+  role_es: MyString
