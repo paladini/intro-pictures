@@ -47,16 +47,16 @@ ActiveRecord::Schema.define(version: 20160228141702) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "companies", force: :cascade do |t|
-    t.text     "resumo_pt"
-    t.text     "resumo_en"
-    t.text     "resumo_es"
-    t.text     "endereco_pt"
-    t.text     "endereco_en"
-    t.text     "endereco_es"
+    t.text     "summary_pt"
+    t.text     "summary_en"
+    t.text     "summary_es"
+    t.text     "address_pt"
+    t.text     "address_en"
+    t.text     "address_es"
     t.string   "email"
-    t.string   "telefone"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "telephone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "employees", force: :cascade do |t|

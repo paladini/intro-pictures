@@ -4,6 +4,7 @@ pt-BR:
       long: "%d-%m-%Y %H:%M:%S"
   formtastic:
     update: "Atualizar"
+    create: "Criar"
   active_admin:
     dashboard: "Painel Administrativo"
     dashboard_welcome:

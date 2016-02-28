@@ -21,8 +21,6 @@ ActiveAdmin.register Employee, as: "empregado" do
 		column "Cargo", :role_pt
 		column "Cargo (Inglês)", :role_en
 		column "Cargo (Espanhol)", :role_es
-		column "Data de criação", :created_at
-		column "Data de última atualização", :updated_at
 		actions
 	end
 
@@ -49,18 +47,5 @@ ActiveAdmin.register Employee, as: "empregado" do
 	      	row("Atualizado em"){ empregado.updated_at }
 	    end
 	end
-
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
 
 end
