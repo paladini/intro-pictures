@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   
   # Routes to ActiveAdmin
+  get '/admin/companies', to: redirect('/admin/companies/1')
   ActiveAdmin.routes(self)
 
   # Root

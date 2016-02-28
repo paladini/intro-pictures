@@ -3,6 +3,29 @@ ActiveAdmin.register Employee, as: "empregado" do
 	menu label: "Equipe" , priority: 2
 	permit_params :name, :role_pt, :role_en, :role_es
 
+	# Defining default company to every employee
+	before_build do |obj|
+		obj.company = Company.first
+	end
+	
+	#
+	# Label-related stuff
+	#
+	filter :name, label: "Nome"
+	filter :role_pt, label: "Cargo"
+	filter :role_en, label: "Cargo (Inglês)"
+	filter :role_es, label: "Cargo (Espanhol)"
+
+	index do
+		column "Nome", :name
+		column "Cargo", :role_pt
+		column "Cargo (Inglês)", :role_en
+		column "Cargo (Espanhol)", :role_es
+		column "Data de criação", :created_at
+		column "Data de última atualização", :updated_at
+		actions
+	end
+
 	# Custom form for translated labels
 	form do |f|
 	    inputs do
@@ -39,6 +62,5 @@ ActiveAdmin.register Employee, as: "empregado" do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
 
 end

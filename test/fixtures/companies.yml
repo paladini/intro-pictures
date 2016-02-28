@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  resumo_pt: MyText
+  resumo_en: MyText
+  resumo_es: MyText
+  endereco_pt: MyText
+  endereco_es: MyText
+  endereco_en: MyText
+  email: MyString
+  telefone: MyString
+
+two:
+  resumo_pt: MyText
+  resumo_en: MyText
+  resumo_es: MyText
+  endereco_pt: MyText
+  endereco_es: MyText
+  endereco_en: MyText
+  email: MyString
+  telefone: MyString
