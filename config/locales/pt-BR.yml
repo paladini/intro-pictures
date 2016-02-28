@@ -18,6 +18,9 @@ pt-BR:
         one: empregado
       company:
         one: empresa
+      department:
+        one: departamento
+        other: departamentos
     attributes:
       employee:
         name: "Nome"
@@ -35,6 +38,12 @@ pt-BR:
         address_es: "Endereço (Espanhol)"
         email: "Email"
         telephone: "Telefone"
+        created_at: "Data criação"
+        updated_at: "Data atualização"
+      department:
+        name_pt: "Nome"
+        name_es: "Nome (Espanhol)"
+        name_en: "Nome (Inglês)"
         created_at: "Data criação"
         updated_at: "Data atualização"
 

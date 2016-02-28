@@ -24,6 +24,11 @@
   </div>
 
   <div class="field">
+    <%= f.label "Departamento" %>
+    <%= f.select(:department, Department.all.collect {|a| a.name_pt}) -%>
+  </div>
+
+  <div class="field">
     <%= f.label :subject %>
     <%= f.text_field :subject %>
   </div>

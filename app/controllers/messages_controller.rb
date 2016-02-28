@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   
   	def new
   		@message = Message.new
+  		@departments = Department.all
  	end
  	
 	def create
@@ -17,6 +18,6 @@ class MessagesController < ApplicationController
 
   	private
 	  	def message_params
-	    	params.require(:message).permit(:name, :email, :subject, :content, :file)
+	    	params.require(:message).permit(:name, :email, :subject, :content, :department, :file)
 	  	end
 end
