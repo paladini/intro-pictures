@@ -5,7 +5,6 @@ pt:
   errors:
     messages:
       blank: "Campo não pode estar em branco."
-
   recaptcha:
     errors:
       incorrect-captcha-sol: "Verificação anti-spam falhou, tente novamente."
@@ -22,6 +21,24 @@ pt:
         one: departamento
         other: departamentos
     attributes:
+      job:
+        title_pt: Título
+        title_en: Título (Inglês)
+        title_es: Título (Espanhol)
+        synopsis: Sinopse
+        password: Senha
+        format: Formato
+        genre: Gênero
+        subgenre: Subgênero
+        running_time: Duração
+        target: Público
+        created_by: Criado por
+        written_by: Escrito por
+        directed_by: Dirigido por
+        status: Status
+        player: Player
+        created_at: Data criação
+        updated_at: Data atualização
       employee:
         name: "Nome"
         role_pt: "Cargo"
@@ -46,6 +63,13 @@ pt:
         name_en: "Nome (Inglês)"
         created_at: "Data criação"
         updated_at: "Data atualização"
+
+    errors:
+      models:
+        job:
+          attributes:
+            url:
+              invalid: Link para um vídeo ou álbum do Vimeo deve ser inserido.
 
   active_admin:
     dashboard: "Painel Administrativo"

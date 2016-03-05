@@ -10,7 +10,7 @@
 ###################
 
 Job:
-   - url_youtube:string
+   - url:string #can be a video or an album
    - title_pt:string
    - title_en:string
    - title_es:string

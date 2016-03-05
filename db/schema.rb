@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228224830) do
+ActiveRecord::Schema.define(version: 20160305011011) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -78,5 +78,26 @@ ActiveRecord::Schema.define(version: 20160228224830) do
   end
 
   add_index "employees", ["company_id"], name: "index_employees_on_company_id"
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "url"
+    t.string   "title_pt"
+    t.string   "title_es"
+    t.string   "title_en"
+    t.string   "password"
+    t.text     "synopsis"
+    t.text     "format"
+    t.text     "genre"
+    t.text     "subgenre"
+    t.text     "running_time"
+    t.text     "target"
+    t.text     "created_by"
+    t.text     "written_by"
+    t.text     "directed_by"
+    t.text     "status"
+    t.text     "player"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
 end

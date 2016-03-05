@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  title_pt: MyString
+  title_es: MyString
+  title_en: MyString
+  password: MyString
+  synopsis: MyText
+  format: MyText
+  genre: MyText
+  subgenre: MyText
+  running_time: MyText
+  target: MyText
+  created_by: MyText
+  written_by: MyText
+  directed_by: MyText
+  status: MyText
+  player: MyText
+
+two:
+  url: MyString
+  title_pt: MyString
+  title_es: MyString
+  title_en: MyString
+  password: MyString
+  synopsis: MyText
+  format: MyText
+  genre: MyText
+  subgenre: MyText
+  running_time: MyText
+  target: MyText
+  created_by: MyText
+  written_by: MyText
+  directed_by: MyText
+  status: MyText
+  player: MyText

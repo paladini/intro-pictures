@@ -1,6 +1,6 @@
 ActiveAdmin.register Department do
 
-	menu label: "Departamentos" , priority: 3
+	menu label: "Departamentos" , priority: 5
 	permit_params :name_pt, :name_es, :name_en
 
 	before_save do |obj|
