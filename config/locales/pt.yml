@@ -25,16 +25,34 @@ pt:
         title_pt: Título
         title_en: Título (Inglês)
         title_es: Título (Espanhol)
-        synopsis: Sinopse
+        synopsis_pt: Sinopse
+        synopsis_en: Sinopse (Inglês)
+        synopsis_es: Sinopse (Espanhol)
         password: Senha
-        format: Formato
-        genre: Gênero
-        subgenre: Subgênero
-        running_time: Duração
-        target: Público
-        created_by: Criado por
-        written_by: Escrito por
-        directed_by: Dirigido por
+        format_pt: Formato
+        format_en: Formato (Inglês)
+        format_es: Formato (Espanhol)
+        genre_pt: Gênero
+        genre_en: Gênero (Inglês)
+        genre_es: Gênero (Espanhol)
+        subgenre_pt: Subgênero
+        subgenre_en: Subgênero (Inglês)
+        subgenre_es: Subgênero (Espanhol)
+        running_time_pt: Duração
+        running_time_en: Duração (Inglês)
+        running_time_es: Duração (Espanhol)
+        target_pt: Público
+        target_en: Público (Inglês)
+        target_es: Público (Espanhol)
+        created_by_pt: Criado por
+        created_by_en: Criado por (Inglês)
+        created_by_es: Criado por (Espanhol)
+        written_by_pt: Escrito por
+        written_by_en: Escrito por (Inglês)
+        written_by_es: Escrito por (Espanhol)
+        directed_by_pt: Dirigido por
+        directed_by_en: Dirigido por (Inglês)
+        directed_by_es: Dirigido por (Espanhol)
         status: Status
         player: Player
         created_at: Data criação

@@ -13,6 +13,17 @@ ActiveAdmin.register_page "Dashboard" do
     # Here is an example of a simple dashboard with columns and panels.
     #
     columns do
+
+        column do
+            panel "Jobs" do
+                table_for Job.all do |t|
+                  t.column("Título") { |obj| link_to obj.title_pt, admin_job_path(obj) }
+                  t.column("URL") { |obj| obj.url }
+                  t.column("Privado") { |obj| obj.password.empty? ? "Não" : "Sim" }
+                end
+            end
+        end
+
         column do
             panel "Equipe" do
                 table_for Employee.all do |t|
@@ -22,11 +33,11 @@ ActiveAdmin.register_page "Dashboard" do
             end
         end
 
-        column do
-            panel "Info" do
-              para "Welcome to ActiveAdmin."
-            end
-        end
+        # column do
+        #     panel "Info" do
+        #       para "Welcome to ActiveAdmin."
+        #     end
+        # end
     end
 
     # section "Tasks that are late" do

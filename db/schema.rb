@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305171519) do
+ActiveRecord::Schema.define(version: 20160305180546) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -86,19 +86,37 @@ ActiveRecord::Schema.define(version: 20160305171519) do
     t.string   "title_es"
     t.string   "title_en"
     t.string   "password"
-    t.text     "synopsis"
-    t.text     "format"
-    t.text     "genre"
-    t.text     "subgenre"
-    t.text     "running_time"
-    t.text     "target"
-    t.text     "created_by"
-    t.text     "written_by"
-    t.text     "directed_by"
+    t.text     "synopsis_pt"
+    t.text     "format_pt"
+    t.text     "genre_pt"
+    t.text     "subgenre_pt"
+    t.text     "running_time_pt"
+    t.text     "target_pt"
+    t.text     "created_by_pt"
+    t.text     "written_by_pt"
+    t.text     "directed_by_pt"
     t.text     "status"
     t.text     "player"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.text     "synopsis_es"
+    t.text     "synopsis_en"
+    t.text     "format_es"
+    t.text     "format_en"
+    t.text     "genre_es"
+    t.text     "genre_en"
+    t.text     "subgenre_es"
+    t.text     "subgenre_en"
+    t.text     "running_time_es"
+    t.text     "running_time_en"
+    t.text     "target_es"
+    t.text     "target_en"
+    t.text     "created_by_es"
+    t.text     "created_by_en"
+    t.text     "written_by_es"
+    t.text     "written_by_en"
+    t.text     "directed_by_es"
+    t.text     "directed_by_en"
   end
 
 end
