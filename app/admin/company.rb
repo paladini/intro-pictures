@@ -21,16 +21,20 @@ ActiveAdmin.register Company do
 
 	# Custom form for translated labels
 	form :title => "Editar Informações Gerais" do |f|
-	    inputs do
-		    input :summary_pt
-		    input :summary_en
-		    input :summary_es
-		    input :address_pt
-		    input :address_en
-		    input :address_es
-		    input :email
-		    input :contact_email, hint: "Email destinatário do formulário de contato."
-		    input :telephone
+	    inputs "Resumo" do
+		    input :summary_pt, :input_html => { rows: 1 }, hint: "Descrição da empresa (em português) que aparecerá no site."
+		    input :summary_en, :input_html => { rows: 1 }, hint: "Descrição da empresa (em inglês) que aparecerá no site."
+		    input :summary_es, :input_html => { rows: 1 }, hint: "Descrição da empresa (em espanhol) que aparecerá no site."
+		end
+		inputs "Endereço" do
+		    input :address_pt, :input_html => { rows: 1 }, hint: "Endereço da empresa (em português) que aparecerá no site."
+		    input :address_en, :input_html => { rows: 1 }, hint: "Endereço da empresa (em inglês) que aparecerá no site."
+		    input :address_es, :input_html => { rows: 1 }, hint: "Endereço da empresa (em espanhol) que aparecerá no site."
+		end
+		inputs "Contato" do
+		    input :email, :input_html => { rows: 1 }, hint: "Emails que aparecerão publicamente no site. Um email por linha."
+		    input :telephone, :input_html => { rows: 1 }, hint: "Telefones que aparecerão publicamente no site. Um telefone por linha."
+		    input :contact_email, hint: "Email destinatário do formulário de contato. Não aparecerá no site."
 	    end
 	    actions
 	end
@@ -44,9 +48,13 @@ ActiveAdmin.register Company do
 	      	row :address_pt
 	      	row :address_en
 	      	row :address_es
-	      	row :email
+	      	row "Email(s)" do
+	      		raw(simple_format(company.email))
+	      	end
+	      	row "Telefone(s)" do
+	      		raw(simple_format(company.telephone))
+	      	end
 	      	row :contact_email
-	      	row :telephone
 	      	row :created_at
 	      	row :updated_at
 	    end
