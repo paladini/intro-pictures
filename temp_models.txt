@@ -9,13 +9,23 @@
 #
 ###################
 
-
 Job:
    - url_youtube:string
-   - sinopse:text
-   - <ficha_tecnica_preciso_dos_dados>
-   - senha:string (se for em branco, é público)
-   - 
+   - title_pt:string
+   - title_en:string
+   - title_es:string
+   - synopsis:text
+   - password:string (se for em branco, é público)
+   - format:text
+   - genre:text
+   - subgenre:text
+   - running_time:text
+   - target:text
+   - created_by:text
+   - written_by:text
+   - directed_by:text
+   - status:text
+   - player:text
 
 Company:
 	- resumo:text

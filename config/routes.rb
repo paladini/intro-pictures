@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'pages/home'
+
   # get 'messages/new'
   resources :messages, only: [:new, :create]
 
@@ -11,7 +13,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # Root
-  root to: "home#index"
+  get '/:locale' => 'pages#home'
+  root to: "pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

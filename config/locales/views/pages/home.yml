@@ -1,0 +1,47 @@
+en:
+  job:
+    title: Title
+    format: Format 
+    genre: Genre 
+    subgenre: Subgenre 
+    running_time: Running Time
+    target: Target 
+    created_by: Created by
+    written_by: Written by 
+    directed_by: Directed by
+    status: Status
+    Player: Player
+
+  path: Find me at
+
+pt:
+  job:
+    title: Título
+    format: Formato 
+    genre: Gênero
+    subgenre: Subgênero 
+    running_time: Duração
+    target: Público 
+    created_by: Criado por
+    written_by: Escrito por 
+    directed_by: Dirigido por
+    status: Status
+    Player: Player
+
+  path: Encontre-me em
+
+es:
+  job:
+    title: Título
+    format: Formato
+    genre: Género 
+    subgenre: Subgénero 
+    running_time: Duración
+    target: Público 
+    created_by: Creado por
+    written_by: Escrito por 
+    directed_by: Dirigido por
+    status: Status
+    Player: Player
+
+  path: Estoy en

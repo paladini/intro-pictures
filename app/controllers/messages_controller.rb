@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
   
   	def new
   		@message = Message.new
-  		@departments = Department.all
  	end
  	
 	def create
