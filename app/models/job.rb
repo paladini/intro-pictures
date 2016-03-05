@@ -20,7 +20,10 @@ class Job < ActiveRecord::Base
 
 	validates :url, presence: true
 
+	# Validating Vimeo video or album
+	validates :url, format: { with: /(http|https):\/\/(www.|)vimeo.com\/[[0-9]*|album\/[0-9]*]+/ix }
+	# has_vimeo_video :url
 	# Create validation for a Vimeo video later.
-	validates :url, format: { with: URI.regexp }, if: Proc.new { |a| a.url.present? }
+	# validates :url, format: { with: URI.regexp }, if: Proc.new { |a| a.url.present? }
 
 end
