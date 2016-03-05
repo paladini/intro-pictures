@@ -30,8 +30,8 @@ Job:
 Company:
 	- resumo:text
 	- endereço:text
-	- email:string
-	- telefone:string
+	- email:text
+	- telephone:text
 	- has_many :Empregado (cuidado, pois todos os "empregados" pertencem à mesma empresa.
 
 Employee:

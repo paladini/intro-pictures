@@ -7,7 +7,7 @@ ActiveAdmin.register Company do
     config.clear_action_items!
 	permit_params :summary_pt, :summary_en, :summary_es,
 				  :address_pt, :address_en, :address_es,
-				  :email, :telephone
+				  :email, :telephone, :contact_email
 
 	before_save do |obj|
 		if !obj.valid?
@@ -29,6 +29,7 @@ ActiveAdmin.register Company do
 		    input :address_en
 		    input :address_es
 		    input :email
+		    input :contact_email, hint: "Email destinatário do formulário de contato."
 		    input :telephone
 	    end
 	    actions
@@ -44,6 +45,7 @@ ActiveAdmin.register Company do
 	      	row :address_en
 	      	row :address_es
 	      	row :email
+	      	row :contact_email
 	      	row :telephone
 	      	row :created_at
 	      	row :updated_at

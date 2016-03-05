@@ -55,6 +55,7 @@ pt:
         address_es: "Endereço (Espanhol)"
         email: "Email"
         telephone: "Telefone"
+        contact_email: Email do Formulário
         created_at: "Data criação"
         updated_at: "Data atualização"
       department:

@@ -7,8 +7,9 @@ class Company < ActiveRecord::Base
 #     t.text :address_pt
 #     t.text :address_en
 #     t.text :address_es
-#     t.string :email
-#     t.string :telephone
+#     t.text :email
+#     t.text :telephone
+# 	  t.string :contact_email
 
 	has_many :employees
 
@@ -21,5 +22,6 @@ class Company < ActiveRecord::Base
 	validates :address_es, presence: true
 	validates :email, presence: true
 	validates :telephone, presence: true
+	validates :contact_email, presence: true
 
 end
