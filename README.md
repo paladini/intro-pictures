@@ -5,8 +5,11 @@
 - rake db:migrate
 - rake db:seed
 
-
-Design: https://marvelapp.com/1bb7che
+Desktop: https://marvelapp.com/1bb7che
+Tablet Paisagem: https://marvelapp.com/bhe7b8
+Tablet Retrato: https://marvelapp.com/1fd1g8h
+Smartphone Paisagem: https://marvelapp.com/f5dh36
+Smartphone Retrato: https://marvelapp.com/16f1643
 
 == README
 

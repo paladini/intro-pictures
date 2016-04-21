@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
   # Routes to ActiveAdmin
   get '/admin/companies', to: redirect('/admin/companies/1')
+  get '/admin/contatos', to: redirect('/admin/contatos/1')
   ActiveAdmin.routes(self)
 
   # Root

@@ -22,6 +22,6 @@ class Company < ActiveRecord::Base
 	validates :address_es, presence: true
 	validates :email, presence: true
 	validates :telephone, presence: true
-	validates :contact_email, presence: true
+	# validates :contact_email, presence: true
 
 end

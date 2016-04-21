@@ -1,0 +1,340 @@
+$logo-height: 60px;
+$logo-width: 160px;
+$logo-padding: 20px;
+
+body {
+  padding-top: $logo-height + ($logo-padding * 2);
+  background : #000;
+  background : rgba(0, 0, 0, 1);
+}
+
+header {
+  padding-top: $logo-padding;
+  padding-bottom: $logo-padding;
+}
+
+#logo {
+  height: $logo-height;
+  width: $logo-width;
+}
+
+.background-black {
+  background : #000;
+  background : rgba(0, 0, 0, 1);
+}
+
+.textoRodape
+{
+  font-family : Futura;
+  font-size : 10px;
+  line-height : 13px;
+  color : #B2B2B2;
+  color : rgb(178, 178, 178);
+}
+
+.overlay-all{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 40px;
+  top: -5px;
+}
+
+.text-language {
+
+  a {
+    font-family : Futura LT;
+    font-weight : bold;
+    font-size : 16px;
+    text-transform : uppercase;
+    color : #666666;
+    color : rgb(102, 102, 102);
+    text-decoration: none;
+  }
+
+  .active {
+    color : #FFFFFF;
+    color : rgb(255, 255, 255);
+  }
+  
+}
+
+// .text-language-inactive {
+//   color : #666666;
+//   color : rgb(102, 102, 102);
+// }
+
+// .text-language-active {
+//   color : #FFFFFF;
+//   color : rgb(255, 255, 255);
+// }
+
+#search {
+  font-family : Futura LT;
+  font-weight : bold;
+  font-size : 23px;
+  text-transform : uppercase;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+  background : #000000;
+  background : rgba(0, 0, 0, 1);
+  border-style : Solid;
+  border-color : #E5E5E5;
+  border-color : rgba(229, 229, 229, 1);
+  border-width : 1px;
+  // width: 280px;
+  padding: 5px 10px;
+}
+// .textoBuscador
+// {
+//   font-family : Futura LT;
+//   font-weight : bold;
+//   font-size : 23px;
+//   text-transform : uppercase;
+//   color : #FFFFFF;
+//   color : rgb(255, 255, 255);
+// }
+
+// .boxBuscador
+// {
+  
+// }
+
+.portfolioNormal
+{
+  background-image : url(portfolioNormal.png);
+  /*Para criar uma imagem referenciada no CSS, use o comando \'Exportar CSS selecionado\'.*/
+  background-repeat : no-repeat;
+  opacity : 0.5;
+  filter: alpha(opacity=50) progid:DXImageTransform.Microsoft.Alpha(opacity=50) ;
+}
+
+.textoPortfolioNormal
+{
+  font-family : Futura;
+  font-size : 16px;
+  line-height : 21px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+  opacity : 0.5;
+  filter: alpha(opacity=50) progid:DXImageTransform.Microsoft.Alpha(opacity=50) ;
+}
+
+.bulletInativo
+{
+  background : #989898;
+  background : rgba(152, 152, 152, 1);
+}
+
+.bulletAtivo
+{
+  background : #E5E5E5;
+  background : rgba(229, 229, 229, 1);
+}
+
+.portfolioOver
+{
+  background-image : url(portfolioOver.png);
+  /*Para criar uma imagem referenciada no CSS, use o comando \'Exportar CSS selecionado\'.*/
+  background-repeat : no-repeat;
+}
+
+.textoPortfolioOver
+{
+  font-family : Futura;
+  font-size : 16px;
+  line-height : 21px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+
+.textosSobre
+{
+  font-family : Futura;
+  font-size : 20px;
+  color : #000000;
+  color : rgb(0, 0, 0);
+}
+
+.titulosSobre
+{
+  font-family : Futura LT;
+  font-weight : bold;
+  font-size : 30px;
+  text-transform : uppercase;
+  color : #000000;
+  color : rgb(0, 0, 0);
+}
+
+.textoCargo
+{
+  font-family : Futura;
+  font-size : 20px;
+  color : #4D4D4D;
+  color : rgb(77, 77, 77);
+}
+
+.boxContato
+{
+  background : #000000;
+  background : rgba(0, 0, 0, 1);
+  border-style : Solid;
+  border-color : #FFFFFF;
+  border-color : rgba(255, 255, 255, 1);
+  border-width : 1px;
+}
+
+.boxContatoOver
+{
+  background : #4D4D4D;
+  background : rgba(77, 77, 77, 1);
+  border-style : Solid;
+  border-color : #FFFFFF;
+  border-color : rgba(255, 255, 255, 1);
+  border-width : 1px;
+}
+
+.textoContato
+{
+  font-family : Futura LT;
+  font-weight : bold;
+  font-size : 30px;
+  text-transform : uppercase;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+
+.textoContatoAnexo
+{
+  font-family : Futura LT;
+  font-weight : bold;
+  font-size : 20px;
+  text-transform : uppercase;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+
+.btnContatoEnviarNormal
+{
+  background : #FFFFFF;
+  background : rgba(255, 255, 255, 1);
+}
+
+.btnContatoEnviarOver
+{
+  background : #CBCBCB;
+  background : rgba(203, 203, 203, 1);
+}
+
+.textoContatoEnviar
+{
+  font-family : Futura LT;
+  font-weight : bold;
+  font-size : 30px;
+  text-transform : uppercase;
+  color : #000000;
+  color : rgb(0, 0, 0);
+}
+
+.boxContatoVerde
+{
+  background : #000000;
+  background : rgba(0, 0, 0, 1);
+  border-style : Solid;
+  border-color : #7AC843;
+  border-color : rgba(122, 200, 67, 1);
+  border-width : 1px;
+}
+
+.boxContatoVermelho
+{
+  background : #000000;
+  background : rgba(0, 0, 0, 1);
+  border-style : Solid;
+  border-color : #FF1D25;
+  border-color : rgba(255, 29, 37, 1);
+  border-width : 1px;
+}
+
+.textoContatoPreenchido
+{
+  font-family : Futura;
+  font-size : 25px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+
+.textoContatoAlert
+{
+  font-family : Futura;
+  font-size : 18px;
+  color : #FF1D25;
+  color : rgb(255, 29, 37);
+}
+
+.textoPortfolioNome
+{
+  font-family : Futura;
+  font-size : 43px;
+  line-height : 40px;
+  color : #000000;
+  color : rgb(0, 0, 0);
+}
+
+.textoPortfolioAno
+{
+  font-family : Futura;
+  font-size : 35px;
+  line-height : 40px;
+  color : #333333;
+  color : rgb(51, 51, 51);
+}
+
+.textoPortfolioTitulos
+{
+  font-family : Futura LT;
+  font-weight : bold;
+  font-size : 30px;
+  text-transform : uppercase;
+  color : #000000;
+  color : rgb(0, 0, 0);
+}
+
+.textoPortfolioDescricao
+{
+  font-family : Futura;
+  font-size : 12px;
+  color : #000000;
+  color : rgb(0, 0, 0);
+}
+
+.bgPortfolioFichaTecnica
+{
+  background : #F1F1F1;
+  background : rgba(241, 241, 241, 1);
+}
+
+.scrolPortfolioAtivo
+{
+  border-style : Solid;
+  border-color : #4D4D4D;
+  border-color : rgba(77, 77, 77, 1);
+  border-width : 5px;
+}
+
+.scrolPortfolioFundo
+{
+  border-style : Solid;
+  border-color : #CBCBCB;
+  border-color : rgba(203, 203, 203, 1);
+  border-width : 5px;
+}
+
+.scrolPortfolioFundoOver
+{
+  background : #E5E5E5;
+  background : rgba(229, 229, 229, 1);
+}
+
+
+

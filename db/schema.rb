@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305180546) do
+ActiveRecord::Schema.define(version: 20160305194729) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -55,9 +55,14 @@ ActiveRecord::Schema.define(version: 20160305180546) do
     t.text     "address_es"
     t.text     "email"
     t.text     "telephone"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "contact_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "departments", force: :cascade do |t|
@@ -66,7 +71,10 @@ ActiveRecord::Schema.define(version: 20160305180546) do
     t.string   "name_es"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "contact_id"
   end
+
+  add_index "departments", ["contact_id"], name: "index_departments_on_contact_id"
 
   create_table "employees", force: :cascade do |t|
     t.string   "name"

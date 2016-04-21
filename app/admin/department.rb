@@ -1,8 +1,13 @@
 ActiveAdmin.register Department do
 
+	# menu false
 	menu label: "Departamentos" , priority: 5
 	permit_params :name_pt, :name_es, :name_en
 
+	# Defining default contact to every department
+	before_build do |obj|
+		obj.contact = Contact.first
+	end
 	before_save do |obj|
 		if !obj.valid?
 			flash[:error] = "Dados não atualizados! Algum campo não foi preenchido corretamente."
