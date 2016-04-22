@@ -64,20 +64,32 @@ footer {
       padding-top: 0px;
       padding-bottom: 0px;
 
-      span {
+      .typename {
         font-family : Futura;
         font-size : 16px;
         color : #4D4D4D;
         color : rgb(77, 77, 77);
+      }
+
+      .membername {
+        text-align: right;
       }
     }
   }
 
   .contact {
     padding-top: 25px;
-    padding-bottom: 25px;
+    // padding-bottom: 25px;
+
+    p {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
   }
 }
+
 
 
 .footer-normal {
@@ -408,5 +420,32 @@ footer {
   background : rgba(229, 229, 229, 1);
 }
 
+@media(max-width: $screen-xs-max){
+  .info {
+    padding: 25px 0px;
 
+    h4 {
+      text-align: center;
+      padding: 10px 0px;
+    }
+
+    .about {
+      padding: 10px 0px;
+    }
+
+    .team {
+      padding: 5px 0px 10px 0px;
+      p {
+        text-align: center;
+      }
+    }
+
+    .contact {
+      padding: 10px 0px;
+    }
+  }
+}
+@media(min-width: $screen-sm-min){}
+@media(min-width: $screen-md-min){}
+@media(min-width: $screen-lg-min){}
 
