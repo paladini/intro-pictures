@@ -38,12 +38,12 @@
 </div>
 
 <!-- Jobs -->
-<div class="container-fluid">
+<!-- <div class="container-fluid">
 	<div class="row">
 	  <div class="col-xs-12 col-md-8" style="background-color: green;">.col-xs-12 .col-md-8</div>
 	  <div class="col-xs-6 col-md-4" style="background-color: green;">.col-xs-6 .col-md-4</div>
 	</div>
-</div>
+</div> -->
 
 <div class="container">
 
@@ -70,42 +70,80 @@ Nullam a ex vitae massa bibendum iaculis eget at nibh. Morbi id diam mollis ante
 Nam aliquet nunc ac ipsum elementum posuere. In accumsan massa quis velit faucibus, quis fermentum neque tempor. Maecenas sit amet purus nibh. Sed suscipit convallis lorem, nec pulvinar velit porta eget. Morbi dictum sagittis ipsum. Etiam eget sodales ex, at hendrerit enim. Praesent volutpat ligula vel turpis varius, commodo ornare neque maximus. Morbi volutpat elit eget nulla tempus pulvinar. Vestibulum ultrices, purus cursus dapibus condimentum, metus libero gravida purus, a tincidunt massa felis pellentesque mauris. Pellentesque et dui risus. Sed nec erat ac augue sodales blandit eu at libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis, turpis id gravida pulvinar, eros ligula imperdiet enim, nec pellentesque ante nunc laoreet dolor. Praesent interdum scelerisque turpis. Aliquam aliquet mi non justo feugiat, sed viverra lorem auctor. </p>
 </div>
 
-<!-- Info: About -->
+<!-- Info section -->
+<section class="info">
+	<div class="container">
 
-<!-- Info: Team -->
+		<!-- Info: About -->
+		<div class="row about">
+			<div class="col-xs-10 col-xs-offset-1">
+				<p>The richness of brazilian folklore and of traditions and festivities from this theme is widely known. However, do you know the great variety of events annualy held, far from big centers and big audience, but even so very essential?</p>
 
-<!-- Info: Contact -->
+				<p>It aims at showing distinctive and tradional cultural aspects of brazil from its public gathering, in addition to showing different regions of the country, which is so rich in contrasts and different landscapes.
+				</p>
+			</div>
+		</div>
+
+		<!-- Info: Team -->
+		<div class="row team">
+			<div class="col-sm-1 col-sm-offset-4 vcenter">
+				<h4>Team</h4>
+			</div>
+			<div class="col-sm-3 vcenter">
+				<p>Guilherme Passos | <span>Câncer</span></p>
+				<p>Guilherme Passos | <span>Designer</span></p>
+				<p>Guilherme Passos | <span>Hombre</span></p>
+			</div>
+		</div>
+
+		<!-- Info: Contact -->
+		<div class="row contact">
+			<div class="col-sm-3 col-sm-offset-">
+				<h4>E-mail</h4>
+				<p>Olar</p>
+			</div>
+			<div class="col-sm-4">
+				<h4>Address</h4>
+				<p>Olar</p>
+			</div>
+			<div class="col-sm-3">
+				<h4>Phone</h4>
+				<p>Olar</p>
+			</div>
+		</div>
+
+	</div>
+</section>
 
 <!-- Contact form -->
 
 <!-- Footer -->
-<!-- <div class="container-fluid">
-	<header class="navbar-fixed-top background-black">
+<footer class="hidden-xs background-black footer-normal" >
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12">
-				<div class="row">
-					<%= image_tag("logo.png", alt: "Intro Pictures", id: "logo", class: "center-block") %>
-					<div class="overlay-all text-right text-language" >
-						<div class="row">
-							<div class="col-xs-12">
-								<a href="#" class="active">EN</a>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12">
-								<a href="#">PT</a>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12">
-								<a href="#">ES</a>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="col-xs-12 col-sm-8 vcenter">
+				<p>All materials, texts, videos and images (collectively, the “Materials”) of this Site, are property of Intro Pictures TV, unless otherwise noted, or property of third parties and are protected copyright laws. Intro Pictures TV does not guarantee nor is responsible for the use of the Materials of this site which could violate the rights of those who do not belong or are not affiliated with Intro Pictures TV.</p>
+			</div><!--
+			--><div class="col-xs-12 col-sm-2 col-sm-offset-2 vcenter"> 
+				<%= image_tag("lab_logo.svg", alt: "Intro Pictures logo", title: "Intro Pictures", class: "pull-right") %>
+			</div>
+			<!-- The empty comment above is necessary to keep the page structure -->
+		</div>
+	</div>
+</footer>
+
+<!-- Footer for small devices -->
+<footer class="hidden-sm hidden-md hidden-lg background-black footer-small">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-md-8">
+				<p>All materials, texts, videos and images (collectively, the “Materials”) of this Site, are property of Intro Pictures TV, unless otherwise noted, or property of third parties and are protected copyright laws. Intro Pictures TV does not guarantee nor is responsible for the use of the Materials of this site which could violate the rights of those who do not belong or are not affiliated with Intro Pictures TV.</p>
+				<br/>
+			</div>
+			<div class="col-xs-12 col-md-1 col-md-offset-3">
+				<p style="text-align: center;">Developed by:<br/></p>
+				<%= image_tag("lab_logo.svg", alt: "Intro Pictures logo", title: "Intro Pictures", class: "center-block") %>
 			</div>
 		</div>
-	</header>
-</div> -->
-
-<!-- </div> 
+	</div>
+</footer>

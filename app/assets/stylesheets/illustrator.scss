@@ -1,9 +1,11 @@
-$logo-height: 60px;
-$logo-width: 160px;
+$logo-height: 80px;
+$logo-width: 215px;
 $logo-padding: 20px;
+$footer-padding: 8px;
 
 body {
   padding-top: $logo-height + ($logo-padding * 2);
+  padding-bottom: 40px;
   background : #000;
   background : rgba(0, 0, 0, 1);
 }
@@ -13,23 +15,108 @@ header {
   padding-bottom: $logo-padding;
 }
 
+footer {
+  p {
+    font-family : Futura;
+    font-size : 10px;
+    line-height : 13px;
+    color : #B2B2B2;
+    color : rgb(178, 178, 178);
+    margin: 0px;
+  }
+}
+
+.info {
+  background-color: #FFF;
+  padding: 50px 0px;
+
+  // Font for general texts
+  font-family : Futura;
+  font-size : 16px;
+  color : #000000;
+  color : rgb(0, 0, 0);
+
+  h4 {
+    font-family : Futura LT;
+    font-weight : bold;
+    font-size : 24px;
+    text-transform : uppercase;
+    color : #000000;
+    color : rgb(0, 0, 0);
+  }
+
+  .about{
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .team {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    p {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+
+      span {
+        font-family : Futura;
+        font-size : 16px;
+        color : #4D4D4D;
+        color : rgb(77, 77, 77);
+      }
+    }
+  }
+
+  .contact {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+
+.footer-normal {
+  position: fixed;
+  bottom: 0px;
+  padding-top: $footer-padding;
+  padding-bottom: $footer-padding;
+
+  img {
+    height: 100%;
+  }
+}
+
+.footer-small {
+  padding-top: 20px;
+}
+
 #logo {
   height: $logo-height;
+  // width: auto;
   width: $logo-width;
 }
 
-.background-black {
-  background : #000;
-  background : rgba(0, 0, 0, 1);
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 
-.textoRodape
-{
-  font-family : Futura;
-  font-size : 10px;
-  line-height : 13px;
-  color : #B2B2B2;
-  color : rgb(178, 178, 178);
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.background-black {
+  // background: green;
+  background : #000;
+  background : rgba(0, 0, 0, 1);
 }
 
 .overlay-all{
@@ -37,7 +124,7 @@ header {
   width: 100%;
   height: 100%;
   right: 40px;
-  top: -5px;
+  top: 0px;
 }
 
 .text-language {
@@ -45,19 +132,28 @@ header {
   a {
     font-family : Futura LT;
     font-weight : bold;
-    font-size : 16px;
+    font-size : 18px;
     text-transform : uppercase;
     color : #666666;
     color : rgb(102, 102, 102);
     text-decoration: none;
+
+    &:hover {
+      color: #CBCBCB;
+    }
   }
 
   .active {
-    color : #FFFFFF;
+    color : #FFF;
     color : rgb(255, 255, 255);
+    &:hover {
+      color: #FFF;
+    }
   }
   
 }
+
+
 
 // .text-language-inactive {
 //   color : #666666;
@@ -148,31 +244,7 @@ header {
   color : rgb(255, 255, 255);
 }
 
-.textosSobre
-{
-  font-family : Futura;
-  font-size : 20px;
-  color : #000000;
-  color : rgb(0, 0, 0);
-}
 
-.titulosSobre
-{
-  font-family : Futura LT;
-  font-weight : bold;
-  font-size : 30px;
-  text-transform : uppercase;
-  color : #000000;
-  color : rgb(0, 0, 0);
-}
-
-.textoCargo
-{
-  font-family : Futura;
-  font-size : 20px;
-  color : #4D4D4D;
-  color : rgb(77, 77, 77);
-}
 
 .boxContato
 {
