@@ -363,27 +363,32 @@ footer {
 }
 
 #search {
-  font-family : Futura LT;
-  font-weight : bold;
-  font-size : 23px;
-  text-transform : uppercase;
-  color : #FFFFFF;
-  color : rgb(255, 255, 255);
-  background : #000000;
-  background : rgba(0, 0, 0, 1);
-  border-style : Solid;
-  border-color : #E5E5E5;
-  border-color : rgba(229, 229, 229, 1);
-  border-width : 1px;
-  padding: 5px 10px;
-  width: 100%;
-}
-
-
+    font-family : Futura LT;
+    font-weight : bold;
+    font-size : 23px;
+    text-transform : uppercase;
+    color : #FFFFFF;
+    color : rgb(255, 255, 255);
+    background : #000000;
+    background : rgba(0, 0, 0, 1);
+    border-style : Solid;
+    border-color : #E5E5E5;
+    border-color : rgba(229, 229, 229, 1);
+    border-width : 1px;
+    padding: 5px 10px;
+    width: 100%;
+    display: inline;
+    // width: auto;
+    // box-sizing : border-box;
+    // width: 100%;
+  }
 
 #search-icon {
   width: 40px;
   height: 40px;
+  display: inline;
+  line-height: 40px;
+
 }
 
 .portfolioNormal
@@ -501,6 +506,7 @@ footer {
   background : rgba(229, 229, 229, 1);
 }
 
+// Extra-small
 @media(max-width: $screen-xs-max){
   .info {
     padding: 25px 0px;
@@ -525,28 +531,54 @@ footer {
       padding: 10px 0px;
     }
   }
+
+  .search-padding {
+    padding-right: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  .contact-form{
+    padding: 50px 0px;
+  }
+
 }
-@media(min-width: $screen-sm-min){}
+
+// Small
+@media(min-width: $screen-sm-min){
+  .search-padding {
+    padding-right: 0px !important;
+    margin-right: 0px !important;
+  }
+    
+  .nopadding {
+    padding-left: 0px !important;
+    margin-left: 5px !important;
+  }
+}
+
+// Medium
 @media(min-width: $screen-md-min){
   .search-padding {
     padding-right: 0px !important;
-    margin-right: 5px !important;
+    margin-right: 0px !important;
   }
     
   .nopadding {
-    padding-left: 0 !important;
-    margin-left: 0 !important;
+    padding-left: 0px !important;
+    margin-left: 5px !important;
   }
 }
+
+// Large
 @media(min-width: $screen-lg-min){
   .search-padding {
     padding-right: 0px !important;
-    margin-right: 5px !important;
+    margin-right: 0px !important;
   }
     
   .nopadding {
-    padding-left: 0 !important;
-    margin-left: 0 !important;
+    padding-left: 0px !important;
+    margin-left: 5px !important;
   }
 }
 
