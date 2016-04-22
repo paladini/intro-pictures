@@ -29,20 +29,21 @@
 </div>
 
 <!-- Search -->
-<div class="container-fluid">
+<section class="container-fluid">
 	<div class="row">
-	  <div class="col-md-6 col-md-offset-3">
-	  	<input type="text" class="center-block" id="search" name="search" placeholder="SEARCH" />
+	  <div class="col-xs-11 col-sm-5 col-sm-offset-3 col-xs-offset-0 col-md-3 col-md-offset-4 search-padding vcenter">
+		<input type="text" class="center-block" id="search" name="search" placeholder="SEARCH" />
+	  </div>
+	  <div class="col-xs-1 col-md-1 nopadding vcenter">
+		<a href=""><%= image_tag("lupa.svg", alt: "Search", title: "Search", id: "search-icon") %></a>
 	  </div>
 	</div>
-</div>
+</section>
+
+<br/><br/>
 
 <!-- Jobs -->
 <!-- <div class="container-fluid">
-	<div class="row">
-	  <div class="col-xs-12 col-md-8" style="background-color: green;">.col-xs-12 .col-md-8</div>
-	  <div class="col-xs-6 col-md-4" style="background-color: green;">.col-xs-6 .col-md-4</div>
-	</div>
 </div> -->
 
 <div class="container">
@@ -126,6 +127,14 @@ Nam aliquet nunc ac ipsum elementum posuere. In accumsan massa quis velit faucib
 </section>
 
 <!-- Contact form -->
+<section class="container contact-form">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+			<%= render :template => "messages/new" %> 
+		</div>
+	</div>
+</section>
+
 
 <!-- Footer -->
 <footer class="hidden-xs background-black footer-normal" >

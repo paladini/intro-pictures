@@ -3,6 +3,19 @@ $logo-width: 215px;
 $logo-padding: 20px;
 $footer-padding: 8px;
 
+// Placeholder stylesheet
+$placeholder-font-family: Futura LT;
+$placeholder-font-weight: bold;
+$placeholder-font-size: 22px;
+$placeholder-text-transform: uppercase;
+$placeholder-color: #FFFFFF;
+$placeholder-color-rgb: rgb(255, 255, 255);
+
+/* 
+  ====================
+        GENERAL
+  ====================
+*/
 body {
   padding-top: $logo-height + ($logo-padding * 2);
   padding-bottom: 40px;
@@ -26,6 +39,17 @@ footer {
   }
 }
 
+/* 
+  ====================
+        SECTIONS
+  ====================
+*/
+
+// Section: search
+
+// Section: jobs
+
+// Section: info
 .info {
   background-color: #FFF;
   padding: 50px 0px;
@@ -45,6 +69,7 @@ footer {
     color : rgb(0, 0, 0);
   }
 
+  // Info: About
   .about{
     padding-top: 25px;
     padding-bottom: 25px;
@@ -54,6 +79,7 @@ footer {
     }
   }
 
+  // Info: Team
   .team {
     padding-top: 25px;
     padding-bottom: 25px;
@@ -77,6 +103,7 @@ footer {
     }
   }
 
+  // Info: Contact
   .contact {
     padding-top: 25px;
     // padding-bottom: 25px;
@@ -90,7 +117,176 @@ footer {
   }
 }
 
+// Section: contact form
+.contact-form{
+  padding: 100px 0px;
 
+  *::-webkit-input-placeholder {
+    font-family : $placeholder-font-family;
+    font-weight : $placeholder-font-weight;
+    font-size : $placeholder-font-size;
+    text-transform : $placeholder-text-transform;
+    color : $placeholder-color;
+    color : $placeholder-color-rgb;
+  }
+  *:-moz-placeholder {
+    font-family : $placeholder-font-family;
+    font-weight : $placeholder-font-weight;
+    font-size : $placeholder-font-size;
+    text-transform : $placeholder-text-transform;
+    color : $placeholder-color;
+    color : $placeholder-color-rgb;
+  }
+  *::-moz-placeholder {
+    font-family : $placeholder-font-family;
+    font-weight : $placeholder-font-weight;
+    font-size : $placeholder-font-size;
+    text-transform : $placeholder-text-transform;
+    color : $placeholder-color;
+    color : $placeholder-color-rgb;
+  }
+  *:-ms-input-placeholder {
+    font-family : $placeholder-font-family;
+    font-weight : $placeholder-font-weight;
+    font-size : $placeholder-font-size;
+    text-transform : $placeholder-text-transform;
+    color : $placeholder-color;
+    color : $placeholder-color-rgb;
+  }
+
+  input, textarea, select {
+    background : #000000;
+    background : rgba(0, 0, 0, 1);
+    padding: 5px 10px;
+    margin: 4px 0px;
+    width: 100%;
+    resize: none;
+
+    // Font
+    font-family : Futura;
+    font-size : 18px;
+    color : #FFFFFF;
+    color : rgb(255, 255, 255);
+    text-transform: none;
+
+    // Attach file
+    &[type=file] {
+      color: transparent;
+    }
+
+    
+
+    // Validation
+    border-style : Solid;
+    border-color : #FFFFFF;
+    border-color : rgba(255, 255, 255, 1);
+    border-width : 1px;
+
+    .valid {
+      border-style : Solid;
+      border-color : #7AC843;
+      border-color : rgba(122, 200, 67, 1);
+      border-width : 1px;
+    }
+
+    .invalid {
+      border-style : Solid;
+      border-color : #FF1D25;
+      border-color : rgba(255, 29, 37, 1);
+      border-width : 1px;
+    }
+  }
+
+  input, textarea {
+    &:focus, &:hover {
+      background : #4D4D4D !important;
+      background : rgba(77, 77, 77, 1) !important;
+      border-style : Solid !important;
+      border-color : #FFFFFF !important;
+      border-color : rgba(255, 255, 255, 1) !important;
+      border-width : 1px !important;
+    }
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    overflow: hidden;
+    background: image-url("seta_contato.svg") no-repeat;
+    background-position: 98% center;
+
+    option {
+      &:disabled {
+        font-family : $placeholder-font-family !important;
+        font-weight : $placeholder-font-weight !important;
+        font-size : $placeholder-font-size !important;
+        text-transform : $placeholder-text-transform !important;
+        color : $placeholder-color !important;
+        color : $placeholder-color-rgb !important;
+      }
+    }
+  }
+
+  .submit{
+    background : #FFFFFF;
+    background : rgba(255, 255, 255, 1);
+    font-family : Futura LT;
+    font-weight : bold;
+    font-size : 30px;
+    text-transform : uppercase;
+    color : #000000;
+    color : rgb(0, 0, 0);
+    width: auto;
+    margin: 4px auto;
+    border: 0;
+
+    &:hover {
+      background : #CBCBCB;
+      background : rgba(203, 203, 203, 1);
+      border: 0 !important;
+    }
+  }
+
+  .textoContatoAnexo
+  {
+    font-family : Futura LT;
+    font-weight : bold;
+    font-size : 20px;
+    text-transform : uppercase;
+    color : #FFFFFF;
+    color : rgb(255, 255, 255);
+  }
+
+  .boxContatoVerde
+  {
+    background : #000000;
+    background : rgba(0, 0, 0, 1);
+    
+  }
+
+  .boxContatoVermelho
+  {
+    background : #000000;
+    background : rgba(0, 0, 0, 1);
+    
+  }
+
+  .textoContatoPreenchido
+  {
+    font-family : Futura;
+    font-size : 25px;
+    color : #FFFFFF;
+    color : rgb(255, 255, 255);
+  }
+
+  .textoContatoAlert
+  {
+    font-family : Futura;
+    font-size : 18px;
+    color : #FF1D25;
+    color : rgb(255, 29, 37);
+  }
+}
 
 .footer-normal {
   position: fixed;
@@ -107,9 +303,16 @@ footer {
   padding-top: 20px;
 }
 
+
+
+/* 
+  ====================
+          MISC
+  ====================
+*/
+
 #logo {
   height: $logo-height;
-  // width: auto;
   width: $logo-width;
 }
 
@@ -117,12 +320,6 @@ footer {
     display: inline-block;
     vertical-align: middle;
     float: none;
-}
-
-.vertical-center {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .background-black {
@@ -165,18 +362,6 @@ footer {
   
 }
 
-
-
-// .text-language-inactive {
-//   color : #666666;
-//   color : rgb(102, 102, 102);
-// }
-
-// .text-language-active {
-//   color : #FFFFFF;
-//   color : rgb(255, 255, 255);
-// }
-
 #search {
   font-family : Futura LT;
   font-weight : bold;
@@ -190,23 +375,16 @@ footer {
   border-color : #E5E5E5;
   border-color : rgba(229, 229, 229, 1);
   border-width : 1px;
-  // width: 280px;
   padding: 5px 10px;
+  width: 100%;
 }
-// .textoBuscador
-// {
-//   font-family : Futura LT;
-//   font-weight : bold;
-//   font-size : 23px;
-//   text-transform : uppercase;
-//   color : #FFFFFF;
-//   color : rgb(255, 255, 255);
-// }
 
-// .boxBuscador
-// {
-  
-// }
+
+
+#search-icon {
+  width: 40px;
+  height: 40px;
+}
 
 .portfolioNormal
 {
@@ -258,103 +436,6 @@ footer {
 
 
 
-.boxContato
-{
-  background : #000000;
-  background : rgba(0, 0, 0, 1);
-  border-style : Solid;
-  border-color : #FFFFFF;
-  border-color : rgba(255, 255, 255, 1);
-  border-width : 1px;
-}
-
-.boxContatoOver
-{
-  background : #4D4D4D;
-  background : rgba(77, 77, 77, 1);
-  border-style : Solid;
-  border-color : #FFFFFF;
-  border-color : rgba(255, 255, 255, 1);
-  border-width : 1px;
-}
-
-.textoContato
-{
-  font-family : Futura LT;
-  font-weight : bold;
-  font-size : 30px;
-  text-transform : uppercase;
-  color : #FFFFFF;
-  color : rgb(255, 255, 255);
-}
-
-.textoContatoAnexo
-{
-  font-family : Futura LT;
-  font-weight : bold;
-  font-size : 20px;
-  text-transform : uppercase;
-  color : #FFFFFF;
-  color : rgb(255, 255, 255);
-}
-
-.btnContatoEnviarNormal
-{
-  background : #FFFFFF;
-  background : rgba(255, 255, 255, 1);
-}
-
-.btnContatoEnviarOver
-{
-  background : #CBCBCB;
-  background : rgba(203, 203, 203, 1);
-}
-
-.textoContatoEnviar
-{
-  font-family : Futura LT;
-  font-weight : bold;
-  font-size : 30px;
-  text-transform : uppercase;
-  color : #000000;
-  color : rgb(0, 0, 0);
-}
-
-.boxContatoVerde
-{
-  background : #000000;
-  background : rgba(0, 0, 0, 1);
-  border-style : Solid;
-  border-color : #7AC843;
-  border-color : rgba(122, 200, 67, 1);
-  border-width : 1px;
-}
-
-.boxContatoVermelho
-{
-  background : #000000;
-  background : rgba(0, 0, 0, 1);
-  border-style : Solid;
-  border-color : #FF1D25;
-  border-color : rgba(255, 29, 37, 1);
-  border-width : 1px;
-}
-
-.textoContatoPreenchido
-{
-  font-family : Futura;
-  font-size : 25px;
-  color : #FFFFFF;
-  color : rgb(255, 255, 255);
-}
-
-.textoContatoAlert
-{
-  font-family : Futura;
-  font-size : 18px;
-  color : #FF1D25;
-  color : rgb(255, 29, 37);
-}
 
 .textoPortfolioNome
 {
@@ -446,6 +527,26 @@ footer {
   }
 }
 @media(min-width: $screen-sm-min){}
-@media(min-width: $screen-md-min){}
-@media(min-width: $screen-lg-min){}
+@media(min-width: $screen-md-min){
+  .search-padding {
+    padding-right: 0px !important;
+    margin-right: 5px !important;
+  }
+    
+  .nopadding {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+@media(min-width: $screen-lg-min){
+  .search-padding {
+    padding-right: 0px !important;
+    margin-right: 5px !important;
+  }
+    
+  .nopadding {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+}
 

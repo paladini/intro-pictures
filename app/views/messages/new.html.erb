@@ -14,40 +14,34 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: :name %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, placeholder: :email %>
   </div>
 
   <div class="field">
-    <%= f.label "Departamento" %>
-    <%= f.select(:department, Department.all.collect {|a| a.name_pt}) -%>
+    <%= f.select(:department, options_for_select([["Departamento", 0], Department.all.collect {|a| a.name_pt}], disabled: [0]), selected: 0) %>
   </div>
 
   <div class="field">
-    <%= f.label :subject %>
-    <%= f.text_field :subject %>
+    <%= f.text_field :subject, placeholder: :subject %>
   </div>
 
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, placeholder: :content, rows: 8 %>
   </div>
 
   <div class="field">
-  	<%= f.label "Anexo" %>
-  	<%= f.file_field :file %>
+  	<%= f.file_field :file, placeholder: "Anexo", data: {buttonText: ""} %>
   </div>
 
-  <div class="field">
-  	<%= recaptcha_tags %>
-  </div>
+  <!-- <div class="field">
+  	<%= recaptcha_tags(:display => { :theme => "blackglass", :tabindex => 0}, :size => 470) %>
+  </div> -->
 
   <div class="actions">
-    <%= f.submit 'Enviar', class: 'button' %>
+    <%= f.submit 'Enviar', class: 'submit center-block text-center' %>
   </div>
 <% end %>
