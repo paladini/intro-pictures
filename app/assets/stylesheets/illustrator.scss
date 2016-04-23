@@ -378,9 +378,6 @@ footer {
     padding: 5px 10px;
     width: 100%;
     display: inline;
-    // width: auto;
-    // box-sizing : border-box;
-    // width: 100%;
   }
 
 #search-icon {
@@ -391,24 +388,38 @@ footer {
 
 }
 
-.portfolioNormal
-{
-  background-image : url(portfolioNormal.png);
-  /*Para criar uma imagem referenciada no CSS, use o comando \'Exportar CSS selecionado\'.*/
-  background-repeat : no-repeat;
-  opacity : 0.5;
-  filter: alpha(opacity=50) progid:DXImageTransform.Microsoft.Alpha(opacity=50) ;
-}
+.jobs {
+  padding-bottom: 30px;
 
-.textoPortfolioNormal
-{
-  font-family : Futura;
-  font-size : 16px;
-  line-height : 21px;
-  color : #FFFFFF;
-  color : rgb(255, 255, 255);
-  opacity : 0.5;
-  filter: alpha(opacity=50) progid:DXImageTransform.Microsoft.Alpha(opacity=50) ;
+  .job-outer {
+    text-align: center;
+    margin-bottom: 30px;
+
+    &:hover {
+      p, span, img {
+        opacity: 1.0;
+        filter: none;
+      }
+    }
+
+    p, span {
+      font-family : Futura;
+      font-size : 16px;
+      line-height : 21px;
+      color : #FFFFFF;
+      color : rgb(255, 255, 255);
+      opacity : 0.5;
+      filter: alpha(opacity=50) progid:DXImageTransform.Microsoft.Alpha(opacity=50) ;
+    }
+
+    img {
+      width: inherit;
+      max-width: 100%;
+      height: auto;
+      opacity : 0.5;
+      filter: alpha(opacity=50) progid:DXImageTransform.Microsoft.Alpha(opacity=50) ;
+    }
+  }
 }
 
 .bulletInativo
@@ -422,23 +433,6 @@ footer {
   background : #E5E5E5;
   background : rgba(229, 229, 229, 1);
 }
-
-.portfolioOver
-{
-  background-image : url(portfolioOver.png);
-  /*Para criar uma imagem referenciada no CSS, use o comando \'Exportar CSS selecionado\'.*/
-  background-repeat : no-repeat;
-}
-
-.textoPortfolioOver
-{
-  font-family : Futura;
-  font-size : 16px;
-  line-height : 21px;
-  color : #FFFFFF;
-  color : rgb(255, 255, 255);
-}
-
 
 
 
