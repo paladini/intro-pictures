@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require active_admin.js.coffee
 //= require bootstrap-sprockets
+//= require illustrator.js
 // require_tree .
