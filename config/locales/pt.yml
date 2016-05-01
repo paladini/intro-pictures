@@ -1,4 +1,20 @@
 pt:
+  home:
+    search: "Buscar"
+    info:
+      team: "Equipe"
+      email: "E-mail"
+      phone: "Telefone"
+      address: "Endereço"
+    contact:
+      name: "Nome"
+      email: "Email"
+      department: "Departamento"
+      subject: "Assunto"
+      content: "Mensagem"
+      attach: "Anexar arquivo"
+      submit: "Enviar"
+
   time:
     formats:
       long: "%d-%m-%Y %H:%M:%S"

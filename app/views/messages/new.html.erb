@@ -14,27 +14,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :name, placeholder: :name %>
+    <%= f.text_field :name, placeholder: t('home.contact.name') %>
   </div>
 
   <div class="field">
-    <%= f.email_field :email, placeholder: :email %>
+    <%= f.email_field :email, placeholder: t('home.contact.email') %>
   </div>
 
   <div class="field">
-    <%= f.select(:department, options_for_select([["Departamento", 0], Department.all.collect {|a| a.name_pt}], disabled: [0]), selected: 0) %>
+    <!-- <%= f.select(:department, options_for_select([["Departamento", 0], Department.all.collect {|a| a.name_pt}], disabled: 0, selected: 0, hidden: 0)) %> -->
+    <%= f.select(:department, Department.all.collect {|a| a.name_pt}, {prompt: t('home.contact.department')}) %>
   </div>
 
   <div class="field">
-    <%= f.text_field :subject, placeholder: :subject %>
+    <%= f.text_field :subject, placeholder: t('home.contact.subject') %>
   </div>
 
   <div class="field">
-    <%= f.text_area :content, placeholder: :content, rows: 8 %>
+    <%= f.text_area :content, placeholder: t('home.contact.content'), rows: 8 %>
   </div>
 
   <div class="field">
-  	<%= f.file_field :file, placeholder: "Anexo", data: {buttonText: ""} %>
+    <label class="custom-file-upload">
+        <input id="message_file" type="file"/>
+        <%= t('home.contact.attach') %>
+    </label>
+  	<!-- <%= f.file_field :file, placeholder: "Anexo", data: {buttonText: ""} %> -->
   </div>
 
   <!-- <div class="field">
@@ -42,6 +47,6 @@
   </div> -->
 
   <div class="actions">
-    <%= f.submit 'Enviar', class: 'submit center-block text-center' %>
+    <%= f.submit t('home.contact.submit'), class: 'submit center-block text-center' %>
   </div>
 <% end %>

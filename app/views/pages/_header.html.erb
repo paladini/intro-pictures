@@ -1,0 +1,29 @@
+<a class="anchor" id="header"></a>
+<div class="container-fluid">
+	<header class="navbar-fixed-top background-black">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<%= image_tag("logo.png", alt: "Intro Pictures logo", title: "Intro Pictures", id: "logo", class: "center-block") %>
+					<div class="overlay-all text-right text-language" >
+						<div class="row">
+							<div class="col-xs-12">
+								<a href="<%= url_for(locale: :en) %>" class="<%= 'active' if I18n.locale == I18n.default_locale %>">EN</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<a href="<%= url_for(locale: :pt) %>" class="<%= 'active' if I18n.locale == :pt %>">PT</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<a href="<%= url_for(locale: :es) %>" class="<%= 'active' if I18n.locale == :es %>">ES</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
