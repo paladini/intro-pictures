@@ -46,16 +46,43 @@ footer {
 */
 
 // Section: search
+#search {
+  font-family : Futura LT;
+  font-weight : bold;
+  font-size : 23px;
+  text-transform : uppercase;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+  background : #000000;
+  background : rgba(0, 0, 0, 1);
+  border-style : Solid;
+  border-color : #E5E5E5;
+  border-color : rgba(229, 229, 229, 1);
+  border-width : 1px;
+  padding: 5px 10px;
+  width: 100%;
+  display: inline;
+}
+
+#search-icon {
+  width: 40px;
+  height: 40px;
+  display: inline;
+  line-height: 40px;
+  cursor: pointer; 
+}
 
 // Section: jobs
 .jobs {
-  padding-top: 10px;
+  padding-top: 30px;
   padding-bottom: 30px;
 
   .job-outer {
     text-align: center;
     margin-bottom: 30px;
     z-index: 0;
+    cursor: pointer; 
+
     &:hover {
       p, span, img {
         opacity: 1.0;
@@ -154,7 +181,8 @@ footer {
 
 // Section: contact form
 .contact-form{
-  padding: 100px 0px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 
   *::-webkit-input-placeholder {
     font-family : $placeholder-font-family;
@@ -353,6 +381,163 @@ footer {
 
 /* 
   ====================
+        JOB MODAL
+  ====================
+*/
+.job-modal {
+
+
+  .scrolPortfolioAtivo
+  {
+    border-style : Solid;
+    border-color : #4D4D4D;
+    border-color : rgba(77, 77, 77, 1);
+    border-width : 5px;
+  }
+
+  .scrolPortfolioFundo
+  {
+    border-style : Solid;
+    border-color : #CBCBCB;
+    border-color : rgba(203, 203, 203, 1);
+    border-width : 5px;
+  }
+
+  .scrolPortfolioFundoOver
+  {
+    
+  }
+
+  .vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+  }
+  .vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+  }
+
+  .modal-dialog {
+    width: 80%;
+
+    .modal-content{
+      /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+      width:inherit;
+      height:inherit;
+      /* To center horizontally */
+      margin: 0 auto;
+      pointer-events: all;
+
+      // Custom
+      border: none;
+      border-radius: 0px;
+
+      .modal-body {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        height: 80vh;
+
+        .video-title {
+          font-family : Futura LT;
+          font-size : 35px;
+          font-weight : bold;
+          line-height : 40px;
+          color : #000000;
+          color : rgb(0, 0, 0);
+          text-transform : uppercase;
+        }
+
+        .video-year {
+          font-family : Futura;
+          font-size : 30px;
+          line-height : 40px;
+          color : #333333;
+          color : rgb(51, 51, 51);
+          margin-bottom: 5px;
+          padding-bottom: 0px;
+        }
+
+        .description-title
+        {
+          font-family : Futura LT;
+          font-weight : bold;
+          font-size : 30px;
+          text-transform : uppercase;
+          color : #000000;
+          color : rgb(0, 0, 0);
+        }
+
+        .description-text
+        {
+          font-family : Futura;
+          font-size : 12px;
+          color : #000000;
+          color : rgb(0, 0, 0);
+        }
+
+        .col-video {
+          padding: 0px !important; 
+          margin: 0px !important;
+          background-color: black;
+
+          .video {
+            max-width: 100%;
+            max-height: 80vh;
+            height: 80vh;
+          }
+        }
+
+        .col-video-description {
+          max-width: 100%;
+          max-height: 80vh;
+          height: 80vh;
+          padding: 15px;
+          overflow-y: auto;
+
+          .meta {
+            border-bottom: 8px;
+            border-bottom-color: #000;
+            border-bottom-style: solid;
+            margin-bottom: 10px;
+          }
+
+          .datasheet {
+
+            // Rows
+            .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+              background : #E5E5E5 !important;
+              background : rgba(229, 229, 229, 1) !important;
+            }
+
+            // Cells
+            .table-striped>tbody>tr:nth-child(odd)>td, 
+            .table-striped>tbody>tr:nth-child(odd)>th {
+              background-color: #F1F1F1;
+              background-color: rgba(241,241,241, 1);
+            }
+            
+            td {
+              border-top: none;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.modal-backdrop {
+  opacity: 0.8 !important;
+  filter: alpha(opacity=80) !important;
+}
+
+/* 
+  ====================
          ANCHOR
   ====================
 */
@@ -450,98 +635,10 @@ footer {
   
 }
 
-#search {
-    font-family : Futura LT;
-    font-weight : bold;
-    font-size : 23px;
-    text-transform : uppercase;
-    color : #FFFFFF;
-    color : rgb(255, 255, 255);
-    background : #000000;
-    background : rgba(0, 0, 0, 1);
-    border-style : Solid;
-    border-color : #E5E5E5;
-    border-color : rgba(229, 229, 229, 1);
-    border-width : 1px;
-    padding: 5px 10px;
-    width: 100%;
-    display: inline;
-  }
-
-#search-icon {
-  width: 40px;
-  height: 40px;
-  display: inline;
-  line-height: 40px;
-  cursor: pointer; 
-}
 
 
 
 
-.textoPortfolioNome
-{
-  font-family : Futura;
-  font-size : 43px;
-  line-height : 40px;
-  color : #000000;
-  color : rgb(0, 0, 0);
-}
-
-.textoPortfolioAno
-{
-  font-family : Futura;
-  font-size : 35px;
-  line-height : 40px;
-  color : #333333;
-  color : rgb(51, 51, 51);
-}
-
-.textoPortfolioTitulos
-{
-  font-family : Futura LT;
-  font-weight : bold;
-  font-size : 30px;
-  text-transform : uppercase;
-  color : #000000;
-  color : rgb(0, 0, 0);
-}
-
-.textoPortfolioDescricao
-{
-  font-family : Futura;
-  font-size : 12px;
-  color : #000000;
-  color : rgb(0, 0, 0);
-}
-
-.bgPortfolioFichaTecnica
-{
-  background : #F1F1F1;
-  background : rgba(241, 241, 241, 1);
-}
-
-.scrolPortfolioAtivo
-{
-  border-style : Solid;
-  border-color : #4D4D4D;
-  border-color : rgba(77, 77, 77, 1);
-  border-width : 5px;
-}
-
-.scrolPortfolioFundo
-{
-  border-style : Solid;
-  border-color : #CBCBCB;
-  border-color : rgba(203, 203, 203, 1);
-  border-width : 5px;
-}
-
-.scrolPortfolioFundoOver
-{
-  background : #E5E5E5;
-  background : rgba(229, 229, 229, 1);
-}
 
 // Extra-small
 @media(max-width: $screen-xs-max){
@@ -575,7 +672,8 @@ footer {
   }
 
   .contact-form{
-    padding: 50px 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
 }
@@ -611,6 +709,10 @@ footer {
   .search-padding {
     padding-right: 0px !important;
     margin-right: 0px !important;
+  }
+
+  .jobs {
+    max-width: 1353px !important; // cuidado com isso
   }
     
   .nopadding {

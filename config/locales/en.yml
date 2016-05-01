@@ -22,6 +22,7 @@
 en:
   home:
     search: "Search"
+    close_popup: "Close"
     info:
       team: "Team"
       email: "E-mail"

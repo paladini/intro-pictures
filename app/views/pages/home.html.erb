@@ -1,3 +1,67 @@
+<div class="modal job-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+	<div class="vertical-alignment-helper">
+	  	<div class="modal-dialog modal-lg vertical-align-center" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body">
+		        <div class="row">
+		          <div class="col-sm-8 col-video">
+		            <iframe class="video" src="//player.vimeo.com/video/158344086" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		          </div>
+		          <div class="col-sm-4 col-video-description">
+
+		          	<!-- Meta information -->
+		          	<div class="row meta">
+		          		<div class="col-sm-10">
+		          			<p class="video-title">Folk Brasil</p>
+		          			<p class="video-year">(2015)</p>
+		          		</div>
+		          		<div class="col-sm-2">
+		          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
+		          		</div>
+		          	</div>
+
+		          	<!-- Synopsis -->
+		          	<div class="row synopsis">
+		          		<div class="col-sm-12">
+		          			<p class="description-title">Synopsis</p>
+		          			<p class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dolor metus, pulvinar at mauris non, tincidunt tempor lorem. Fusce tincidunt neque vitae tincidunt congue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque mattis odio eu tellus varius ullamcorper. Mauris odio risus, placerat at libero eu, efficitur pellentesque felis. Suspendisse ut turpis non ante finibus porta at in eros. Donec tristique neque vitae nulla congue consequat. Vestibulum consequat malesuada turpis, sed dapibus lacus pretium non.</p>
+		          		</div>
+		          	</div>
+
+		          	<!-- Infos / Datasheet -->
+		          	<div class="row datasheet">
+		          		<div class="col-sm-12">
+		          			<p class="description-title">Datasheet</p>
+		          			<table class="table table-striped description-text table-hover">
+		          				<tbody> 
+		          					<tr> 
+		          						<td>Title</td>
+		          						<td>Folk Brazil</td>
+		          					</tr>
+		          					<tr> 
+		          						<td>English Title</td>
+		          						<td>Folk Brazil (EN)</td>
+		          					</tr>
+		          					<tr> 
+		          						<td>Format</td>
+		          						<td>Format</td>
+		          					</tr>
+		          					<tr> 
+		          						<td>Genre</td>
+		          						<td>Genre</td>
+		          					</tr> 
+		          				</tbody> 
+		          			</table>
+		          		</div>
+					</div>		          	
+		          </div>
+		        </div>
+		      </div>
+		    </div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	</div><!-- /.vertical alignment-helper -->
+</div><!-- /.modal -->
+
 <!-- Header (fixed, follows the user) -->
 <%= render 'header' %>
 

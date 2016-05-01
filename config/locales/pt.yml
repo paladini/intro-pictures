@@ -1,6 +1,7 @@
 pt:
   home:
     search: "Buscar"
+    close_popup: "Fechar"
     info:
       team: "Equipe"
       email: "E-mail"

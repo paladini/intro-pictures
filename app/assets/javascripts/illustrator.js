@@ -1,6 +1,11 @@
 
 
 var ready = function() {
+
+	// $('.modal-clickable').on('click', function(){
+	//     $(this).modal();
+	// })
+
 	/*
 		=====================
 	 		 Search bar
