@@ -1,4 +1,41 @@
-$(document).ready(function(){
+
+
+var ready = function() {
+	/*
+		=====================
+	 		 Search bar
+		=====================
+	*/
+	function search_do() {
+		var input_text = $('#search').val();
+		if (input_text.length === 0) {
+			$('.job').show();
+		} else {
+			var jobs = $('#jobs').find('.job');
+			for(var i = 0; i < jobs.length; i++) {
+				var current = $(jobs[i]);
+				var text_of_current = $(current.find('.job-title')).text().toLowerCase();
+				if (text_of_current.indexOf(input_text.toLowerCase()) > -1) {
+					current.show();
+				} else {
+					current.hide();
+				}
+			}
+		}
+	}
+
+	// On click
+	$('#search-icon').click(function(e){
+		search_do();
+	});
+
+	// On enter pressed
+	$('#search').keypress(function(e){
+  		if (e.which == 13) {
+    		search_do();
+    		return false;    //<---- Add this line
+  		}
+    });
 
 	/*
 		=====================
@@ -39,4 +76,9 @@ $(document).ready(function(){
 		$('.anchor-nav-item-active').removeClass('anchor-nav-item-active');
 		$(this).addClass('anchor-nav-item-active');
 	});
-});
+};
+
+// Compatibility reasons
+$(document).ready(ready);
+$(document).on('page:load', ready);
+// $(document).on('turbolinks:load', ready);
