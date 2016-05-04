@@ -227,6 +227,11 @@ footer {
     width: 100%;
     resize: none;
 
+    // Prevent Google Chrome blue border when focus
+    &:focus{
+      outline: none;
+    }
+
     // Font
     font-family : Futura;
     font-size : 18px;
