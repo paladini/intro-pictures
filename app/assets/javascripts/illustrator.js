@@ -2,10 +2,6 @@
 
 var ready = function() {
 
-	// $('.modal-clickable').on('click', function(){
-	//     $(this).modal();
-	// })
-
 	/*
 		=====================
 	 		 Search bar
@@ -14,9 +10,11 @@ var ready = function() {
 	function search_do() {
 		var input_text = $('#search').val();
 		if (input_text.length === 0) {
+			$('#no-result').hide();
 			$('.job').show();
 		} else {
 			var jobs = $('#jobs').find('.job');
+			var hidden = 0;
 			for(var i = 0; i < jobs.length; i++) {
 				var current = $(jobs[i]);
 				var text_of_current = $(current.find('.job-title')).text().toLowerCase();
@@ -25,6 +23,14 @@ var ready = function() {
 				} else {
 					current.hide();
 				}
+				// If not visible, add 1 to "hidden"
+				hidden += !(current.is(':visible')); 
+			}
+			
+			if (hidden == jobs.length) {
+				$('#no-result').show();
+			} else {
+				$('#no-result').hide();
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 pt:
   home:
     search: "Buscar"
+    no_result: "Nenhum resultado."
     close_popup: "Fechar"
     info:
       team: "Equipe"
