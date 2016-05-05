@@ -61,6 +61,10 @@ footer {
   border-width : 1px;
   padding: 5px 10px;
   width: 100%;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 #search-icon {
