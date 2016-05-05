@@ -16,6 +16,7 @@ pt:
       content: "Mensagem"
       attach: "Anexar arquivo"
       submit: "Enviar"
+    developed_by: "Developed by 322 Lab and Fernando Paladini"
 
   time:
     formats:
