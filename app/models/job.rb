@@ -1,5 +1,24 @@
 class Job < ActiveRecord::Base
 
+	validates :video_url, presence: true
+	validates :video_id, presence: true
+	validates :video_thumb_small, presence: true
+	validates :video_thumb_medium, presence: true
+	validates :video_thumb_large, presence: true
+	validate :id_uniqueness_validation
+
+	# Validating Vimeo video or album
+	validates :video_url, format: { with: /(http|https):\/\/(www.|)vimeo.com\/[[0-9]*|album\/[0-9]*]+/ix }
+
+	private
+		def id_uniqueness_validation()
+			if Job.where(video_id: self.video_id).any?
+				errors.add(:video_url, "Este vídeo já foi adicionado!")
+			end
+		end
+
+end
+
 # Fields / Columns:
 #   t.string :url #can be a video or an album
 #   t.string :title_pt
@@ -35,10 +54,3 @@ class Job < ActiveRecord::Base
 #   t.text :directed_by_en
 #   t.text :status 
 #   t.text :player 
-
-	validates :url, presence: true
-
-	# Validating Vimeo video or album
-	validates :url, format: { with: /(http|https):\/\/(www.|)vimeo.com\/[[0-9]*|album\/[0-9]*]+/ix }
-
-end

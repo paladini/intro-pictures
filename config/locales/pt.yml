@@ -17,9 +17,10 @@ pt:
       attach: "Anexar arquivo"
       submit: "Enviar"
     developed_by: "Developed by 322 Lab and Fernando Paladini"
-
   time:
     formats:
+      default: "%d-%m-%Y"
+      short: "%b %d"
       long: "%d-%m-%Y %H:%M:%S"
   errors:
     messages:
@@ -29,7 +30,6 @@ pt:
       incorrect-captcha-sol: "Verificação anti-spam falhou, tente novamente."
       recaptcha_unreachable: "Verificação anti-spam falhou, tente novamente."
       verification_failed: "Verificação anti-spam falhou, tente novamente."
-
   activerecord:
     models:
       employee:
@@ -41,6 +41,7 @@ pt:
         other: departamentos
     attributes:
       job:
+        video_url: URL do vídeo
         title_pt: Título
         title_en: Título (Inglês)
         title_es: Título (Espanhol)
@@ -106,8 +107,8 @@ pt:
       models:
         job:
           attributes:
-            url:
-              invalid: Link para um vídeo ou álbum do Vimeo deve ser inserido.
+            video_url:
+              invalid: Link para um vídeo do Vimeo deve ser inserido.
 
   active_admin:
     dashboard: "Painel Administrativo"

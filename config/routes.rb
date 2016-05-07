@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   # Root
   get '/:locale' => 'pages#home'
+  post '/load_video' => 'jobs#load_vimeo_video'
   root to: "pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

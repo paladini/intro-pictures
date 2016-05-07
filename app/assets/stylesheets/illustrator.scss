@@ -248,19 +248,36 @@ footer {
     border-color : rgba(255, 255, 255, 1);
     border-width : 1px;
 
-    .valid {
-      border-style : Solid;
-      border-color : #7AC843;
-      border-color : rgba(122, 200, 67, 1);
-      border-width : 1px;
-    }
+    // .touched {
+    //   input, textarea {
+    //     &:valid {
+    //       border-style : solid !important;
+    //       border-color : #7AC843 !important;
+    //       border-color : rgba(122, 200, 67, 1) !important;
+    //       border-width : 1px !important;
+    //     }
 
-    .invalid {
-      border-style : Solid;
-      border-color : #FF1D25;
-      border-color : rgba(255, 29, 37, 1);
-      border-width : 1px;
-    }
+    //     &:invalid {
+    //       border-style : solid !important;
+    //       border-color : #FF1D25 !important;
+    //       border-color : rgba(255, 29, 37, 1) !important;
+    //       border-width : 1px !important;
+    //     }
+    //   }
+    // }
+    // &:valid, .valid {
+    //   border-style : Solid;
+    //   border-color : #7AC843;
+    //   border-color : rgba(122, 200, 67, 1);
+    //   border-width : 1px;
+    // }
+
+    // &:invalid, .invalid {
+    //   border-style : Solid;
+    //   border-color : #FF1D25;
+    //   border-color : rgba(255, 29, 37, 1);
+    //   border-width : 1px;
+    // }
   }
 
   input, textarea {

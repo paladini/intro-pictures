@@ -1,11 +1,13 @@
 ActiveAdmin.register Job do
 
 	menu label: "Jobs" , priority: 3
-	permit_params :url, 
-	              :status, 
+	permit_params :video_id, 
+				  :video_url,
+				  :video_thumb_small, :video_thumb_medium, :video_thumb_large,
+	              :status,
 	              :player,
-				  :password, 
-				  :title_pt, :title_en, :title_es, 
+				  :password,
+				  :title_pt, :title_en, :title_es,
 				  :genre_pt, :genre_en, :genre_es,
 	              :target_pt, :target_en, :target_es, 
 				  :format_pt, :format_en, :format_es, 
@@ -25,9 +27,14 @@ ActiveAdmin.register Job do
 	#
 	# Label-related stuff
 	#
+	filter :title_pt
+	filter :video_url
+	filter :genre_pt
+	filter :synopsis_pt
+
 	index do
 		column :title_pt
-		column :url
+		column :video_url
 		column "Protegido | Privado", :password do |obj|
 			obj.password.empty? ? "Não" : "Sim"
 		end
@@ -41,7 +48,16 @@ ActiveAdmin.register Job do
 	# Custom form for translated labels
 	form do |f|
 	    inputs "Informações Básicas" do
-	        input :url, hint: "Link para um vídeo ou álbum do Vimeo."
+	        input :video_url, hint: "Link para um vídeo do Vimeo."
+	        li do 
+	        	'<label id="input_thumbnail" class="label">Miniatura do vídeo</label>
+	        	<p class="inline-hints">A miniatura do vídeo será obtida quando um vídeo do Vimeo for inserido.</p>
+	        	'.html_safe
+	        end
+	        input :video_thumb_small, as: :hidden
+	        input :video_thumb_medium, as: :hidden
+	        input :video_thumb_large, as: :hidden
+	        input :video_id, as: :hidden
 		    input :title_pt
 		    input :title_en
 		    input :title_es
@@ -105,6 +121,50 @@ ActiveAdmin.register Job do
 	        input :player, :input_html => { rows: 1 }
 	    end
 	    actions
+	end
+
+	show title: :title_en do
+	    attributes_table do
+	    	row :video_url
+	    	row "Miniatura" do
+		        image_tag(job.video_thumb_large)
+			end
+	        row :status
+	        row :player
+			row :password
+			row :title_pt
+			row :title_en
+			row :title_es
+			row :genre_pt
+			row :genre_en
+			row :genre_es
+	        row :target_pt
+	        row :target_en
+	        row :target_es
+			row :format_pt
+			row :format_en
+			row :format_es
+			row :synopsis_pt
+			row :synopsis_en
+			row :synopsis_es
+			row :subgenre_pt
+			row :subgenre_en
+			row :subgenre_es
+	        row :created_by_pt
+	        row :created_by_en
+	        row :created_by_es
+	        row :written_by_pt
+	        row :written_by_en
+	        row :written_by_es
+	        row :directed_by_pt
+	        row :directed_by_en
+	        row :directed_by_es
+			row :running_time_pt
+			row :running_time_en
+			row :running_time_es
+	      	row :created_at 
+	      	row :updated_at
+	    end
 	end
 
 end

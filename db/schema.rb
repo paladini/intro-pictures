@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305194729) do
+ActiveRecord::Schema.define(version: 20160507142608) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20160305194729) do
   add_index "employees", ["company_id"], name: "index_employees_on_company_id"
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "url"
+    t.string   "video_url"
     t.string   "title_pt"
     t.string   "title_es"
     t.string   "title_en"
@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(version: 20160305194729) do
     t.text     "directed_by_pt"
     t.text     "status"
     t.text     "player"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.text     "synopsis_es"
     t.text     "synopsis_en"
     t.text     "format_es"
@@ -125,6 +125,10 @@ ActiveRecord::Schema.define(version: 20160305194729) do
     t.text     "written_by_en"
     t.text     "directed_by_es"
     t.text     "directed_by_en"
+    t.integer  "video_id"
+    t.string   "video_thumb_small"
+    t.string   "video_thumb_medium"
+    t.string   "video_thumb_large"
   end
 
 end

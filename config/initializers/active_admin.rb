@@ -6,15 +6,17 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Intro Pictures"
   config.comments = false
-
+  config.before_filter do
+    I18n.locale = "pt"
+  end
   # config.before_filter do 
-  #     I18n.locale = "en"
+  #     I18n.locale = :pt
   # end
 
-  # I18n.locale = "pt-BR"
+  # I18n.locale = "pt"
   # config.before_filter do
-    # i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # i18n.default_locale = "pt-BR"
+  #   i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    # i18n.default_locale = :pt
   # end
 
   # Set the link url for the title. For example, to take
@@ -206,6 +208,7 @@ ActiveAdmin.setup do |config|
   #   config.register_javascript 'my_javascript.js'
   config.register_javascript 'active_admin/jquery.autogrowtextarea.min.js'
   config.register_javascript 'active_admin/autogrow_textarea.js'
+  config.register_javascript 'active_admin/jobs.js'
   # config.register_javascript 
   # config.register_javascript 'jquery.autogrowtextarea.min.js'
 
