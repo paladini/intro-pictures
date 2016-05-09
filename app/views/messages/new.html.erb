@@ -14,24 +14,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :name, placeholder: t('home.contact.name') %>
+    <%= f.text_field :name, placeholder: t('home.contact.name'), required: true %>
   </div>
 
   <div class="field">
-    <%= f.email_field :email, placeholder: t('home.contact.email') %>
+    <%= f.email_field :email, placeholder: t('home.contact.email'), required: true %>
   </div>
 
   <div class="field">
-    <!-- <%= f.select(:department, options_for_select([["Departamento", 0], Department.all.collect {|a| a.name_pt}], disabled: 0, selected: 0, hidden: 0)) %> -->
-    <%= f.select(:department, Department.all.collect {|a| a.name_pt}, {prompt: t('home.contact.department')}) %>
+    <%= f.select(:department, Department.all.collect {|a| a.name_pt}, {prompt: t('home.contact.department')}, required: true) %>
   </div>
 
   <div class="field">
-    <%= f.text_field :subject, placeholder: t('home.contact.subject') %>
+    <%= f.text_field :subject, placeholder: t('home.contact.subject'), required: true %>
   </div>
 
   <div class="field">
-    <%= f.text_area :content, placeholder: t('home.contact.content'), rows: 8 %>
+    <%= f.text_area :content, placeholder: t('home.contact.content'), required:true, rows: 8 %>
   </div>
 
   <div class="field">

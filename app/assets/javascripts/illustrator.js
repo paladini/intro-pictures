@@ -1,5 +1,3 @@
-
-
 var ready = function() {
 
 	/*
@@ -7,12 +5,9 @@ var ready = function() {
 	 		 Form validations
 		===========================
 	*/
-	// function form_validation(e) {
-	// }
-	// $('#new_message').find('input[type="text"], input[type="email"], textarea').one('blur keydown', function(e){
-	// 	$(this).addClass('touched');
-	// 	console.log("Entrei aqui!");
-	// });
+	$('#new_message').find('input[type="text"], select, input[type="email"], textarea').one('blur keydown', function(e){
+		$(this).addClass('touched');
+	});
 
 	/*
 		=====================

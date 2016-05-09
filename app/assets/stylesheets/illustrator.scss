@@ -228,6 +228,22 @@ footer {
     color : $placeholder-color-rgb;
   }
 
+  .touched {
+    &:valid {
+      border-style : solid !important;
+      border-color : #7AC843 !important;
+      border-color : rgba(122, 200, 67, 1) !important;
+      border-width : 1px !important;
+    }
+
+    &:invalid {
+      border-style : solid !important;
+      border-color : #FF1D25 !important;
+      border-color : rgba(255, 29, 37, 1) !important;
+      border-width : 1px !important;
+    }
+  }
+
   input, textarea, select {
     background : #000000;
     background : rgba(0, 0, 0, 1);
@@ -254,36 +270,12 @@ footer {
     border-color : rgba(255, 255, 255, 1);
     border-width : 1px;
 
-    // .touched {
-    //   input, textarea {
-    //     &:valid {
-    //       border-style : solid !important;
-    //       border-color : #7AC843 !important;
-    //       border-color : rgba(122, 200, 67, 1) !important;
-    //       border-width : 1px !important;
-    //     }
-
-    //     &:invalid {
-    //       border-style : solid !important;
-    //       border-color : #FF1D25 !important;
-    //       border-color : rgba(255, 29, 37, 1) !important;
-    //       border-width : 1px !important;
-    //     }
-    //   }
-    // }
-    // &:valid, .valid {
-    //   border-style : Solid;
-    //   border-color : #7AC843;
-    //   border-color : rgba(122, 200, 67, 1);
-    //   border-width : 1px;
-    // }
-
-    // &:invalid, .invalid {
-    //   border-style : Solid;
-    //   border-color : #FF1D25;
-    //   border-color : rgba(255, 29, 37, 1);
-    //   border-width : 1px;
-    // }
+    &:invalid {
+      border-style : Solid;
+      border-color : #FFFFFF;
+      border-color : rgba(255, 255, 255, 1);
+      border-width : 1px;
+    }
   }
 
   input, textarea {
