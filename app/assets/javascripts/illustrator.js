@@ -99,6 +99,9 @@ var ready = function() {
 		$('.anchor-nav-item-active').removeClass('anchor-nav-item-active');
 		$(this).addClass('anchor-nav-item-active');
 	});
+
+	// Smooth scroll;
+	$('#anchor-nav a').smoothScroll();
 };
 
 // Compatibility reasons
