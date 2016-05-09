@@ -27,7 +27,6 @@ gem "recaptcha", require: "recaptcha/rails" # captcha for anti-flood reasons
 
 # Vimeo related.
 gem 'vimeo'
-# gem "has_vimeo_video"
 
 # Globalize, to translate model rows to other languages.
 # gem 'globalize', '~> 5.0', '>= 5.0.1'
@@ -63,8 +62,6 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
-  # Vimeo related
-  # gem "has_vimeo_video"
 end
 
 group :development do
