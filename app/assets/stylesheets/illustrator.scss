@@ -416,29 +416,30 @@ footer {
         JOB MODAL
   ====================
 */
+
+// Scroll bar for Chrome
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  border-style : Solid;
+  border-color : #4D4D4D;
+  border-color : rgba(77, 77, 77, 1);
+}
+
+::-webkit-scrollbar-track-piece {
+  border-radius: 0px;
+  border-style : Solid;
+  border-color : #CBCBCB;
+  border-color : rgba(203, 203, 203, 1);
+}
+
 .job-modal {
-
-
-  .scrolPortfolioAtivo
-  {
-    border-style : Solid;
-    border-color : #4D4D4D;
-    border-color : rgba(77, 77, 77, 1);
-    border-width : 5px;
-  }
-
-  .scrolPortfolioFundo
-  {
-    border-style : Solid;
-    border-color : #CBCBCB;
-    border-color : rgba(203, 203, 203, 1);
-    border-width : 5px;
-  }
-
-  .scrolPortfolioFundoOver
-  {
-    
-  }
 
   .vertical-alignment-helper {
     display:table;
