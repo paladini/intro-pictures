@@ -62,7 +62,13 @@ footer {
   padding: 5px 10px;
   width: 100%;
 
-  &:focus{
+  &:hover, &:focus {
+    background : #4D4D4D !important;
+    background : rgba(77, 77, 77, 1) !important;
+    border-style : Solid !important;
+    border-color : #FFFFFF !important;
+    border-color : rgba(255, 255, 255, 1) !important;
+    border-width : 1px !important;
     outline: none;
   }
 }
@@ -620,9 +626,6 @@ footer {
 }
 
 #logo {
-  // height: $logo-height;
-  // width: $logo-width;
-  //cursor: pointer;
   width: $logo-width;
   height: $logo-height;
 
