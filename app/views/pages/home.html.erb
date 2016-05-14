@@ -3,26 +3,93 @@
 	  	<div class="modal-dialog modal-lg vertical-align-center" role="document">
 		    <div class="modal-content">
 		      <div class="modal-body">
-		        <div class="row">
-		          <div class="col-sm-8 col-video">
+
+		      	<!-- Extra Small / Small devices -->
+		      	<div class="row hidden-md hidden-lg">
+
+		      		<!-- Meta information -->
+		      		<div class="col-xs-12 col-video-description">
+		          	<div class="row meta">
+		          		<div class="col-xs-10">
+		          			<p class="video-title">Folk Brasil (pequeno)</p>
+		          			<p class="video-year">(2015)</p>
+		          		</div>
+		          		<div class="col-xs-2">
+		          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
+		          		</div>
+		          	</div>
+		          </div>
+
+		          <div class="col-xs-12 col-video">
 		            <iframe class="video" src="//player.vimeo.com/video/158344086" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		          </div>
-		          <div class="col-sm-4 col-video-description">
+
+		          <div class="col-xs-12 col-video-description">
+
+		          	<!-- Synopsis -->
+		          	<!-- <div class="row synopsis"> -->
+		          	<div class="row">
+		          		<div class="col-xs-12 col-ms-6 synopsis">
+		          			<p class="description-title">Synopsis</p>
+		          			<p class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dolor metus, pulvinar at mauris non, tincidunt tempor lorem. Fusce tincidunt neque vitae tincidunt congue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque mattis odio eu tellus varius ullamcorper. Mauris odio risus, placerat at libero eu, efficitur pellentesque felis. Suspendisse ut turpis non ante finibus porta at in eros. Donec tristique neque vitae nulla congue consequat. Vestibulum consequat malesuada turpis, sed dapibus lacus pretium non.Sed risus nibh, consequat lobortis arcu a, mattis dapibus turpis. Etiam blandit, dui sit amet consequat finibus, turpis ligula accumsan ex, et congue elit lectus at mauris. Pellentesque vitae hendrerit metus. Morbi at erat leo. Maecenas in dolor dapibus, posuere ante eget, tincidunt enim. Fusce vel ex fermentum, scelerisque erat a, eleifend diam. Donec varius nec ante eu tempor. Donec a massa id erat blandit molestie in sit amet justo. Aenean vitae purus ut turpis volutpat laoreet. Morbi at nulla dui. Mauris sagittis augue sollicitudin dolor fringilla ullamcorper. Etiam porttitor egestas orci, eu sagittis massa sodales et. Mauris viverra mi lobortis velit lacinia, id venenatis mi ultrices. Quisque nec ante fermentum, lobortis dui vitae, interdum metus. Praesent posuere placerat tortor, vel sagittis purus. Curabitur eu varius felis. 
+
+		          			Vivamus laoreet, nisi sed tincidunt iaculis, odio metus vestibulum turpis, eget mattis sem metus sed urna. Phasellus nec nibh dapibus, tempus justo eu, venenatis sem. Aliquam orci magna, vulputate a ornare eu, consequat cursus eros. Curabitur tempor id risus quis fermentum. Integer a elit ut lectus bibendum porttitor. Donec sagittis, diam tristique eleifend sollicitudin, ex nisl mattis orci, vel commodo risus lacus in massa. Maecenas in tortor luctus, tristique eros ac, euismod justo. Donec sit amet tincidunt lacus, ac dapibus augue. Mauris facilisis, nisi a ultrices elementum, velit nunc feugiat libero, a feugiat elit ante ac justo. Pellentesque ut vulputate turpis, quis congue leo. Proin interdum accumsan augue tincidunt pulvinar. Vestibulum ex enim, fermentum et augue elementum, volutpat accumsan purus. Fusce luctus nisl felis, eu molestie libero congue sed. Vivamus ac nunc dolor. Vivamus malesuada elit eu ultricies euismod. Sed nulla metus, eleifend ac molestie id, maximus ac lacus. 
+		          			</p>
+		          		</div>
+			          	<!-- </div> -->
+
+			          	<!-- Infos / Datasheet -->
+		          		<div class="col-xs-12 col-ms-6 datasheet">
+		          			<p class="description-title">Info</p>
+		          			<table class="table table-striped description-text table-hover">
+		          				<tbody> 
+		          					<tr> 
+		          						<td>Title</td>
+		          						<td>Folk Brazil</td>
+		          					</tr>
+		          					<tr> 
+		          						<td>English Title</td>
+		          						<td>Folk Brazil (EN)</td>
+		          					</tr>
+		          					<tr> 
+		          						<td>Format</td>
+		          						<td>Format</td>
+		          					</tr>
+		          					<tr> 
+		          						<td>Genre</td>
+		          						<td>Genre</td>
+		          					</tr> 
+		          				</tbody> 
+		          			</table>
+									</div>
+								</div>          	
+		          </div>
+		        </div>
+
+
+
+
+		      	<!-- Medium / Large devices -->
+		        <div class="row hidden-xs hidden-sm hidden-ms">
+		          <div class="col-md-8 col-video">
+		            <iframe class="video" src="//player.vimeo.com/video/158344086" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		          </div>
+		          <div class="col-md-4 col-video-description">
 
 		          	<!-- Meta information -->
 		          	<div class="row meta">
-		          		<div class="col-sm-10">
+		          		<div class="col-md-10">
 		          			<p class="video-title">Folk Brasil</p>
 		          			<p class="video-year">(2015)</p>
 		          		</div>
-		          		<div class="col-sm-2">
+		          		<div class="col-md-2">
 		          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
 		          		</div>
 		          	</div>
 
 		          	<!-- Synopsis -->
 		          	<div class="row synopsis">
-		          		<div class="col-sm-12">
+		          		<div class="col-md-12">
 		          			<p class="description-title">Synopsis</p>
 		          			<p class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dolor metus, pulvinar at mauris non, tincidunt tempor lorem. Fusce tincidunt neque vitae tincidunt congue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque mattis odio eu tellus varius ullamcorper. Mauris odio risus, placerat at libero eu, efficitur pellentesque felis. Suspendisse ut turpis non ante finibus porta at in eros. Donec tristique neque vitae nulla congue consequat. Vestibulum consequat malesuada turpis, sed dapibus lacus pretium non.Sed risus nibh, consequat lobortis arcu a, mattis dapibus turpis. Etiam blandit, dui sit amet consequat finibus, turpis ligula accumsan ex, et congue elit lectus at mauris. Pellentesque vitae hendrerit metus. Morbi at erat leo. Maecenas in dolor dapibus, posuere ante eget, tincidunt enim. Fusce vel ex fermentum, scelerisque erat a, eleifend diam. Donec varius nec ante eu tempor. Donec a massa id erat blandit molestie in sit amet justo. Aenean vitae purus ut turpis volutpat laoreet. Morbi at nulla dui. Mauris sagittis augue sollicitudin dolor fringilla ullamcorper. Etiam porttitor egestas orci, eu sagittis massa sodales et. Mauris viverra mi lobortis velit lacinia, id venenatis mi ultrices. Quisque nec ante fermentum, lobortis dui vitae, interdum metus. Praesent posuere placerat tortor, vel sagittis purus. Curabitur eu varius felis. 
 
@@ -33,7 +100,7 @@
 
 		          	<!-- Infos / Datasheet -->
 		          	<div class="row datasheet">
-		          		<div class="col-sm-12">
+		          		<div class="col-md-12">
 		          			<p class="description-title">Info</p>
 		          			<table class="table table-striped description-text table-hover">
 		          				<tbody> 
@@ -56,7 +123,7 @@
 		          				</tbody> 
 		          			</table>
 		          		</div>
-					</div>		          	
+								</div>		          	
 		          </div>
 		        </div>
 		      </div>

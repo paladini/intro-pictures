@@ -433,19 +433,6 @@ footer {
 
 .job-modal {
 
-  .vertical-alignment-helper {
-    display:table;
-    height: 100%;
-    width: 100%;
-    pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
-  }
-  .vertical-align-center {
-    /* To center vertically */
-    display: table-cell;
-    vertical-align: middle;
-    pointer-events:none;
-  }
-
   .modal-dialog {
     width: 80%;
 
@@ -460,11 +447,12 @@ footer {
       // Custom
       border: none;
       border-radius: 0px;
+      width: 90%;
 
       .modal-body {
         padding-bottom: 0px;
         padding-top: 0px;
-        height: 80vh;
+        // height: 80vh;
 
         .video-title {
           font-family : Futura;
@@ -482,7 +470,6 @@ footer {
           line-height : 20px;
           color : #333333;
           color : rgb(51, 51, 51);
-          margin-bottom: 15px;
           padding-bottom: 0px;
         }
 
@@ -518,17 +505,9 @@ footer {
 
         .col-video-description {
           max-width: 100%;
-          max-height: 80vh;
-          height: 80vh;
           padding: 15px;
           overflow-y: auto;
-
-          .meta {
-            border-bottom: 5px;
-            border-bottom-color: #000;
-            border-bottom-style: solid;
-            margin-bottom: 10px;
-          }
+          background-color: white;
 
           .datasheet {
 
@@ -712,6 +691,44 @@ footer {
     padding-bottom: 50px;
   }
 
+  .job-modal {
+    .modal-dialog {
+      width: 90%;
+
+      .modal-content {
+        width: 98%;
+        margin: 100px auto;
+      }
+    }
+  }
+
+}
+
+// Medium small
+@media(min-width: $screen-ms-min){
+  .job-modal {
+    .vertical-alignment-helper {
+      display:table;
+      height: 100%;
+      width: 100%;
+      pointer-events:none; //This makes sure that we can still click outside of the modal to close it
+    }
+    .vertical-align-center {
+      /* To center vertically */
+      display: table-cell;
+      vertical-align: middle;
+      pointer-events:none;
+    }
+
+    .modal-dialog {
+      width: 70%;
+
+      .modal-content {
+        width: 70%;
+        margin: auto auto;
+      }
+    }
+  }
 }
 
 // Small
@@ -720,6 +737,28 @@ footer {
     padding-left: 0px !important;
     margin-left: 5px !important;
   }
+
+  .job-modal {
+
+    .vertical-alignment-helper {
+      display: inherit;
+      height: auto;
+      width: auto;
+    }
+    .vertical-align-center { 
+      display: inherit;
+    }
+
+    .modal-dialog {
+      width: 90%;
+
+      .modal-content {
+        width: 98%;
+        margin: 100px auto;
+      }
+    }
+  }
+
 }
 
 // Medium
@@ -727,6 +766,133 @@ footer {
   .nopadding {
     padding-left: 0px !important;
     margin-left: 5px !important;
+  }
+
+  .job-modal {
+
+    .vertical-alignment-helper {
+      display:table;
+      height: 100%;
+      width: 100%;
+      pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+    }
+    .vertical-align-center {
+      /* To center vertically */
+      display: table-cell;
+      vertical-align: middle;
+      pointer-events:none;
+    }
+
+    .modal-dialog {
+      width: 80%;
+
+      .modal-content{
+        /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+        width:inherit;
+        height:inherit;
+        /* To center horizontally */
+        margin: 0 auto;
+        pointer-events: all;
+
+        // Custom
+        border: none;
+        border-radius: 0px;
+        width: 90%;
+        max-width: $screen-md-max;
+
+        .modal-body {
+          padding-bottom: 0px;
+          padding-top: 0px;
+          height: 80vh;
+
+          .video-title {
+            font-family : Futura;
+            font-size : 35px;
+            font-weight : bold;
+            line-height : 30px;
+            color : #000000;
+            color : rgb(0, 0, 0);
+            text-transform : uppercase;
+          }
+
+          .video-year {
+            font-family : Futura;
+            font-size : 25px;
+            line-height : 20px;
+            color : #333333;
+            color : rgb(51, 51, 51);
+            margin-bottom: 15px;
+            padding-bottom: 0px;
+          }
+
+          .description-title
+          {
+            font-family : Futura;
+            font-weight : bold;
+            font-size : 30px;
+            text-transform : uppercase;
+            color : #000000;
+            color : rgb(0, 0, 0);
+          }
+
+          .description-text
+          {
+            font-family : Futura;
+            font-size : 12px;
+            color : #000000;
+            color : rgb(0, 0, 0);
+          }
+
+          .col-video {
+            padding: 0px !important; 
+            margin: 0px !important;
+            background-color: black;
+
+            .video {
+              max-width: 100%;
+              max-height: 80vh;
+              height: 80vh;
+            }
+          }
+
+          .col-video-description {
+            max-width: 100%;
+            max-height: 80vh;
+            height: 80vh;
+            padding: 15px;
+            overflow-y: auto;
+
+            .meta {
+              border-bottom: 5px;
+              border-bottom-color: #000;
+              border-bottom-style: solid;
+              margin-bottom: 10px;
+            }
+
+            .datasheet {
+
+              // Rows
+              .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+                background : #E5E5E5 !important;
+                background : rgba(229, 229, 229, 1) !important;
+              }
+
+              // Cells
+              .table-striped>tbody>tr:nth-child(odd)>td, 
+              .table-striped>tbody>tr:nth-child(odd)>th {
+                background-color: #F1F1F1;
+                background-color: rgba(241,241,241, 1);
+              }
+              
+              td {
+                border-top: none;
+              }
+            }
+          }
+
+        }
+      }
+    }
   }
 }
 
@@ -739,6 +905,11 @@ footer {
   .nopadding {
     padding-left: 0px !important;
     margin-left: 5px !important;
+  }
+
+  .job-modal .modal-dialog .modal-content {
+    width: inherit;
+    max-width: $screen-lg-min;
   }
 }
 
