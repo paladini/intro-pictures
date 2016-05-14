@@ -1,3 +1,19 @@
+/*
+	=========================
+ 		Adjusting Captcha
+	=========================
+*/
+// var adjustCaptcha = function() {
+// 	$('#my-awesome-captcha').find('iframe').first().parent().css("width", "initial");
+// 	console.log($(this));
+// }
+
+function validateEmail(email) 
+{
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
 var ready = function() {
 
 	/*
@@ -7,6 +23,16 @@ var ready = function() {
 	*/
 	$('#new_message').find('input[type="text"], select, input[type="email"], textarea').one('blur keydown', function(e){
 		$(this).addClass('touched');
+	});
+
+	$('#message_email').on('keydown', function() {
+		if ($(this).hasClass('touched')) {
+			if (validateEmail($(this).val())) {
+				$(this)[0].setCustomValidity('');
+			} else {
+				$(this)[0].setCustomValidity('Error.');
+			}
+		}
 	});
 
 	/*
@@ -97,9 +123,15 @@ var ready = function() {
 
 	// Smooth scroll;
 	$('#anchor-nav a').smoothScroll();
+
 };
 
 // Compatibility reasons
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+// Adjusting captcha
+// $('iframe').ready(adjustCaptcha);
+// $('iframe').on('page:load', adjustCaptcha);
+
 // $(document).on('turbolinks:load', ready);
