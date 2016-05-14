@@ -1,6 +1,5 @@
 ActiveAdmin.register Department do
 
-	# menu false
 	menu label: "Formulário de Contato" , priority: 5
 	permit_params :name_pt, :name_es, :name_en, :email
 

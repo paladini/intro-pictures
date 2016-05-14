@@ -7,8 +7,7 @@ ActiveAdmin.register Company do
     config.clear_action_items!
 	permit_params :summary_pt, :summary_en, :summary_es,
 				  :address_pt, :address_en, :address_es,
-				  :email, :telephone #, :contact_email
-				  # department_attributes: [:id, :name_pt, :name_es, :name_en, :email]
+				  :email, :telephone
 
 	before_save do |obj|
 		if !obj.valid?
@@ -35,16 +34,7 @@ ActiveAdmin.register Company do
 		inputs "Contato" do
 		    input :email, :input_html => { rows: 1 }, hint: "Emails que aparecerão publicamente para os usuários do site. Um email por linha. Não está relacionado com os e-mails do formulário de contato, se deseja modificar os e-mails do formulário de contato vá no menu \"Formulário de Contato\"."
 		    input :telephone, :input_html => { rows: 1 }, hint: "Um telefone por linha. Telefones que aparecerão publicamente no site."
-		    # input :contact_email, hint: "Email destinatário do formulário de contato. Não aparecerá no site."
 	    end
-	    # f.inputs "Formulário de contato" do
-	    #   	f.has_many :departments, heading: false, allow_destroy: true, allow_create: true do |t|
-	    #     	t.input :email
-	    #     	t.input :name_pt
-	    #     	t.input :name_en
-	    #     	t.input :name_es
-	    #   	end
-	    # end
 	    actions
 	end
 
@@ -63,7 +53,6 @@ ActiveAdmin.register Company do
 	      	row "Telefone(s)" do
 	      		raw(simple_format(company.telephone))
 	      	end
-	      	# row :contact_email
 	      	row :created_at
 	      	row :updated_at
 	    end

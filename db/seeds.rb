@@ -16,8 +16,7 @@ ad_en = "Peixoto Gomide Street, 1801/06\nZipcode 01409-06\nSão Paulo/SP | Brazi
 ad_es = "Rua Peixoto Gomide Street 1801/06\nCEP 01409-06\nSão Paulo/SP | Brazil"
 Company.create!(summary_pt: sm_pt, summary_en: sm_en, summary_es: sm_es, 
 				address_pt: ad_pt, address_en: ad_en, address_es: ad_es,
-				email: "projetos@intropictures.tv", telephone: "+55 11 5696 4700") #, contact_email: "contato@intropictures.tv")
+				email: "projetos@intropictures.tv", telephone: "+55 11 5696 4700")
 
 # Creates default departments
 Department.create!(email: "contato@intropictures.tv", name_pt: "Outro", name_es: "Otro", name_en: "Other", company_id: 1)
-# Contact.create(email: "contato@intropictures.tv")

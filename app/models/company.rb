@@ -13,7 +13,6 @@ class Company < ActiveRecord::Base
 
 	has_many :employees
 	has_many :departments
-	# accepts_nested_attributes_for :departments, allow_destroy: true
 
 	# Validations
 	validates :summary_pt, presence: true
@@ -24,6 +23,5 @@ class Company < ActiveRecord::Base
 	validates :address_es, presence: true
 	validates :email, presence: true
 	validates :telephone, presence: true
-	# validates :contact_email, presence: true
 
 end
