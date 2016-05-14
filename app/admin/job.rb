@@ -33,7 +33,7 @@ ActiveAdmin.register Job do
 	filter :synopsis_pt
 
 	index do
-		column :title_pt
+		column :title_en
 		column :video_url
 		column "Protegido | Privado", :password do |obj|
 			obj.password.empty? ? "Não" : "Sim"

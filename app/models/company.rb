@@ -12,6 +12,8 @@ class Company < ActiveRecord::Base
 # 	  t.string :contact_email
 
 	has_many :employees
+	has_many :departments
+	# accepts_nested_attributes_for :departments, allow_destroy: true
 
 	# Validations
 	validates :summary_pt, presence: true

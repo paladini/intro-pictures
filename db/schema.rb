@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507142608) do
+ActiveRecord::Schema.define(version: 20160514222116) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -59,12 +59,6 @@ ActiveRecord::Schema.define(version: 20160507142608) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "contacts", force: :cascade do |t|
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "departments", force: :cascade do |t|
     t.string   "name_pt"
     t.string   "name_en"
@@ -72,8 +66,11 @@ ActiveRecord::Schema.define(version: 20160507142608) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "contact_id"
+    t.string   "email"
+    t.integer  "company_id"
   end
 
+  add_index "departments", ["company_id"], name: "index_departments_on_company_id"
   add_index "departments", ["contact_id"], name: "index_departments_on_contact_id"
 
   create_table "employees", force: :cascade do |t|

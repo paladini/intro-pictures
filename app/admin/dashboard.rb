@@ -17,8 +17,8 @@ ActiveAdmin.register_page "Dashboard" do
         column do
             panel "Jobs" do
                 table_for Job.all do |t|
-                  t.column("Título") { |obj| link_to obj.title_pt, admin_job_path(obj) }
-                  t.column("URL") { |obj| obj.url }
+                  t.column("Título") { |obj| link_to obj.title_en, admin_job_path(obj) }
+                  t.column("URL") { |obj| obj.video_url }
                   t.column("Privado") { |obj| obj.password.empty? ? "Não" : "Sim" }
                 end
             end

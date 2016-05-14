@@ -18,6 +18,6 @@ Company.create!(summary_pt: sm_pt, summary_en: sm_en, summary_es: sm_es,
 				address_pt: ad_pt, address_en: ad_en, address_es: ad_es,
 				email: "projetos@intropictures.tv", telephone: "+55 11 5696 4700") #, contact_email: "contato@intropictures.tv")
 
-# Creates default departments to contact
-Contact.create(email: "contato@intropictures.tv")
-Department.create!(name_pt: "Outro", name_es: "Otro", name_en: "Other", contact_id: 1)
+# Creates default departments
+Department.create!(email: "contato@intropictures.tv", name_pt: "Outro", name_es: "Otro", name_en: "Other", company_id: 1)
+# Contact.create(email: "contato@intropictures.tv")
