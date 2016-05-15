@@ -120,23 +120,14 @@ footer {
     margin-bottom: 20px;
     z-index: 0;
     cursor: pointer;
-    // height: 100%;
 
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;  
-    
     -webkit-flex-flow: column wrap;
     flex-flow: column wrap;
-    // display: flex;
-    // height: 100%;
-    // height: 200px;
-    // max-width: 242px;
-
-    // line-height: 200px;
-    // display: table;
 
     &:hover {
       p, span, img {
@@ -148,55 +139,17 @@ footer {
 
     p, span {
       margin: 5px auto auto auto;
-      // display: table-column;
-      // vertical-align: middle;
-      // display: table;
-      // width: 100%;
       max-width: 242px;
-      // height: 100%;
-      // // height: 42px;
-      // font-family : Futura;
-      // font-size : 16px;
-      // line-height : 21px;
-      // text-align: center;
-      // // margin-top: 10px;
-      // // margin: 5px auto 0px auto;
 
       color : #FFFFFF;
       color : rgb(255, 255, 255);
       opacity : 0.5;
       filter: alpha(opacity=50) progid:DXImageTransform.Microsoft.Alpha(opacity=50) ;
-
-      // span {
-      //   display: table-cell;
-      //   vertical-align: middle;
-      // }
     }
-    // p, span {
-    //   // display: inline-block;
-    //   // vertical-align: middle;
-    //   // line-height: normal;
-    //   // display:table-cell;
-    //   height: 64px;
-    //   line-height: 64px;
-    //   font-family : Futura;
-    //   font-size : 16px;
-    //   // line-height : 21px;
-    //   color : #FFFFFF;
-    //   color : rgb(255, 255, 255);
-    //   opacity : 0.5;
-    //   filter: alpha(opacity=50) progid:DXImageTransform.Microsoft.Alpha(opacity=50) ;
-    // }
 
     img {
-      // display: table-row;
-
-      // width: inherit;
-      // max-width: 100%;
-      // height: auto;
       max-width: 242px;
       margin: 0 auto;
-      // display: table;
       width: 100%;
       height: 136px;
       opacity : 0.5;
