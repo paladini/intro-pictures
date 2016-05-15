@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514222116) do
+ActiveRecord::Schema.define(version: 20160515170322) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -100,7 +100,6 @@ ActiveRecord::Schema.define(version: 20160514222116) do
     t.text     "created_by_pt"
     t.text     "written_by_pt"
     t.text     "directed_by_pt"
-    t.text     "status"
     t.text     "player"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -126,6 +125,10 @@ ActiveRecord::Schema.define(version: 20160514222116) do
     t.string   "video_thumb_small"
     t.string   "video_thumb_medium"
     t.string   "video_thumb_large"
+    t.string   "year"
+    t.string   "status_en"
+    t.string   "status_pt"
+    t.string   "status_es"
   end
 
 end

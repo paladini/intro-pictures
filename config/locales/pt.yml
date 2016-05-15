@@ -45,6 +45,7 @@ pt:
         title_pt: Título
         title_en: Título (Inglês)
         title_es: Título (Espanhol)
+        year: Ano
         synopsis_pt: Sinopse
         synopsis_en: Sinopse (Inglês)
         synopsis_es: Sinopse (Espanhol)
@@ -73,8 +74,10 @@ pt:
         directed_by_pt: Dirigido por
         directed_by_en: Dirigido por (Inglês)
         directed_by_es: Dirigido por (Espanhol)
-        status: Status
-        player: Player
+        status_pt: Status
+        status_en: Status (Inglês)
+        status_es: Status (Espanhol)
+        player: Atores
         created_at: Data criação
         updated_at: Data atualização
       employee:

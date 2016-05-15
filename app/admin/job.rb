@@ -4,9 +4,10 @@ ActiveAdmin.register Job do
 	permit_params :video_id, 
 				  :video_url,
 				  :video_thumb_small, :video_thumb_medium, :video_thumb_large,
-	              :status,
+	              :status_en, :stauts_pt, :status_es,
 	              :player,
 				  :password,
+				  :year,
 				  :title_pt, :title_en, :title_es,
 				  :genre_pt, :genre_en, :genre_es,
 	              :target_pt, :target_en, :target_es, 
@@ -38,12 +39,9 @@ ActiveAdmin.register Job do
 		column "Privado", :password do |obj|
 			obj.password.blank? ? "Não" : "Sim"
 		end
-		column :running_time
-		column :status
+		column :year
 		actions
 	end
-
-	# form partial: "form"
 
 	# Custom form for translated labels
 	form do |f|
@@ -61,6 +59,7 @@ ActiveAdmin.register Job do
 		    input :title_pt
 		    input :title_en
 		    input :title_es
+		    input :year
 			input :password, hint: "Se este campo for preenchido, o Job será exibido na página mas exigirá senha para ser visto."
 		end
 
@@ -117,7 +116,9 @@ ActiveAdmin.register Job do
 	    end
 
 	    inputs "Outras informações" do
-	        input :status, :input_html => { rows: 1 }
+	        input :status_pt, :input_html => { rows: 1 }
+	        input :status_en, :input_html => { rows: 1 }
+	        input :status_es, :input_html => { rows: 1 }
 	        input :player, :input_html => { rows: 1 }
 	    end
 	    actions
@@ -129,7 +130,10 @@ ActiveAdmin.register Job do
 	    	row "Miniatura" do
 		        image_tag(job.video_thumb_large)
 			end
-	        row :status
+	        row :status_pt
+	        row :status_en
+	        row :status_es
+	        row :year
 	        row :player
 			row :password
 			row :title_pt
