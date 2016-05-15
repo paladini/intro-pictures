@@ -5,10 +5,7 @@
 		<!-- Info: About -->
 		<div class="row about">
 			<div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1">
-				<p>The richness of brazilian folklore and of traditions and festivities from this theme is widely known. However, do you know the great variety of events annualy held, far from big centers and big audience, but even so very essential?</p>
-
-				<p>It aims at showing distinctive and tradional cultural aspects of brazil from its public gathering, in addition to showing different regions of the country, which is so rich in contrasts and different landscapes.
-				</p>
+				<p><%= simple_format(@summary) %></p>
 			</div>
 		</div>
 
@@ -18,15 +15,17 @@
 				<h4><%= t('home.info.team') %></h4>
 			</div>
 			<div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-0 col-md-5 col-md-offset-0 vcenter">
-				<p>
-					<span class="membername">Guilherme Passos</span> | <span class="typename">Câncer</span>
-				</p>
-				<p>
+				<% @employees.each do |e| %>
+					<p>
+						<span class="membername"><%= e[:name] %></span> | <span class="typename"><%= e[:role] %></span>
+					</p>
+				<% end %>
+				<!-- <p>
 					<span class="membername">Guilherme Passos</span> | <span class="typename">Designer</span>
 				</p>
 				<p>
 					<span class="membername">Guilherme Cunha</span> | <span class="typename">Gerente Chefe em Rola</span>
-				</p>
+				</p> -->
 			</div>
 		</div>
 
@@ -34,19 +33,22 @@
 		<div class="row contact">
 			<div class="col-xs-12 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-2 text-center">
 				<h4><%= t('home.info.email') %></h4>
-				<p>projetos@intropictures.tv</p>
+				<!-- <p>projetos@intropictures.tv</p> -->
+				<p><%= simple_format(@email) %></p>
 				<br class="visible-xs-*" />
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-2 text-center">
 				<h4><%= t('home.info.phone') %></h4>
-				<p>+55 11 5696 4700</p>
+				<!-- <p>+55 11 5696 4700</p> -->
+				<p><%= simple_format(@telephone) %></p>
 				<br class="visible-xs-*" />
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-3 text-center">
 				<h4><%= t('home.info.address') %></h4>
-				<p>Rua Peixoto Gomide 1801/06</p>
-				<p>CEP 01409-06</p>
-				<p>São Paulo/SP | Brasil</p>
+				<p><%= simple_format(@address) %></p>
+				<!-- <p>Rua Peixoto Gomide 1801/06</p> -->
+				<!-- <p>CEP 01409-06</p> -->
+				<!-- <p>São Paulo/SP | Brasil</p> -->
 			</div>
 		</div>
 

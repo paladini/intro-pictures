@@ -13,5 +13,6 @@ class Employee < ActiveRecord::Base
 	validates :role_pt, presence: true
 	validates :role_en, presence: true
 	validates :role_es, presence: true
+	validates :company, presence: true
 
 end

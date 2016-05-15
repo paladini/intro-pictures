@@ -20,7 +20,6 @@ class Job < ActiveRecord::Base
 end
 
 # Fields / Columns:
-#   t.string :url #can be a video or an album
 #   t.string :title_pt
 #   t.string :title_en 
 #   t.string :title_es 
