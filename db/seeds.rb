@@ -8,6 +8,7 @@
 
 def seeds_production()
 	puts "Running seeds for production..."
+	seeds_development()
 end
 
 def seeds_development()
