@@ -30,6 +30,8 @@ gem "recaptcha", require: "recaptcha/rails" # captcha for anti-flood reasons
 gem 'validates_email_format_of'
 gem 'vimeo'
 
+# Tests
+# gem "rspec-rails", group: [:development, :test]
 
 # Globalize, to translate model rows to other languages.
 # gem 'globalize', '~> 5.0', '>= 5.0.1'

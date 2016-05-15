@@ -8,8 +8,9 @@ class Job < ActiveRecord::Base
 	validate :id_uniqueness_validation
 
 	# Validating Vimeo video or album
-	validates :video_url, format: { with: /(http|https):\/\/(www.|)vimeo.com\/[[0-9]*|album\/[0-9]*]+/ix }
-
+	# validates :video_url, format: { with: /(http|https):\/\/(www.|)vimeo.com\/[[0-9]*|album\/[0-9]*]+/ix }
+	validates :video_url, format: { with: /https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)/ix }
+	
 	private
 		def id_uniqueness_validation()
 			if Job.where(video_id: self.video_id).any?

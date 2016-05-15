@@ -19,7 +19,7 @@ ActiveAdmin.register_page "Dashboard" do
                 table_for Job.all do |t|
                   t.column("Título") { |obj| link_to obj.title_en, admin_job_path(obj) }
                   t.column("URL") { |obj| obj.video_url }
-                  t.column("Privado") { |obj| obj.password.empty? ? "Não" : "Sim" }
+                  t.column("Privado") { |obj| obj.password.blank? ? "Não" : "Sim" }
                 end
             end
         end

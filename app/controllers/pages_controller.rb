@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   def home
   	company = Company.first
   	@message = Message.new
+    @jobs = Job.all
   	@email = company.email
   	@telephone = company.telephone
 

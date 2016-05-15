@@ -3,16 +3,16 @@
 		<div class="col-xs-12" id="no-result">
 			<p class="text-center"><%= t('home.no_result') %></p>
 		</div>
-		<div class="col-xs-12 col-ms-6 col-sm-4 col-md-3 col-lg-2 job">
-			<div class="job-outer" data-toggle="modal" data-target="#myModal">
-				<!-- <a href="#myModal" > -->
-					<%= image_tag("temp.png") %>
-					<p class="job-title">Nome do Filme (Ano)</p>
-				<!-- </a> -->
+		<% @jobs.each do |job| %>
+			<div class="col-xs-12 col-ms-6 col-sm-4 col-md-3 col-lg-2 job">
+				<div class="job-outer" data-toggle="modal" data-target="#myModal">
+					<%= image_tag(job.video_thumb_large) %>
+					<p class="job-title"><span><%= job.title_en %></span></p>
+				</div>
 			</div>
-		</div>
+		<% end %>
 		<div class="col-xs-12 col-ms-6 col-sm-4 col-md-3 col-lg-2 job">
-			<div class="job-outer">
+			<div class="job-outer" data-toggle="modal" data-target="#locked">
 				<%= image_tag("temp.png") %>
 				<p class="job-title">Testando (1995)</p>
 			</div>

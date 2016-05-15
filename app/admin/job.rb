@@ -35,8 +35,8 @@ ActiveAdmin.register Job do
 	index do
 		column :title_en
 		column :video_url
-		column "Protegido | Privado", :password do |obj|
-			obj.password.empty? ? "Não" : "Sim"
+		column "Privado", :password do |obj|
+			obj.password.blank? ? "Não" : "Sim"
 		end
 		column :running_time
 		column :status
