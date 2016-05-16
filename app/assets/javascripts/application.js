@@ -17,4 +17,5 @@
 //= require bootstrap-sprockets
 //= require jquery.smooth-scroll.js
 //= require illustrator.js
+//= require jobs.js
 // require_tree .

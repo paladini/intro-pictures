@@ -1,0 +1,484 @@
+<!-- <div class="modal job-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"> -->
+	<div class="vertical-alignment-helper">
+	  	<div class="modal-dialog modal-lg vertical-align-center" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body">
+
+		      	<!-- Extra Small / Small devices -->
+		      	<div class="row hidden-md hidden-lg">
+
+		      		<!-- Meta information -->
+		      		<div class="col-xs-12 col-video-description">
+		          	<div class="row meta">
+		          		<div class="col-xs-10">
+		          			<p class="video-title">
+			          			<%= if I18n.locale == :en 
+			          					@job.title_en
+			          				elsif I18n.locale == :pt
+			          					@job.title_pt
+			          				elsif I18n.locale == :es 
+			          					@job.title_es
+			          				end
+			          			%>
+		          			</p>
+		          			<p class="video-year">(<%= @job.year %>)</p>
+		          		</div>
+		          		<div class="col-xs-2">
+		          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
+		          		</div>
+		          	</div>
+		          </div>
+
+		          <div class="col-xs-12 col-video">
+		            <iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		          </div>
+
+		          <div class="col-xs-12 col-video-description">
+		          	<!-- Synopsis -->
+		          	<!-- <div class="row synopsis"> -->
+		          	<div class="row">
+		          		<div class="col-xs-12 col-ms-6 synopsis">
+		          			<p class="description-title"><%= t('home.job.synopsis') %></p>
+		          			<p class="description-text">
+		          				<%= if I18n.locale == :en 
+		          						@job.synopsis_en
+		          					elsif I18n.locale == :pt 
+		          						@job.synopsis_pt
+		          					elsif I18n.locale == :es
+		          						@job.synopsis_es
+		          					end
+		          				%>
+		          			</p>
+		          		</div>
+			          	<!-- </div> -->
+
+			          	<!-- Infos / Datasheet -->
+		          		<div class="col-xs-12 col-ms-6 datasheet">
+		          		<p class="description-title"><%= t('home.job.info') %></p>
+		          		<table class="table table-striped description-text table-hover"><tbody>
+
+          					<!-- Title -->
+          					<% if @job.title_en.present? %>
+	          					<tr>
+	          						<td><%= t('home.job.title') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.title_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.title_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.title_es)
+		          							end
+	          							%>
+	          						</td>
+	          					</tr>
+          					<% end %>
+
+          					<!-- Format -->
+          					<% if @job.format_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.format') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.format_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.format_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.format_es)
+		          							end
+	          							%>
+	          						</td>
+	          					</tr>
+		          			<% end %>
+
+		          			<!-- Genre -->
+		          			<% if @job.genre_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.genre') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.genre_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.genre_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.genre_es)
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Subgenre -->
+	          				<% if @job.subgenre_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.subgenre') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.subgenre_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.subgenre_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.subgenre_es)
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Running Time -->
+	          				<% if @job.running_time_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.running_time') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.running_time_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.running_time_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.running_time_es)
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Target -->
+	          				<% if @job.target_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.target') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.target_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.target_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.target_es)
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Created By -->
+	          				<% if @job.created_by_en.present? %>
+	          					<tr> 
+	          						<td class="text-nowrap"><%= t('home.job.created_by') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.created_by_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.created_by_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.created_by_es)
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Written By -->
+	          				<% if @job.written_by_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.written_by') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.written_by_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.written_by_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.written_by_es)
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+	          				
+	          				<!-- Directed By -->
+	          				<% if @job.directed_by_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.directed_by') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.directed_by_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.directed_by_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.directed_by_es)
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Status -->
+	          				<% if @job.status_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.status') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									simple_format(@job.status_en)
+		          							elsif I18n.locale == :pt 
+		          								simple_format(@job.status_pt)
+		          							elsif I18n.locale == :es
+		          								simple_format(@job.status_es)
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Player -->
+	          				<% if @job.player.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.player') %></td>
+	          						<td><%= simple_format(@job.player) %></td>
+	          					</tr>
+	          				<% end %>
+
+		          		</tbody></table>
+						</div>
+					</div>          	
+		          </div>
+		        </div>
+
+
+
+
+		      	<!-- Medium / Large devices -->
+		        <div class="row hidden-xs hidden-sm hidden-ms">
+		          <div class="col-md-8 col-video">
+		            <iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		          </div>
+		          <div class="col-md-4 col-video-description">
+
+		          	<!-- Meta information -->
+		          	<div class="row meta">
+		          		<div class="col-md-10">
+		          			<p class="video-title">
+		          				<%= if I18n.locale == :en 
+			          					@job.title_en
+			          				elsif I18n.locale == :pt
+			          					@job.title_pt
+			          				elsif I18n.locale == :es 
+			          					@job.title_es
+			          				end
+			          			%>
+		          			</p>
+		          			<p class="video-year">(<%= @job.year %>)</p>
+		          		</div>
+		          		<div class="col-md-2">
+		          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
+		          		</div>
+		          	</div>
+
+		          	<!-- Synopsis -->
+		          	<div class="row synopsis">
+		          		<div class="col-md-12">
+		          			<p class="description-title"><%= t('home.job.synopsis') %></p>
+		          			<p class="description-text">
+		          				<%= if I18n.locale == :en 
+		          						@job.synopsis_en
+		          					elsif I18n.locale == :pt 
+		          						@job.synopsis_pt
+		          					elsif I18n.locale == :es
+		          						@job.synopsis_es
+		          					end
+		          				%>
+		          			</p>
+		          		</div>
+		          	</div>
+
+		          	<!-- Infos / Datasheet -->
+		          	<div class="row datasheet">
+		          		<div class="col-md-12">
+		          		<p class="description-title"><%= t('home.job.info') %></p>
+		          		<table class="table table-striped description-text table-hover"><tbody>
+
+		          			<!-- Title -->
+          					<% if @job.title_en.present? %>
+	          					<tr>
+	          						<td><%= t('home.job.title') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.title_en
+		          							elsif I18n.locale == :pt 
+		          								@job.title_pt
+		          							elsif I18n.locale == :es
+		          								@job.title_es
+		          							end
+	          							%>
+	          						</td>
+	          					</tr>
+          					<% end %>
+
+          					<!-- Format -->
+          					<% if @job.format_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.format') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.format_en
+		          							elsif I18n.locale == :pt 
+		          								@job.format_pt
+		          							elsif I18n.locale == :es
+		          								@job.format_es
+		          							end
+	          							%>
+	          						</td>
+	          					</tr>
+		          			<% end %>
+
+		          			<!-- Genre -->
+		          			<% if @job.genre_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.genre') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.genre_en
+		          							elsif I18n.locale == :pt 
+		          								@job.genre_pt
+		          							elsif I18n.locale == :es
+		          								@job.genre_es
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Subgenre -->
+	          				<% if @job.subgenre_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.subgenre') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.subgenre_en
+		          							elsif I18n.locale == :pt 
+		          								@job.subgenre_pt
+		          							elsif I18n.locale == :es
+		          								@job.subgenre_es
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Running Time -->
+	          				<% if @job.running_time_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.running_time') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.running_time_en
+		          							elsif I18n.locale == :pt 
+		          								@job.running_time_pt
+		          							elsif I18n.locale == :es
+		          								@job.running_time_es
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Target -->
+	          				<% if @job.target_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.target') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.target_en
+		          							elsif I18n.locale == :pt 
+		          								@job.target_pt
+		          							elsif I18n.locale == :es
+		          								@job.target_es
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Created By -->
+	          				<% if @job.created_by_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.created_by') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.created_by_en
+		          							elsif I18n.locale == :pt 
+		          								@job.created_by_pt
+		          							elsif I18n.locale == :es
+		          								@job.created_by_es
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Written By -->
+	          				<% if @job.written_by_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.written_by') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.written_by_en
+		          							elsif I18n.locale == :pt 
+		          								@job.written_by_pt
+		          							elsif I18n.locale == :es
+		          								@job.written_by_es
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+	          				
+	          				<!-- Directed By -->
+	          				<% if @job.directed_by_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.directed_by') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.directed_by_en
+		          							elsif I18n.locale == :pt 
+		          								@job.directed_by_pt
+		          							elsif I18n.locale == :es
+		          								@job.directed_by_es
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Status -->
+	          				<% if @job.status_en.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.status') %></td>
+	          						<td>
+	          							<%= if I18n.locale == :en 
+	          									@job.status_en
+		          							elsif I18n.locale == :pt 
+		          								@job.status_pt
+		          							elsif I18n.locale == :es
+		          								@job.status_es
+		          							end
+	          							%>
+          							</td>
+	          					</tr>
+	          				<% end %>
+
+	          				<!-- Player -->
+	          				<% if @job.player.present? %>
+	          					<tr> 
+	          						<td><%= t('home.job.player') %></td>
+	          						<td><%= @job.player %></td>
+	          					</tr>
+	          				<% end %>
+
+		          		</tbody></table>
+		          		</div>
+					</div>		          	
+		          </div>
+		        </div>
+		      </div>
+		    </div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	</div><!-- /.vertical alignment-helper -->
+<!-- </div>/.modal -->

@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
 	def show()
-		@job = Job.find_by_id(params[:id])
+		@job = Job.find(params[:id])
 	end
 
 	def load_vimeo_video()
