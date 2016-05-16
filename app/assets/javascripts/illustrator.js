@@ -122,7 +122,7 @@ var ready = function() {
 	});
 
 	// Smooth scroll;
-	$('#anchor-nav a').smoothScroll();
+	$('#anchor-nav a, #logo').smoothScroll();
 
 };
 
