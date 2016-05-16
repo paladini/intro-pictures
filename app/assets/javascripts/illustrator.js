@@ -135,6 +135,20 @@ var ready = function() {
 	// Smooth scroll;
 	$('#anchor-nav a, #logo').smoothScroll();
 
+	/*
+		=====================
+	 		 Recaptcha
+		=====================
+	*/
+	// $('.g-recaptcha iframe').on('load', function(){
+	// 	console.log("I'm loaded!");
+	// 	$(this).parent().css('margin', '0px auto');
+	// });
+	$('#my-awesome-captcha iframe').first().on('load', function(){
+		console.log("I'm loaded!");
+		$(this).parent().css('margin', '0px auto');
+		alert("loaded!");
+	});
 };
 
 // Compatibility reasons

@@ -23,7 +23,7 @@
 		          			</p>
 		          			<p class="video-year">(<%= @job.year %>)</p>
 		          		</div>
-		          		<div class="col-xs-2">
+		          		<div class="col-xs-2" style="display: block">
 		          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
 		          		</div>
 		          	</div>
@@ -333,11 +333,11 @@
 		          						<td><%= t('home.job.title') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.title_en
+		          									simple_format(@job.title_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.title_pt
+			          								simple_format(@job.title_pt)
 			          							elsif I18n.locale == :es
-			          								@job.title_es
+			          								simple_format(@job.title_es)
 			          							end
 		          							%>
 		          						</td>
@@ -350,11 +350,11 @@
 		          						<td><%= t('home.job.format') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.format_en
+		          									simple_format(@job.format_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.format_pt
+			          								simple_format(@job.format_pt)
 			          							elsif I18n.locale == :es
-			          								@job.format_es
+			          								simple_format(@job.format_es)
 			          							end
 		          							%>
 		          						</td>
@@ -367,11 +367,11 @@
 		          						<td><%= t('home.job.genre') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.genre_en
+		          									simple_format(@job.genre_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.genre_pt
+			          								simple_format(@job.genre_pt)
 			          							elsif I18n.locale == :es
-			          								@job.genre_es
+			          								simple_format(@job.genre_es)
 			          							end
 		          							%>
 	          							</td>
@@ -384,11 +384,11 @@
 		          						<td><%= t('home.job.subgenre') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.subgenre_en
+		          									simple_format(@job.subgenre_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.subgenre_pt
+			          								simple_format(@job.subgenre_pt)
 			          							elsif I18n.locale == :es
-			          								@job.subgenre_es
+			          								simple_format(@job.subgenre_es)
 			          							end
 		          							%>
 	          							</td>
@@ -401,11 +401,11 @@
 		          						<td><%= t('home.job.running_time') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.running_time_en
+		          									simple_format(@job.running_time_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.running_time_pt
+			          								simple_format(@job.running_time_pt)
 			          							elsif I18n.locale == :es
-			          								@job.running_time_es
+			          								simple_format(@job.running_time_es)
 			          							end
 		          							%>
 	          							</td>
@@ -418,11 +418,11 @@
 		          						<td><%= t('home.job.target') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.target_en
+		          									simple_format(@job.target_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.target_pt
+			          								simple_format(@job.target_pt)
 			          							elsif I18n.locale == :es
-			          								@job.target_es
+			          								simple_format(@job.target_es)
 			          							end
 		          							%>
 	          							</td>
@@ -432,14 +432,14 @@
 		          				<!-- Created By -->
 		          				<% if @job.created_by_en.present? %>
 		          					<tr> 
-		          						<td><%= t('home.job.created_by') %></td>
+		          						<td class="text-nowrap"><%= t('home.job.created_by') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.created_by_en
+		          									simple_format(@job.created_by_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.created_by_pt
+			          								simple_format(@job.created_by_pt)
 			          							elsif I18n.locale == :es
-			          								@job.created_by_es
+			          								simple_format(@job.created_by_es)
 			          							end
 		          							%>
 	          							</td>
@@ -452,11 +452,11 @@
 		          						<td><%= t('home.job.written_by') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.written_by_en
+		          									simple_format(@job.written_by_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.written_by_pt
+			          								simple_format(@job.written_by_pt)
 			          							elsif I18n.locale == :es
-			          								@job.written_by_es
+			          								simple_format(@job.written_by_es)
 			          							end
 		          							%>
 	          							</td>
@@ -469,11 +469,11 @@
 		          						<td><%= t('home.job.directed_by') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.directed_by_en
+		          									simple_format(@job.directed_by_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.directed_by_pt
+			          								simple_format(@job.directed_by_pt)
 			          							elsif I18n.locale == :es
-			          								@job.directed_by_es
+			          								simple_format(@job.directed_by_es)
 			          							end
 		          							%>
 	          							</td>
@@ -486,11 +486,11 @@
 		          						<td><%= t('home.job.status') %></td>
 		          						<td>
 		          							<%= if I18n.locale == :en 
-		          									@job.status_en
+		          									simple_format(@job.status_en)
 			          							elsif I18n.locale == :pt 
-			          								@job.status_pt
+			          								simple_format(@job.status_pt)
 			          							elsif I18n.locale == :es
-			          								@job.status_es
+			          								simple_format(@job.status_es)
 			          							end
 		          							%>
 	          							</td>
@@ -501,7 +501,7 @@
 		          				<% if @job.player.present? %>
 		          					<tr> 
 		          						<td><%= t('home.job.player') %></td>
-		          						<td><%= @job.player %></td>
+		          						<td><%= simple_format(@job.player) %></td>
 		          					</tr>
 		          				<% end %>
 
