@@ -24,4 +24,8 @@ However, you must download several other ruby gems later (as you'll see later).
 4. Run `rake db:migrate` in order to create database tables and columns.
 5. Run `rake db:seed` in order to import some basic Intro Pictures info to the database.
 
+## Mailgun
+picturesintro@gmail.com
+sucessodosite
+
 (...) to be continued.

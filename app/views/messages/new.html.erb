@@ -56,9 +56,9 @@
   </div>
 
   <div class="field">
-    <label class="custom-file-upload">
+    <label class="custom-file-upload" data-label="<%= t('home.contact.attach') %>">
         <input id="message_file" type="file"/>
-        <%= t('home.contact.attach') %>
+        <span><%= t('home.contact.attach') %></span>
     </label>
   	<!-- <%= f.file_field :file, placeholder: "Anexo", data: {buttonText: ""} %> -->
   </div>

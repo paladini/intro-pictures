@@ -21,7 +21,7 @@ var ready = function() {
 	 		 Form validations
 		===========================
 	*/
-	$('#new_message').find('input[type="text"], select, input[type="email"], textarea').one('blur keydown', function(e){
+	$('#new_message').find('input[type="text"], select, input[type="email"], textarea, input[type="file"]').one('blur keydown', function(e){
 		$(this).addClass('touched');
 	});
 
@@ -32,6 +32,17 @@ var ready = function() {
 			} else {
 				$(this)[0].setCustomValidity('Error.');
 			}
+		}
+	});
+
+	$('#message_file:file').change(function(){
+		var fileName = $(this).val();
+		
+		if (fileName) {
+			$('.custom-file-upload span').text(fileName);
+			$('.custom-file-upload').addClass('custom-file-upload-green');
+		} else {
+			$('.custom-file-upload span').text($('.custom-file-upload').data('label'));
 		}
 	});
 
