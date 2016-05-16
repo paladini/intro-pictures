@@ -5,7 +5,7 @@ class Job < ActiveRecord::Base
 	validates :video_thumb_small, presence: true
 	validates :video_thumb_medium, presence: true
 	validates :video_thumb_large, presence: true
-	validate :id_uniqueness_validation
+	validate :id_uniqueness_validation, on: [:create]
 
 	# Validating Vimeo video or album
 	# validates :video_url, format: { with: /(http|https):\/\/(www.|)vimeo.com\/[[0-9]*|album\/[0-9]*]+/ix }

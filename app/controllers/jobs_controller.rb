@@ -14,7 +14,8 @@ class JobsController < ApplicationController
 				"description": info[0]["description"],
 				"thumbnail_small": info[0]["thumbnail_small"],
 				"thumbnail_medium": info[0]["thumbnail_medium"],
-				"thumbnail_large": info[0]["thumbnail_large"]
+				"thumbnail_large": info[0]["thumbnail_large"],
+				"duration": info[0]["duration"]
 			}
 		else
 			render json: {}, status: 400

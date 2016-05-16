@@ -10,7 +10,14 @@ $(document).ready(function() {
 		$('#job_video_url').parent().append("<p class=\"inline-errors\">Algo de errado aconteceu, não foi possível identificar um vídeo do Vimeo.</p>");
 	}
 
-	function load_video(e) {
+	function insert_video(imgUrl) {
+		hide_error();
+		var parent = $('#input_thumbnail').parent();
+		parent.find('img').remove();
+		parent.append('<img src="' + imgUrl + '" alt="A imagem é obtida automaticamente a partir da miniatura cadastrada no Vimeo." title="A imagem é obtida automaticamente a partir da miniatura cadastrada no Vimeo." />');
+	}
+
+	function load_video() {
 		var val = $('#job_video_url').val();
 		if (val.length == 0) {
 			var parent = $('#input_thumbnail').parent();
@@ -23,12 +30,10 @@ $(document).ready(function() {
 		if (id && parseInt(id[id.length-1])) {
 			id = parseInt(id.pop());
 			$.post("/load_video", {vimeo_id:id}).done(function(data){
-				hide_error();
-				var parent = $('#input_thumbnail').parent();
-				parent.find('p').hide();
-				parent.find('img').remove();
-				parent.append('<img src="' + data['thumbnail_large'] + '" alt="A imagem é obtida automaticamente a partir da miniatura cadastrada no Vimeo." title="A imagem é obtida automaticamente a partir da miniatura cadastrada no Vimeo." />');
 				
+				// Inserting new image in the page
+				insert_video(data["thumbnail_large"]);
+
 				// Setting hidden inputs
 				$('#job_video_id').val(data["id"]);
 				$('#job_video_thumb_small').val(data["thumbnail_small"]);
@@ -42,6 +47,9 @@ $(document).ready(function() {
 				if ($('#job_synopsis_en').val().length == 0) {
 					$('#job_synopsis_en').val(data["description"]);
 				}
+				if ($('#job_running_time_en').val().length == 0) {
+					$('#job_running_time_en, #job_running_time_es, #job_running_time_pt').val((Math.round(data["duration"] / 60)).toString() + " min");
+				}
 			}).error(function(error){
 				hide_error(error);
 				show_error(error);
@@ -52,6 +60,13 @@ $(document).ready(function() {
 		}
 	}
 
-	// Detecting focus out from video input
-	$('#job_video_url').on('focusout', load_video);
+	// Detecting the click on the button
+	$('#update_thumb').on('click', load_video);
+
+	// Detects if the thumbnail already exists (on edit form)
+	var thumbnail = $('#job_video_thumb_large').val();
+	if (thumbnail && thumbnail.length > 0) {
+		insert_video(thumbnail);
+		return;
+	}
 });

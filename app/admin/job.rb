@@ -48,9 +48,7 @@ ActiveAdmin.register Job do
 	    inputs "Informações Básicas" do
 	        input :video_url, hint: "Link para um vídeo do Vimeo."
 	        li do 
-	        	'<label id="input_thumbnail" class="label">Miniatura do vídeo</label>
-	        	<p class="inline-hints">A miniatura do vídeo será obtida quando um vídeo do Vimeo for inserido.</p>
-	        	'.html_safe
+	        	'<label id="input_thumbnail" class="label">Miniatura do vídeo<br/><br/><input type="button" id="update_thumb" value="Obter miniatura"></input></label>'.html_safe
 	        end
 	        input :video_thumb_small, as: :hidden
 	        input :video_thumb_medium, as: :hidden
@@ -60,7 +58,7 @@ ActiveAdmin.register Job do
 		    input :title_en
 		    input :title_es
 		    input :year
-			input :password, hint: "Se este campo for preenchido, o Job será exibido na página mas exigirá senha para ser visto."
+			input :password, hint: "Se este campo for preenchido, o Job será exibido na página mas ficará privado, exigindo senha para ser visto."
 		end
 
 		inputs "Sinopse" do
