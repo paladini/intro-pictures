@@ -194,9 +194,14 @@ footer {
     padding-top: 25px;
     padding-bottom: 25px;
 
+    h4 {
+      margin: auto auto;
+    }
+
     p {
-      margin-top: 0px;
-      margin-bottom: 0px;
+      // margin-top: 0px;
+      // margin-bottom: 0px;
+      margin: auto 0px;
       padding-top: 0px;
       padding-bottom: 0px;
       word-wrap: break-word;
