@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   # get 'messages/new'
   resources :messages, only: [:new, :create]
+
+  # Jobs
   resources :jobs, only: [:show]
+  get '/locked/:id' => 'jobs#locked'
+  # post '/jobs/' => 'jobs#show'
+  # post '/jobs/private/' => 'jobs#locked'
 
   # Routes do admin_users
   devise_for :admin_users, ActiveAdmin::Devise.config

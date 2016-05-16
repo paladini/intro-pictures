@@ -1,7 +1,47 @@
 class JobsController < ApplicationController
 
 	def show()
-		@job = Job.find(params[:id])
+		job = Job.find(params[:id])
+
+		# Check if there's a password for the given job. 
+		# If so, checks if the user has provided password equal to the correct password.
+		if (job.password.blank? or (params[:password] and job.password == params[:password]))
+			@job = job
+
+			respond_to do |format|
+			    format.html do
+			    	redirect_to root_path
+			    end
+			    format.js do
+			    	render 'show'
+			    end
+		    end
+		else
+			redirect_to controller: "jobs", action: "locked", id: params[:id]
+		end
+
+	end
+
+	def locked()
+		job = Job.find(params[:id])
+		@id = job.id
+		@year = job.year
+		if I18n.locale == :en
+			@title = job.title_en
+		elsif I18n.locale == :pt
+			@title = job.title_pt
+		elsif I18n.locale == :es
+			@title = job.title_es
+		end
+
+		respond_to do |format|
+		    format.html do
+		    	redirect_to root_path
+		    end
+		    format.js do
+		    	render 'locked'
+		    end
+	    end
 	end
 
 	def load_vimeo_video()

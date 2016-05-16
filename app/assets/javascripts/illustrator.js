@@ -144,11 +144,11 @@ var ready = function() {
 	// 	console.log("I'm loaded!");
 	// 	$(this).parent().css('margin', '0px auto');
 	// });
-	$('#my-awesome-captcha iframe').first().on('load', function(){
-		console.log("I'm loaded!");
-		$(this).parent().css('margin', '0px auto');
-		alert("loaded!");
-	});
+	// $('#my-awesome-captcha iframe').first().on('load', function(){
+	// 	console.log("I'm loaded!");
+	// 	$(this).parent().css('margin', '0px auto');
+	// 	alert("loaded!");
+	// });
 };
 
 // Compatibility reasons

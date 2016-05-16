@@ -1,0 +1,5 @@
+<% if session[:modal] == true %>
+	// $('#myModal').modal('hide');
+<% end %>
+$('#myModal').html("<%= j render('/jobs/locked')%>")
+// $('#myModal').modal('show');

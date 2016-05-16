@@ -1,0 +1,93 @@
+<div class="vertical-alignment-helper">
+  	<div class="modal-dialog modal-lg vertical-align-center" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+
+	      	<!-- Extra Small / Small devices -->
+	      	<div class="row hidden-md hidden-lg">
+
+	      		<!-- Meta information -->
+	      		<div class="col-xs-12 col-video-description">
+	          	<div class="row meta">
+	          		<div class="col-xs-10">
+	          			<p class="video-title">
+		          			<%= @title %>
+	          			</p>
+	          			<p class="video-year">(<%= @year %>)</p>
+	          		</div>
+	          		<div class="col-xs-2" style="display: block">
+	          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
+	          		</div>
+	          	</div>
+	          </div>
+
+	          <div class="col-xs-12 col-video">
+            	<div class="locked-video">
+            		<%= image_tag("cadeado.svg", class: "locked-image", alt: "Intro Pictures logo", title: "Intro Pictures") %>
+            		<p>Locked</p>
+            		<p>Content</p>
+            	</div>
+	          </div>
+
+	          <div class="col-xs-12 col-video-description">
+					<!-- Locked content -->
+		          	<div class="row locked">
+		          		<div class="col-xs-12">
+		          			<p class="description-title">Locked Content</p>
+		          			<p class="description-text">
+		          				To access this content you must enter a valid password below.
+		          			</p>
+		          			<%= form_tag(job_path(@id), method: :get, remote: true) do %>
+		          			  <%= hidden_field_tag 'id', @id %>
+							  <%= password_field_tag(:password, nil, id: "unlock_password_text", placeholder: "Enter the password here") %>
+							  <%= submit_tag("Unlock", id: "unlock_password_button") %>
+							<% end %>
+		          		</div>
+		          	</div>
+	          </div>
+	        </div>
+
+	      	<!-- Medium / Large devices -->
+	        <div class="row hidden-xs hidden-sm hidden-ms">
+	          <div class="col-md-8 col-video">
+            	<div class="locked-video">
+            		<%= image_tag("cadeado.svg", class: "locked-image", alt: "Intro Pictures logo", title: "Intro Pictures") %>
+            		<p>Locked</p>
+            		<p>Content</p>
+            	</div>
+	          </div>
+	          <div class="col-md-4 col-video-description">
+
+	          	<!-- Meta information -->
+	          	<div class="row meta">
+	          		<div class="col-md-10">
+	          			<p class="video-title">
+	          				<%= @title %>
+	          			</p>
+	          			<p class="video-year">(<%= @year %>)</p>
+	          		</div>
+	          		<div class="col-md-2">
+	          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
+	          		</div>
+	          	</div>
+
+				<!-- Locked content -->
+	          	<div class="row locked">
+	          		<div class="col-md-12">
+	          			<p class="description-title">Locked Content</p>
+	          			<p class="description-text">
+	          				To access this content you must enter a valid password below.
+	          			</p>
+	          			<%= form_tag(job_path(@id), method: :get, remote: true) do %>
+	          			  <%= hidden_field_tag 'id', @id %>
+						  <%= password_field_tag(:password, nil, id: "unlock_password_text", placeholder: "Enter the password here") %>
+						  <%= submit_tag("Unlock", id: "unlock_password_button") %>
+						<% end %>
+	          		</div>
+	          	</div>
+	          </div>
+	        </div>
+	      </div>
+	    </div><!-- /.modal-content -->
+  	</div><!-- /.modal-dialog -->
+</div><!-- /.vertical alignment-helper -->

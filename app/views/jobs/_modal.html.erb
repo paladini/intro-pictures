@@ -30,21 +30,11 @@
 		          </div>
 
 		          <div class="col-xs-12 col-video">
-		          	<% if @job.password.blank? %>
-		            	<iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		            <% else %>
-		            	<div class="locked-video">
-		            		<%= image_tag("cadeado.svg", class: "locked-image", alt: "Intro Pictures logo", title: "Intro Pictures") %>
-		            		<p>Locked</p>
-		            		<p>Content</p>
-		            	</div>
-		            <% end %>
+	            	<iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		          </div>
 
 		          <div class="col-xs-12 col-video-description">
 		          	<!-- <div class="row synopsis"> -->
-		          		<% if @job.password.blank? %>
-
 			          	<!-- Synopsis -->
 			          	<div class="row">
 			          		<div class="col-xs-12 col-ms-6 synopsis">
@@ -248,19 +238,6 @@
 			          		</tbody></table>
 							</div>
 						</div>
-					<% else %>
-						<!-- Locked content -->
-			          	<div class="row locked">
-			          		<div class="col-xs-12">
-			          			<p class="description-title">Locked Content</p>
-			          			<p class="description-text">
-			          				To access this content you must enter a valid password below.
-			          			</p>
-			          			<input type="text" id="unlock_password_text" placeholder="Enter the password here" />
-			          			<input type="button" id="unlock_password_button" value="Unlock" />
-			          		</div>
-			          	</div>
-					<% end %>      	
 		          </div>
 		        </div>
 
@@ -270,15 +247,7 @@
 		      	<!-- Medium / Large devices -->
 		        <div class="row hidden-xs hidden-sm hidden-ms">
 		          <div class="col-md-8 col-video">
-		            <% if @job.password.blank? %>
-		            	<iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		            <% else %>
-		            	<div class="locked-video">
-		            		<%= image_tag("cadeado.svg", class: "locked-image", alt: "Intro Pictures logo", title: "Intro Pictures") %>
-		            		<p>Locked</p>
-		            		<p>Content</p>
-		            	</div>
-		           	<% end %>
+	            	<iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		          </div>
 		          <div class="col-md-4 col-video-description">
 
@@ -301,8 +270,6 @@
 		          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
 		          		</div>
 		          	</div>
-
-		          	<% if @job.password.blank? %>
 
 			          	<!-- Synopsis -->
 			          	<div class="row synopsis">
@@ -508,19 +475,6 @@
 			          		</tbody></table>
 			          		</div>
 						</div>
-					<% else %>
-						<!-- Locked content -->
-			          	<div class="row locked">
-			          		<div class="col-md-12">
-			          			<p class="description-title">Locked Content</p>
-			          			<p class="description-text">
-			          				To access this content you must enter a valid password below.
-			          			</p>
-			          			<input type="text" id="unlock_password_text" placeholder="Enter the password here" />
-			          			<input type="button" id="unlock_password_button" value="Unlock" />
-			          		</div>
-			          	</div>
-					<% end %>		          	
 		          </div>
 		        </div>
 		      </div>
