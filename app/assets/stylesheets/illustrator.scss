@@ -584,6 +584,83 @@ footer {
           }
         }
 
+        .locked {
+          *::-webkit-input-placeholder {
+            font-family : $placeholder-font-family;
+            font-weight : $placeholder-font-weight;
+            font-size : 18px;
+            text-transform : $placeholder-text-transform;
+            color : #666;
+          }
+          *:-moz-placeholder {
+            font-family : $placeholder-font-family;
+            font-weight : $placeholder-font-weight;
+            font-size : 18px;
+            text-transform : $placeholder-text-transform;
+            color : #666;
+            opacity: 1;
+          }
+          *::-moz-placeholder {
+            font-family : $placeholder-font-family;
+            font-weight : $placeholder-font-weight;
+            font-size : 18px;
+            text-transform : $placeholder-text-transform;
+            color : #666;
+            opacity: 1;
+          }
+          *:-ms-input-placeholder {
+            font-family : $placeholder-font-family;
+            font-weight : $placeholder-font-weight;
+            font-size : 18px;
+            text-transform : $placeholder-text-transform;
+            color : #666;
+          }
+
+          .description-title {
+            margin-bottom: 0px;
+          }
+
+          .description-text { }
+
+          #unlock_password_text {
+            background: #EEE;
+            padding: 5px 10px;
+            margin: 4px 0px;
+            width: 100%;
+            resize: none;
+            border: 1px solid #CBCBCB;
+
+            // Prevent Google Chrome blue border when focus
+            &:focus{
+              outline: none;
+            }
+
+            // Font
+            font-family : Futura;
+            font-size : 18px;
+            color : black;
+            color : rgb(0, 0, 0);
+            text-transform: none;
+          }
+
+          #unlock_password_button {
+            background : black;
+            background : rgba(0, 0, 0, 1);
+            font-family : Futura LT;
+            font-weight : bold;
+            font-size : 18px;
+            text-transform : uppercase;
+            color : white;
+            padding: 5px 20px;
+            margin: 4px auto;
+            border: 0;
+
+            &:hover {
+              color: #CBCBCB;
+              border: 0 !important;
+            }
+          }
+        }
       }
     }
   }
@@ -592,6 +669,30 @@ footer {
 .modal-backdrop {
   opacity: 0.8 !important;
   filter: alpha(opacity=80) !important;
+}
+
+.locked-video {
+  margin: 50px auto;
+  vertical-align: middle;
+  text-align: center;
+
+  img {
+    height: auto;
+    width: 150px;
+    margin: 0 auto 15px auto;
+  }
+
+  p {
+    margin: 2px 0px;
+    font-family: Futura LT;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 40px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    word-break: normal;
+  }
 }
 
 /* 
@@ -825,6 +926,10 @@ footer {
   .nopadding {
     padding-left: 0px !important;
     margin-left: 5px !important;
+  }
+
+  .locked-video {
+    margin: auto auto;
   }
 
   // Recaptcha
