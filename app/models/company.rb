@@ -14,6 +14,7 @@ class Company < ActiveRecord::Base
 	has_many :employees
 	has_many :departments
 	accepts_nested_attributes_for :departments
+	accepts_nested_attributes_for :employees
 
 	# Validations
 	validates :summary_pt, presence: true

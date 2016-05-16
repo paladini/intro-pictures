@@ -1,6 +1,7 @@
 ActiveAdmin.register Employee, as: "empregado" do
 
-	menu label: "Equipe" , priority: 4
+	# menu label: "Equipe" , priority: 4
+	menu false
 	permit_params :name, :role_pt, :role_en, :role_es
 
 	# Defining default company to every employee
