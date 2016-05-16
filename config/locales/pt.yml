@@ -48,6 +48,12 @@ pt:
       verification_failed: "Verificação anti-spam falhou, tente novamente."
   activerecord:
     models:
+      admin_user:
+        one: administrador
+        other: administradores
+      administrador:
+        one: administrador
+        other: administradores
       employee:
         one: empregado
       company:
@@ -56,6 +62,17 @@ pt:
         one: departamento
         other: departamentos
     attributes:
+      admin_user:
+        password: "Senha"
+        password_confirmation: "Confirmação de senha"
+        encrypted_password: "Senha (criptografada)"
+        current_sign_in_at: "Login atual em"
+        sign_in_count: "Total de logins realizados"
+        last_sign_in_at: "Último login em"
+        current_sign_in_ip: "IP do login atual"
+        last_sign_in_ip: "IP do último login"
+        created_at: Data criação
+        updated_at: Data atualização
       job:
         video_url: URL do vídeo
         title_pt: Título
