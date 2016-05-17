@@ -20,7 +20,11 @@
 		          				end
 		          			%>
 	          			</p>
-	          			<p class="video-year">(<%= @job.year %>)</p>
+	          			<p class="video-year">
+          					<% if @job.year.present? %>
+	          					(<%= @job.year %>)
+		          			<% end %>
+      					</p>
 	          		</div>
 	          		<div class="col-xs-2" style="display: block">
 	          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>
@@ -265,7 +269,12 @@
 		          				end
 		          			%>
 	          			</p>
-	          			<p class="video-year">(<%= @job.year %>)</p>
+	          			
+          				<p class="video-year">
+          					<% if @job.year.present? %>
+	          					(<%= @job.year %>)
+		          			<% end %>
+      					</p>
 	          		</div>
 	          		<div class="col-md-2">
 	          			<%= image_tag("fechar_popup.svg", alt: t('home.close_popup'), title: t('home.close_popup'), height: 32, width: 32, class: "close", data: {dismiss: "modal", label: "Close"}) %>

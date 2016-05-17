@@ -641,10 +641,6 @@ footer {
               outline: none;
             }
 
-            // &:invalid {
-            //   border: 1px solid #FF1D25 !important;
-            // }
-
             // Font
             font-family : Futura;
             font-size : 18px;
@@ -995,7 +991,8 @@ footer {
             font-family : Futura;
             font-size : 35px;
             font-weight : bold;
-            line-height : 30px;
+            // line-height : 30px;
+            line-height: 38px;
             color : #000000;
             color : rgb(0, 0, 0);
             text-transform : uppercase;
