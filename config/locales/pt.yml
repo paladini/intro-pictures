@@ -5,7 +5,7 @@ pt:
     close_popup: "Fechar"
     loading: "Carregando..."
     job:
-      info: "Info"
+      info: "Informações"
       title: "Título"
       year: "Ano"
       synopsis: "Sinopse"

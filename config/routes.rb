@@ -1,26 +1,30 @@
 Rails.application.routes.draw do
 
-  get 'pages/home'
-  get '/:locale' => 'pages#home'
-  # get 'messages/new'
-  resources :messages, only: [:new, :create]
+  # get 'pages/home'
 
-  # Jobs
-  resources :jobs, only: [:show]
-  get '/locked/:id' => 'jobs#locked'
-  # post '/jobs/' => 'jobs#show'
-  # post '/jobs/private/' => 'jobs#locked'
-
-  # Routes do admin_users
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  
   # Routes to ActiveAdmin
   get '/admin/companies', to: redirect('/admin/companies/1')
   get '/admin/contatos', to: redirect('/admin/contatos/1')
+  post '/load_video' => 'jobs#load_vimeo_video'
   ActiveAdmin.routes(self)
+  
+  # Routes do admin_users
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  resources :messages, only: [:new, :create]
+
+  # Jobs
+  scope "(:locale)", locale: /en|es|pt/ do
+    resources :jobs, only: [:show]
+    get '/locked/:id' => 'jobs#locked'
+  end
+  
+  # Jobs
+  # resources :jobs, only: [:show]
+  # post '/jobs/' => 'jobs#show'
+  # post '/jobs/private/' => 'jobs#locked'
 
   # Root
-  post '/load_video' => 'jobs#load_vimeo_video'
+  get '/:locale' => 'pages#home'
   root to: "pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,6 +1,6 @@
 ActiveAdmin.register Job do
 
-	menu label: "Portfólio" , priority: 3
+	menu label: "Portfólio" , priority: 2
 	permit_params :video_id, 
 				  :video_url,
 				  :video_thumb_small, :video_thumb_medium, :video_thumb_large,
