@@ -23,26 +23,10 @@
 
   <div class="field">
     <% if Department.count > 1 %>
-      <%= f.select(:department, Department.all.collect {|a| 
-            if I18n.locale == :en
-              a.name_en
-            elsif I18n.locale == :pt
-              a.name_pt
-            elsif I18n.locale == :es
-              a.name_es
-            end
-          }, {prompt: t('home.contact.department')}, required: true) 
+      <%= f.select(:department, options_for_select(Department.all.collect{ |d| [d.name, d.id] }), {prompt: t('home.contact.department')}, required: true) 
       %>
     <% else %>
-      <%= f.select(:department, Department.all.collect {|a| 
-            if I18n.locale == :en
-              a.name_en
-            elsif I18n.locale == :pt
-              a.name_pt
-            elsif I18n.locale == :es
-              a.name_es
-            end
-          }, required: true) 
+      <%= f.select(:department, options_for_select(Department.all.collect{ |d| [d.name, d.id] }), required: true)
       %>
     <% end %>
   </div>

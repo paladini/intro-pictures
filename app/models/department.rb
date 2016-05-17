@@ -8,4 +8,14 @@ class Department < ActiveRecord::Base
 	validates :name_es, presence: true, uniqueness: true
 	validates :name_en, presence: true, uniqueness: true
 
+	def name()
+		if I18n.locale == :en
+			return name_en
+		elsif I18n.locale == :pt 
+			return name_pt
+		elsif I18n.locale == :es 
+			return name_es
+		end
+	end
+
 end

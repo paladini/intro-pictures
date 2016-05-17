@@ -8,9 +8,13 @@ class MessagesController < ApplicationController
 	    @message = Message.new(message_params)
 
 	    if verify_recaptcha(model: @message) and @message.valid?
-	      	MessageMailer.message_me(@message).deliver_now
+
+	    	# Get the correct e-mail
+	    	mail_to = Department.find(@message.department).email
+
+	    	# Deliver the email
+	      	MessageMailer.message_me(@message, mail_to).deliver_now
 	      	redirect_to root_path, notice: "Thank you for the message."
-	      	# redirect_to new_message_path, notice: "Thank you for your message."
 	    else
 	    	# redirect_to root_path
 	    	# flash[]
