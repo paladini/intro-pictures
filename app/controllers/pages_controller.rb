@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
   	company = Company.first
   	@message = Message.new
-    @jobs = Job.all
+    @jobs = Job.all.order(year: :desc)
   	@email = company.email
   	@telephone = company.telephone
 
