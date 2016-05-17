@@ -17,7 +17,7 @@ class JobsController < ApplicationController
 			    end
 		    end
 		else
-			redirect_to controller: "jobs", action: "locked", id: params[:id]
+			redirect_to controller: "jobs", action: "locked", id: params[:id], locale: I18n.locale
 		end
 
 	end
@@ -46,6 +46,15 @@ class JobsController < ApplicationController
 
 	def load_vimeo_video()
 		id = params[:vimeo_id]
+
+		# [Vimeo] API keys
+		ck = "498c9e3b2e449282fc3bc60f00b708e375fdcd31" #consumer key
+		cs = "k4pk3U9vsrJH+0FCD4F9JczOVnTyAFDDMZjr0lYzFreHRGqpzAyOc+nKLWhY+yY6aplzx1f7NkMeLIPuEnMcmFzIv7RBs1TZCZQFyOBBeF36yEnK5gRnfno8wP+XVSXF" #consumer secret
+		# [Vimeo] Account token and secret
+		tk = "1a94b43e39b86265129d1a07d530a096" # token
+		#sc =  # secret
+		video = Vimeo::Advanced::Video.new(ck, cs, token: tk, secret: sc)
+		video.get_all("matthooks")
 		info = Vimeo::Simple::Video.info(id)
 		if (info and info.code == 200)
 			render json: {

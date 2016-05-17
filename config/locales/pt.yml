@@ -13,12 +13,19 @@ pt:
       genre: "Gênero"
       subgenre: "Subgênero"
       running_time: "Duração"
-      target: "Público-alvo"
+      target: "Público"
       created_by: "Criado por"
       written_by: "Escrito por"
       directed_by: "Dirigido por"
-      status: "Estado"
-      player: "Atores"
+      status: "Status"
+      player: "Player"
+      locked:
+        line_one: "Conteúdo"
+        line_two: "Bloqueado"
+        description: "Para acessar esse conteúdo você precisa inserir uma senha válida."
+        title: "Conteúdo Bloqueado"
+        button: "Desbloquear"
+        password_placeholder: "Digite a senha aqui"
     info:
       team: "Equipe"
       email: "E-mail"
@@ -26,13 +33,16 @@ pt:
       address: "Endereço"
     contact:
       name: "Nome"
-      email: "Email"
+      email: "E-mail"
       department: "Departamento"
       subject: "Assunto"
       content: "Mensagem"
       attach: "Anexar arquivo"
       submit: "Enviar"
+      success: "Mensagem enviada com sucesso."
+      error: ""
     developed_by: "Desenvolvido por 322 Lab Criativo e Fernando Paladini"
+    footer: 'Todos os materiais, textos, vídeos e imagens (coletivamente, os "Materiais") deste site, são de propriedade de Intro Pictures TV, salvo indicação em contrário, ou a propriedade de terceiros e estão protegidos por leis de direitos autorais. A Intro Pictures TV não garante e nem é responsável pela utilização dos materiais deste site, que pode violar os direitos daqueles que não pertencem ou não são filiados com Intro Pictures TV.'
   time:
     formats:
       default: "%d-%m-%Y"
@@ -110,7 +120,7 @@ pt:
         status_pt: Status
         status_en: Status (Inglês)
         status_es: Status (Espanhol)
-        player: Atores
+        player: Player
         created_at: Data criação
         updated_at: Data atualização
       employee:

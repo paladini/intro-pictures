@@ -40,6 +40,13 @@ en:
       directed_by: "Directed by"
       status: "Status"
       player: "Player"
+      locked:
+        line_one: "Locked"
+        line_two: "Content"
+        description: "To access this content you must enter a valid password below."
+        title: "Locked Content"
+        button: "Unlock"
+        password_placeholder: "Enter the password here"
     info:
       team: "Team"
       email: "E-mail"
@@ -47,12 +54,15 @@ en:
       address: "Address"
     contact:
       name: "Name"
-      email: "Email"
+      email: "E-mail"
       department: "Department"
       subject: "Subject"
       content: "Message"
       attach: "Attach File"
       submit: "Send"
+      success: "Message sent successfully."
+      error: ""
     developed_by: "Developed by 322 Lab Criativo and Fernando Paladini"
+    footer: 'All materials, texts, videos and images (collectively, the “Materials”) of this Site, are property of Intro Pictures TV, unless otherwise noted, or property of third parties and are protected copyright laws. Intro Pictures TV does not guarantee nor is responsible for the use of the Materials of this site which could violate the rights of those who do not belong or are not affiliated with Intro Pictures TV.'
 
 

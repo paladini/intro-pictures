@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'pages/home'
-
+  get '/:locale' => 'pages#home'
   # get 'messages/new'
   resources :messages, only: [:new, :create]
 
@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # Root
-  get '/:locale' => 'pages#home'
   post '/load_video' => 'jobs#load_vimeo_video'
   root to: "pages#home"
   # The priority is based upon order of creation: first created -> highest priority.

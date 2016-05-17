@@ -38,7 +38,9 @@
 			          	<!-- Synopsis -->
 			          	<div class="row">
 			          		<div class="col-xs-12 col-ms-6 synopsis">
-			          			<p class="description-title"><%= t('home.job.synopsis') %></p>
+			          			<p class="description-title">
+			          				<%= t('home.job.synopsis') %>
+			          			</p>
 			          			<p class="description-text">
 			          				<%= if I18n.locale == :en 
 			          						@job.synopsis_en
@@ -274,7 +276,9 @@
 			          	<!-- Synopsis -->
 			          	<div class="row synopsis">
 			          		<div class="col-md-12">
-			          			<p class="description-title"><%= t('home.job.synopsis') %></p>
+			          			<p class="description-title">
+			          				<%= t('home.job.synopsis') %>
+			          			</p>
 			          			<p class="description-text">
 			          				<%= if I18n.locale == :en 
 			          						@job.synopsis_en
@@ -295,7 +299,7 @@
 			          		<table class="table table-striped description-text table-hover"><tbody>
 
 			          			<!-- Title -->
-	          					<% if @job.title_en.present? %>
+	          					<% if @job.title? %>
 		          					<tr>
 		          						<td><%= t('home.job.title') %></td>
 		          						<td>

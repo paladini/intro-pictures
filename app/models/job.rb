@@ -11,6 +11,20 @@ class Job < ActiveRecord::Base
 	# validates :video_url, format: { with: /(http|https):\/\/(www.|)vimeo.com\/[[0-9]*|album\/[0-9]*]+/ix }
 	validates :video_url, format: { with: /https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)/ix }
 	
+	def title?()
+		return (title() != nil)
+	end
+
+	def title()
+		if I18n.locale == :en and title_en.present?
+			return title_en
+		elsif I18n.locale == :pt and title_pt.present?
+			return title_pt
+		elsif I18n.locale == :es and title_es.present?
+			return title_es
+		end
+	end
+
 	private
 		def id_uniqueness_validation()
 			if Job.where(video_id: self.video_id).any?
