@@ -5,20 +5,23 @@
 		</div>
 		<% @jobs.each do |job| %>
 			<div class="col-xs-12 col-ms-6 col-sm-4 col-md-3 col-lg-2 job">
-				<!-- <a href="" class="job-outer" data-job-id="<%= job.id %>"> data-toggle="modal" data-target="#myModal" -->
 				<%= link_to job_path(job), remote: true, class: "job-outer" do %>
 					<%= image_tag(job.video_thumb_large) %>
 					<p class="job-title">
-						<% if I18n.locale == :en %>
-							<%= job.title_en %>
-						<% elsif I18n.locale == :pt %>
-							<%= job.title_pt %>
-						<% elsif I18n.locale == :es %>
-							<%= job.title_es %>
+						<b>
+							<% if I18n.locale == :en %>
+								<%= job.title_en %>
+							<% elsif I18n.locale == :pt %>
+								<%= job.title_pt %>
+							<% elsif I18n.locale == :es %>
+								<%= job.title_es %>
+							<% end %>
+						</b>
+						<% if job.year.present? %>
+							(<%= job.year %>)
 						<% end %>
 					</p>
 				<% end %>
-				<!-- </a> -->
 			</div>
 		<% end %>
 	</div>
