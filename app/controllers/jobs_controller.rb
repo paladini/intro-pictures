@@ -8,21 +8,15 @@ class JobsController < ApplicationController
 			@job = job
 
 			respond_to do |format|
-			    format.html do
-			    	redirect_to root_path
-			    end
-			    format.js do
-			    	render 'show'
-			    end
+			    format.html { redirect_to root_path }
+			    format.js { render 'show' }
 		    end
 
 		# Wrong password
 		elsif (job.password.present? and params[:password] and (job.password != params[:password]))
 			respond_to do |format|
 			    format.html { redirect_to root_path }
-			    format.js do
-			    	flash.now[:wrong_password] = true
-			    end
+			    format.js { flash.now[:wrong_password] = true }
 		    end
 		else
 			redirect_to controller: "jobs", action: "locked", id: params[:id], locale: I18n.locale
@@ -43,12 +37,8 @@ class JobsController < ApplicationController
 		end
 
 		respond_to do |format|
-		    format.html do
-		    	redirect_to root_path
-		    end
-		    format.js do
-		    	render 'locked'
-		    end
+		    format.html { redirect_to root_path }
+		    format.js { render 'locked' }
 	    end
 	end
 

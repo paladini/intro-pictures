@@ -39,6 +39,14 @@ footer {
   }
 }
 
+*:focus {
+  outline:0px none transparent !important;
+}
+
+*:invalid {
+  outline:0px none transparent !important;
+}
+
 // Temporary solution for divs with the same height of the row
 .row {
   display: -webkit-box;
@@ -287,6 +295,19 @@ footer {
       border-color : #FF1D25 !important;
       border-color : rgba(255, 29, 37, 1) !important;
       border-width : 1px !important;
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #error_explanation {
+    .field_with_errors {
+      input, textarea, select {
+        border-color: #FF1D25 !important;
+      }
     }
   }
 

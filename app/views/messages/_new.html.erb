@@ -1,0 +1,45 @@
+<%= form_for @message, remote: true, html: {lang: I18n.locale} do |f| %>
+  <div id="error_explanation">
+
+    <div class="field">
+      <%= f.text_field :name, placeholder: t('home.contact.name'), required: true, lang: I18n.locale %>
+    </div>
+
+    <div class="field">
+      <%= f.email_field :email, placeholder: t('home.contact.email'), required: true %>
+    </div>
+
+    <div class="field">
+      <% if Department.count > 1 %>
+        <%= f.select(:department, options_for_select(Department.all.collect{ |d| [d.name, d.id] }), {prompt: t('home.contact.department')}, required: true) 
+        %>
+      <% else %>
+        <%= f.select(:department, options_for_select(Department.all.collect{ |d| [d.name, d.id] }), required: true)
+        %>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :subject, placeholder: t('home.contact.subject'), required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.text_area :content, placeholder: t('home.contact.content'), required:true, rows: 8 %>
+    </div>
+
+    <div class="field">
+      <label class="custom-file-upload" data-label="<%= t('home.contact.attach') %>">
+          <input id="message_file" type="file"/>
+          <span><%= t('home.contact.attach') %></span>
+      </label>
+    </div>
+
+    <div class="field" id="my-awesome-captcha">
+    	<%= recaptcha_tags(theme: "dark") %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t('home.contact.submit'), class: 'submit center-block text-center' %>
+    </div>
+  </div>
+<% end %>

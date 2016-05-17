@@ -3,10 +3,11 @@ class MessagesController < ApplicationController
   	def new
   		@message = Message.new
  	end
- 	
+ 	# 
 	def create
 	    @message = Message.new(message_params)
 
+	   	# if @message.valid?
 	    if verify_recaptcha(model: @message) and @message.valid?
 
 	    	# Get the correct e-mail
@@ -14,16 +15,16 @@ class MessagesController < ApplicationController
 
 	    	# Deliver the email
 	      	MessageMailer.message_me(@message, mail_to).deliver_now
-	      	redirect_to root_path, notice: "Thank you for the message."
+	      	# redirect_to root_path, notice: "Thank you for the message."
+	      	respond_to do |format|
+			    format.html { render :new }
+			    format.js { render 'new', notice: "Success" }
+		    end
 	    else
-	    	# redirect_to root_path
-	    	# flash[]
-	    	# render root_path
-	    	# render 'pages/home'
-	      	render :new
-	      	# flash = flash.now
-	      	# flash[:error] = @message.errors.full_messages.to_sentence
-	      	# redirect_to :back
+	      	respond_to do |format|
+		    	format.js { render :new }
+		        format.json { render json: @message.errors, status: :unprocessable_entity }
+		    end
 	    end
   	end
 

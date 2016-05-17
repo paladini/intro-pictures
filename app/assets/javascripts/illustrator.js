@@ -30,7 +30,7 @@ var ready = function() {
 			if (validateEmail($(this).val())) {
 				$(this)[0].setCustomValidity('');
 			} else {
-				$(this)[0].setCustomValidity('Error.');
+				$(this)[0].setCustomValidity('Please fill out this field.');
 			}
 		}
 	});
