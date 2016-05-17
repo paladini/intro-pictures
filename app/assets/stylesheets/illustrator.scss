@@ -586,6 +586,11 @@ footer {
         }
 
         .locked {
+
+          form {
+            text-align: center;
+          }
+
           *::-webkit-input-placeholder {
             font-family : $placeholder-font-family;
             font-weight : $placeholder-font-weight;
@@ -623,7 +628,7 @@ footer {
 
           .description-text { }
 
-          #unlock_password_text {
+          .unlock_password_text {
             background: #EEE;
             padding: 5px 10px;
             margin: 4px 0px;
@@ -636,6 +641,10 @@ footer {
               outline: none;
             }
 
+            // &:invalid {
+            //   border: 1px solid #FF1D25 !important;
+            // }
+
             // Font
             font-family : Futura;
             font-size : 18px;
@@ -644,7 +653,11 @@ footer {
             text-transform: none;
           }
 
-          #unlock_password_button {
+          .unlock_password_text_wrong {
+            border: 1px solid #FF1D25 !important;
+          }
+
+          .unlock_password_button {
             background : black;
             background : rgba(0, 0, 0, 1);
             font-family : Futura LT;

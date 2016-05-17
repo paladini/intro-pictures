@@ -1,1 +1,5 @@
-$('#myModal').html("<%= j render('/jobs/modal')%>")
+<% if flash.now[:wrong_password] == true %>
+	$('.unlock_password_text').addClass('unlock_password_text_wrong');
+<% else %>
+	$('#myModal').html("<%= j render('/jobs/modal')%>")
+<% end %>

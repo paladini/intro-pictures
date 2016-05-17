@@ -3,8 +3,7 @@ class JobsController < ApplicationController
 	def show()
 		job = Job.find(params[:id])
 
-		# Check if there's a password for the given job. 
-		# If so, checks if the user has provided password equal to the correct password.
+		# Public job (no password) or correct password
 		if (job.password.blank? or (params[:password] and job.password == params[:password]))
 			@job = job
 
@@ -14,6 +13,15 @@ class JobsController < ApplicationController
 			    end
 			    format.js do
 			    	render 'show'
+			    end
+		    end
+
+		# Wrong password
+		elsif (job.password.present? and params[:password] and (job.password != params[:password]))
+			respond_to do |format|
+			    format.html { redirect_to root_path }
+			    format.js do
+			    	flash.now[:wrong_password] = true
 			    end
 		    end
 		else

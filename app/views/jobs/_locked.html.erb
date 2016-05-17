@@ -41,8 +41,8 @@
 		          			</p>
 		          			<%= form_tag(job_path(id: @id), method: :get, remote: true) do %>
 		          			  <%= hidden_field_tag 'id', @id %>
-							  <%= password_field_tag(:password, nil, id: "unlock_password_text", placeholder: t('home.job.locked.password_placeholder')) %>
-						  	  <%= submit_tag(t('home.job.locked.button'), id: "unlock_password_button") %>
+							  <%= password_field_tag(:password, nil, class: "unlock_password_text", placeholder: t('home.job.locked.password_placeholder')) %>
+						  	  <%= submit_tag(t('home.job.locked.button'), class: "unlock_password_button") %>
 							<% end %>
 		          		</div>
 		          	</div>
@@ -84,8 +84,8 @@
 	          			</p>
 	          			<%= form_tag(job_path(id: @id), method: :get, remote: true) do %>
 	          			  <%= hidden_field_tag 'id', @id %>
-						  <%= password_field_tag(:password, nil, id: "unlock_password_text", placeholder: t('home.job.locked.password_placeholder')) %>
-						  <%= submit_tag(t('home.job.locked.button'), id: "unlock_password_button") %>
+						  <%= password_field_tag(:password, nil, class: "unlock_password_text", placeholder: t('home.job.locked.password_placeholder')) %>
+						  <%= submit_tag(t('home.job.locked.button'), class: "unlock_password_button") %>
 						<% end %>
 	          		</div>
 	          	</div>
