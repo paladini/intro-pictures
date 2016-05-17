@@ -59,16 +59,16 @@
 		          		<table class="table table-striped description-text table-hover"><tbody>
 
           					<!-- Title -->
-          					<% if @job.title_en.present? %>
+          					<% if @job.title? %>
 	          					<tr>
 	          						<td><%= t('home.job.title') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.title_en)
+	          									simple_format(@job.title_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.title_pt)
+		          								simple_format(@job.title_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.title_es)
+		          								simple_format(@job.title_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
 	          						</td>
@@ -77,15 +77,15 @@
 
           					<!-- Format -->
           					<% if @job.format_en.present? %>
-	          					<tr>
+	          					<tr> 
 	          						<td><%= t('home.job.format') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.format_en)
+	          									simple_format(@job.format_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.format_pt)
+		          								simple_format(@job.format_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.format_es)
+		          								simple_format(@job.format_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
 	          						</td>
@@ -98,11 +98,11 @@
 	          						<td><%= t('home.job.genre') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.genre_en)
+	          									simple_format(@job.genre_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.genre_pt)
+		          								simple_format(@job.genre_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.genre_es)
+		          								simple_format(@job.genre_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -115,11 +115,11 @@
 	          						<td><%= t('home.job.subgenre') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.subgenre_en)
+	          									simple_format(@job.subgenre_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.subgenre_pt)
+		          								simple_format(@job.subgenre_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.subgenre_es)
+		          								simple_format(@job.subgenre_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -132,11 +132,11 @@
 	          						<td><%= t('home.job.running_time') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.running_time_en)
+	          									simple_format(@job.running_time_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.running_time_pt)
+		          								simple_format(@job.running_time_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.running_time_es)
+		          								simple_format(@job.running_time_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -149,11 +149,11 @@
 	          						<td><%= t('home.job.target') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.target_en)
+	          									simple_format(@job.target_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.target_pt)
+		          								simple_format(@job.target_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.target_es)
+		          								simple_format(@job.target_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -166,11 +166,11 @@
 	          						<td class="text-nowrap"><%= t('home.job.created_by') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.created_by_en)
+	          									simple_format(@job.created_by_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.created_by_pt)
+		          								simple_format(@job.created_by_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.created_by_es)
+		          								simple_format(@job.created_by_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -183,11 +183,11 @@
 	          						<td><%= t('home.job.written_by') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.written_by_en)
+	          									simple_format(@job.written_by_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.written_by_pt)
+		          								simple_format(@job.written_by_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.written_by_es)
+		          								simple_format(@job.written_by_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -200,11 +200,11 @@
 	          						<td><%= t('home.job.directed_by') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.directed_by_en)
+	          									simple_format(@job.directed_by_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.directed_by_pt)
+		          								simple_format(@job.directed_by_pt, {},wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.directed_by_es)
+		          								simple_format(@job.directed_by_es, {},wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -217,11 +217,11 @@
 	          						<td><%= t('home.job.status') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.status_en)
+	          									simple_format(@job.status_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.status_pt)
+		          								simple_format(@job.status_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.status_es)
+		          								simple_format(@job.status_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -232,7 +232,7 @@
 	          				<% if @job.player.present? %>
 	          					<tr> 
 	          						<td><%= t('home.job.player') %></td>
-	          						<td><%= simple_format(@job.player) %></td>
+	          						<td><%= simple_format(@job.player, {}, wrapper_tag: "span") %></td>
 	          					</tr>
 	          				<% end %>
 
@@ -303,11 +303,11 @@
 	          						<td><%= t('home.job.title') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.title_en)
+	          									simple_format(@job.title_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.title_pt)
+		          								simple_format(@job.title_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.title_es)
+		          								simple_format(@job.title_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
 	          						</td>
@@ -320,11 +320,11 @@
 	          						<td><%= t('home.job.format') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.format_en)
+	          									simple_format(@job.format_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.format_pt)
+		          								simple_format(@job.format_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.format_es)
+		          								simple_format(@job.format_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
 	          						</td>
@@ -337,11 +337,11 @@
 	          						<td><%= t('home.job.genre') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.genre_en)
+	          									simple_format(@job.genre_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.genre_pt)
+		          								simple_format(@job.genre_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.genre_es)
+		          								simple_format(@job.genre_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -354,11 +354,11 @@
 	          						<td><%= t('home.job.subgenre') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.subgenre_en)
+	          									simple_format(@job.subgenre_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.subgenre_pt)
+		          								simple_format(@job.subgenre_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.subgenre_es)
+		          								simple_format(@job.subgenre_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -371,11 +371,11 @@
 	          						<td><%= t('home.job.running_time') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.running_time_en)
+	          									simple_format(@job.running_time_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.running_time_pt)
+		          								simple_format(@job.running_time_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.running_time_es)
+		          								simple_format(@job.running_time_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -388,11 +388,11 @@
 	          						<td><%= t('home.job.target') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.target_en)
+	          									simple_format(@job.target_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.target_pt)
+		          								simple_format(@job.target_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.target_es)
+		          								simple_format(@job.target_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -405,11 +405,11 @@
 	          						<td class="text-nowrap"><%= t('home.job.created_by') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.created_by_en)
+	          									simple_format(@job.created_by_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.created_by_pt)
+		          								simple_format(@job.created_by_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.created_by_es)
+		          								simple_format(@job.created_by_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -422,11 +422,11 @@
 	          						<td><%= t('home.job.written_by') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.written_by_en)
+	          									simple_format(@job.written_by_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.written_by_pt)
+		          								simple_format(@job.written_by_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.written_by_es)
+		          								simple_format(@job.written_by_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -439,11 +439,11 @@
 	          						<td><%= t('home.job.directed_by') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.directed_by_en)
+	          									simple_format(@job.directed_by_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.directed_by_pt)
+		          								simple_format(@job.directed_by_pt, {},wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.directed_by_es)
+		          								simple_format(@job.directed_by_es, {},wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -456,11 +456,11 @@
 	          						<td><%= t('home.job.status') %></td>
 	          						<td>
 	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.status_en)
+	          									simple_format(@job.status_en, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.status_pt)
+		          								simple_format(@job.status_pt, {}, wrapper_tag: "span")
 		          							elsif I18n.locale == :es
-		          								simple_format(@job.status_es)
+		          								simple_format(@job.status_es, {}, wrapper_tag: "span")
 		          							end
 	          							%>
           							</td>
@@ -471,7 +471,7 @@
 	          				<% if @job.player.present? %>
 	          					<tr> 
 	          						<td><%= t('home.job.player') %></td>
-	          						<td><%= simple_format(@job.player) %></td>
+	          						<td><%= simple_format(@job.player, {}, wrapper_tag: "span") %></td>
 	          					</tr>
 	          				<% end %>
 
