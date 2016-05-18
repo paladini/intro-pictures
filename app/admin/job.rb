@@ -58,7 +58,7 @@ ActiveAdmin.register Job do
 		    input :title_en
 		    input :title_es
 		    input :year
-			input :password, hint: "Se este campo for preenchido, o Job será exibido na página mas ficará privado, exigindo senha para ser visto."
+			input :password, as: :string, hint: "Se o campo 'Senha' for preenchido, o Job será exibido na página mas ficará privado, exigindo senha para ser visto."
 		end
 
 		inputs "Sinopse" do
