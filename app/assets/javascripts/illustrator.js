@@ -1,13 +1,3 @@
-/*
-	=========================
- 		Adjusting Captcha
-	=========================
-*/
-// var adjustCaptcha = function() {
-// 	$('#my-awesome-captcha').find('iframe').first().parent().css("width", "initial");
-// 	console.log($(this));
-// }
-
 function validateEmail(email) 
 {
     var re = /\S+@\S+\.\S+/;
@@ -148,28 +138,9 @@ var ready = function() {
 	// Smooth scroll;
 	$('#anchor-nav a, #logo').smoothScroll();
 
-	/*
-		=====================
-	 		 Recaptcha
-		=====================
-	*/
-	// $('.g-recaptcha iframe').on('load', function(){
-	// 	console.log("I'm loaded!");
-	// 	$(this).parent().css('margin', '0px auto');
-	// });
-	// $('#my-awesome-captcha iframe').first().on('load', function(){
-	// 	console.log("I'm loaded!");
-	// 	$(this).parent().css('margin', '0px auto');
-	// 	alert("loaded!");
-	// });
 };
 
 // Compatibility reasons
 $(document).ready(ready);
 $(document).on('page:load', ready);
-
-// Adjusting captcha
-// $('iframe').ready(adjustCaptcha);
-// $('iframe').on('page:load', adjustCaptcha);
-
 // $(document).on('turbolinks:load', ready);

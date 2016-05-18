@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
 	def create
 	    @message = Message.new(message_params)
 
+	    # if true
 	    if verify_recaptcha(model: @message) and @message.valid?
 
 	    	# Get the correct e-mail
@@ -23,6 +24,7 @@ class MessagesController < ApplicationController
 			    }
 		    end
 	    else
+	    	puts @message.errors.full_messages
 	      	respond_to do |format|
 		    	format.js { render :new }
 		        format.json { render json: @message.errors, status: :unprocessable_entity }

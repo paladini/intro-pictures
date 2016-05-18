@@ -855,12 +855,19 @@ footer {
 // Extra-small
 @media(max-width: $screen-xs-max){
 
-  // .g-recaptcha {  
-  //   transform:scale(0.77);
-  //   -webkit-transform:scale(0.77);
-  //   transform-origin:0 0;
-  //   -webkit-transform-origin:0 0;
-  // }
+  .g-recaptcha iframe {
+    max-width: 100%;
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin: center center;
+    -webkit-transform-origin: center center;
+  }
+  #rc-imageselect {
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+  }
 
   .info {
     padding: 25px 0px;
@@ -906,6 +913,17 @@ footer {
 
 // Medium small
 @media(min-width: $screen-ms-min){
+  #rc-imageselect {
+    transform: none;
+    -webkit-transform: none;
+  }
+
+  .g-recaptcha iframe {
+    max-width: none;
+    transform: none;
+    -webkit-transform: none;
+  }
+
   .job-modal {
     .vertical-alignment-helper {
       display:table;
@@ -929,7 +947,10 @@ footer {
       }
     }
   }
+  
 }
+
+
 
 // Small
 @media(min-width: $screen-sm-min){
@@ -971,14 +992,6 @@ footer {
   .locked-video {
     margin: auto auto;
   }
-
-  // Recaptcha
-  // .g-recaptcha {
-  //   width: 50%;
-  //   display: block;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  // }
 
   .job-modal {
 
@@ -1132,12 +1145,9 @@ footer {
 }
 
 // Recaptcha
-.g-recaptcha {
-  
-  iframe {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
- 
+.g-recaptcha > div > div{
+  margin: 4px auto !important;
+  text-align: center;
+  width: auto !important;
+  height: auto !important;
 }
