@@ -1,5 +1,7 @@
 class Job < ActiveRecord::Base
 
+	belongs_to :category
+
 	validates :video_url, presence: true
 	validates :video_id, presence: true
 	validates :video_thumb_small, presence: true

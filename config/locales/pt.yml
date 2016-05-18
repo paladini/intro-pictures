@@ -71,7 +71,12 @@ pt:
       department:
         one: departamento
         other: departamentos
+      category:
+        one: categoria
+        other: categorias
     attributes:
+      category:
+        name: nome
       admin_user:
         password: "Senha"
         password_confirmation: "Confirmação de senha"
@@ -89,6 +94,7 @@ pt:
         title_en: Título (Inglês)
         title_es: Título (Espanhol)
         year: Ano
+        category_id: Categoria
         synopsis_pt: Sinopse
         synopsis_en: Sinopse (Inglês)
         synopsis_es: Sinopse (Espanhol)

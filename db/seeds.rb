@@ -38,6 +38,11 @@ def seeds_development()
 	Department.create!(email: "contato@intropictures.tv", name_pt: "Outro", name_es: "Otro", name_en: "Other", company_id: 1)
 	Department.create!(email: "contato@intropictures.tv", name_pt: "Sugestão", name_es: "Sugestão", name_en: "Sugestão", company_id: 1)
 
+	# Creating categories
+	Category.create!(name: "Completo")
+	Category.create!(name: "Produção")
+	Category.create!(name: "Desenvolvimento")
+
 	# Creating jobs
 	## Job -1
 	v = Vimeo::Simple::Video.info("63694853")

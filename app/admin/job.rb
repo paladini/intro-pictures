@@ -7,6 +7,7 @@ ActiveAdmin.register Job do
 	              :status_en, :stauts_pt, :status_es,
 	              :player,
 				  :password,
+				  :category_id,
 				  :year,
 				  :title_pt, :title_en, :title_es,
 				  :genre_pt, :genre_en, :genre_es,
@@ -58,6 +59,7 @@ ActiveAdmin.register Job do
 		    input :title_en
 		    input :title_es
 		    input :year
+		    input :category_id, as: :select, :include_blank => false, collection: Category.all.map {|c| [c.name, c.id]}, hint: "As categorias não serão mostradas para o usuário, mas alterarão a forma com que os Jobs são organizados na página inicial."
 			input :password, as: :string, hint: "Se o campo 'Senha' for preenchido, o Job será exibido na página mas ficará privado, exigindo senha para ser visto."
 		end
 
@@ -125,18 +127,15 @@ ActiveAdmin.register Job do
 	show title: :title_en do
 	    attributes_table do
 	    	row :video_url
+	    	row :title_pt
+			row :title_en
+			row :title_es
 	    	row "Miniatura" do
 		        image_tag(job.video_thumb_large)
 			end
-	        row :status_pt
-	        row :status_en
-	        row :status_es
 	        row :year
-	        row :player
+	        row :category_id
 			row :password
-			row :title_pt
-			row :title_en
-			row :title_es
 			row :genre_pt
 			row :genre_en
 			row :genre_es
@@ -164,6 +163,10 @@ ActiveAdmin.register Job do
 			row :running_time_pt
 			row :running_time_en
 			row :running_time_es
+			row :player
+	        row :status_pt
+	        row :status_en
+	        row :status_es
 	      	row :created_at 
 	      	row :updated_at
 	    end
