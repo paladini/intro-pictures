@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
 	    @message = Message.new(message_params)
 
 	    # if true
-	    if verify_recaptcha(model: @message) and @message.valid?
+	    if verify_recaptcha(model: @message, attribute: :recaptcha) and @message.valid?
 
 	    	# Get the correct e-mail
 	    	mail_to = Department.find(@message.department).email
@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
       		respond_to do |format|
 			    format.html { redirect_to root_path }
 			    format.js {
+			    	@message = Message.new
 			    	flash.now[:success] = true
 			    	render :new
 			    }

@@ -7,11 +7,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  # Messages / Contact Form
-  resources :messages, only: [:new, :create]
-
-  # Jobs
+  # Jobs / Messages
   scope "(:locale)", locale: /en|es|pt/ do
+    resources :messages, only: [:new, :create]
     resources :jobs, only: [:show]
     get '/locked/:id' => 'jobs#locked'
   end

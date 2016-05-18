@@ -1,13 +1,9 @@
-// If succeeded, reset the form. Otherwise, show errors.
+// If succeeded, render new form and prepend success message. Otherwise, show errors.
 <% if flash[:success] == true %>
-	$('#new_message').find('.success').remove();
+	$('#new_message').parent().html("<%= j render('/messages/new')%>");
 	$('#new_message').prepend("<p class='success'><%= t('home.contact.success') %></p>");
-	$('#new_message').find('.touched').each(function(){
-		$(this).removeClass('touched');
-	});
-	$('#new_message')[0].reset();
 <% else %>
-	$('#new_message').parent().html("<%= j render('/messages/new')%>")
+	$('#new_message').parent().html("<%= j render('/messages/new')%>");
 <% end %>
 
 // Binding events to inputs

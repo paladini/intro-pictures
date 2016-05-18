@@ -304,6 +304,15 @@ footer {
     }
   }
 
+  .recaptcha-error {
+    color: #FF1D25;
+    font-family : Futura;
+    font-size : 18px;
+    text-transform: none;
+    text-align: center;
+    margin: 10px auto;
+  }
+
   #error_explanation {
     .field_with_errors {
       input, textarea, select {
