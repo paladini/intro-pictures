@@ -33,7 +33,9 @@
 	          </div>
 
 	          <div class="col-xs-12 col-video">
-            	<iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            	<div class="embed-container">
+            		<iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            	</div>
 	          </div>
 
 	          <div class="col-xs-12 col-video-description">
@@ -252,7 +254,9 @@
 	      	<!-- Medium / Large devices -->
 	        <div class="row hidden-xs hidden-sm hidden-ms">
 	          <div class="col-md-8 col-video">
-            	<iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" height="1000" width="1000" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	          	<div class="embed-container">
+            		<iframe class="video" src="//player.vimeo.com/video/<%= @job.video_id %>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            	</div>
 	          </div>
 	          <div class="col-md-4 col-video-description">
 
