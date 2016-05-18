@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
 	def create
 	    @message = Message.new(message_params)
 
-	   	# if @message.valid?
 	    if verify_recaptcha(model: @message) and @message.valid?
 
 	    	# Get the correct e-mail
@@ -15,10 +14,13 @@ class MessagesController < ApplicationController
 
 	    	# Deliver the email
 	      	MessageMailer.message_me(@message, mail_to).deliver_now
-	      	# redirect_to root_path, notice: "Thank you for the message."
-	      	respond_to do |format|
-			    format.html { render :new }
-			    format.js { render 'new', notice: "Success" }
+
+      		respond_to do |format|
+			    format.html { redirect_to root_path }
+			    format.js {
+			    	flash.now[:success] = true
+			    	render :new
+			    }
 		    end
 	    else
 	      	respond_to do |format|

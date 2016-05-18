@@ -14,13 +14,13 @@ function validateEmail(email)
     return re.test(email);
 }
 
-var ready = function() {
+/*
+	===========================
+ 		 Form validations
+	===========================
+*/
+function formValidations() {
 
-	/*
-		===========================
-	 		 Form validations
-		===========================
-	*/
 	$('#new_message').find('input[type="text"], select, input[type="email"], textarea, input[type="file"]').one('blur keydown', function(e){
 		$(this).addClass('touched');
 	});
@@ -35,6 +35,7 @@ var ready = function() {
 		}
 	});
 
+	// When click on input[type='file']
 	$('#message_file:file').change(function(){
 		var fileName = $(this).val();
 		
@@ -45,6 +46,18 @@ var ready = function() {
 			$('.custom-file-upload span').text($('.custom-file-upload').data('label'));
 		}
 	});
+
+	// Checking which inputs already have a selected value.
+	$('#new_message').find('input[type="text"], select, input[type="email"], textarea, input[type="file"]').each(function(){
+		if ($(this).val().length > 0) {
+			$(this).addClass('touched');
+		}
+	});
+}
+
+var ready = function() {
+
+	formValidations();
 
 	/*
 		=====================
