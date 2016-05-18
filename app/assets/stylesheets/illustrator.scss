@@ -204,6 +204,7 @@ footer {
 
     h4 {
       margin: auto auto;
+      // text-align: right;
     }
 
     p {
@@ -1025,6 +1026,15 @@ footer {
 
   .locked-video {
     margin: auto auto;
+  }
+
+  .info {
+    .team {
+      h4 {
+        text-align: right;
+        margin: auto 0px;
+      }
+    }
   }
 
   .job-modal {

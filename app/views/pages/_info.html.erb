@@ -12,10 +12,10 @@
 		<!-- Info: Team -->
 		<% if @employees.count > 0 %>
 			<div class="row team">
-				<div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-3 col-md-1 col-md-offset-4 vcenter">
+				<div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-3 col-md-2 col-md-offset-3 vcenter">
 					<h4><%= t('home.info.team') %></h4>
 				</div>
-				<div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-0 col-md-5 col-md-offset-0 vcenter">
+				<div class="col-xs-12 col-sm-5 col-md-5 vcenter">
 					<% @employees.each do |e| %>
 						<p>
 							<span class="membername"><%= e[:name] %></span> | <span class="typename"><%= e[:role] %></span>
