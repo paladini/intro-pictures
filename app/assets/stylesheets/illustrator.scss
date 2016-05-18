@@ -313,9 +313,18 @@ footer {
     margin: 10px auto;
   }
 
+  .file-size-error {
+    color: #FF1D25;
+    font-family : Futura;
+    font-size : 18px;
+    text-transform: none;
+    text-align: left;
+    margin: 4px 0px;
+  }
+
   #error_explanation {
     .field_with_errors {
-      input, textarea, select {
+      input, textarea, select, .custom-file-upload {
         border-color: #FF1D25 !important;
       }
     }

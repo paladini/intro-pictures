@@ -5,6 +5,8 @@ ruby '2.3.0'
 gem 'rails', '4.2.5.1'
 gem 'thin'
 
+
+
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
@@ -25,6 +27,7 @@ gem 'activeadmin', github: 'activeadmin'
 # Contact Form
 gem 'mail_form'
 gem "recaptcha", require: "recaptcha/rails" # captcha for anti-flood reasons
+gem 'remotipart', '~> 1.2' # Needed by "remote: true" form submit with input[type='file']
 
 # Models related
 gem 'validates_email_format_of'

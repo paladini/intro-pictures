@@ -40,6 +40,7 @@ pt:
       attach: "Anexar arquivo"
       submit: "Enviar"
       success: "Mensagem enviada com sucesso."
+      file_size_error: "Tamanho do arquivo deve ser menor do que 5MB."
     developed_by: "Desenvolvido por 322 Lab Criativo e Fernando Paladini"
     footer: 'Todos os materiais, textos, vídeos e imagens (coletivamente, os "Materiais") deste site, são de propriedade de Intro Pictures TV, salvo indicação em contrário, ou a propriedade de terceiros e estão protegidos por leis de direitos autorais. A Intro Pictures TV não garante e nem é responsável pela utilização dos materiais deste site, que pode violar os direitos daqueles que não pertencem ou não são filiados com Intro Pictures TV.'
   time:

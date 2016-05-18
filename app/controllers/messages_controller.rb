@@ -3,10 +3,12 @@ class MessagesController < ApplicationController
   	def new
   		@message = Message.new
  	end
- 	# 
+
 	def create
 	    @message = Message.new(message_params)
-
+	    
+	    # puts @message.valid?
+	    # if @message.valid?
 	    # if true
 	    if verify_recaptcha(model: @message, attribute: :recaptcha) and @message.valid?
 
@@ -25,6 +27,7 @@ class MessagesController < ApplicationController
 			    }
 		    end
 	    else
+	    	puts @message.valid?
 	    	puts @message.errors.full_messages
 	      	respond_to do |format|
 		    	format.js { render :new }

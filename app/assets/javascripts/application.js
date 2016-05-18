@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require turbolinks
 //= require active_admin.js.coffee
 //= require bootstrap-sprockets

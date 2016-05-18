@@ -29,10 +29,17 @@
     </div>
 
     <div class="field">
+      <% if @message.errors[:file].any? %>
+        <p class="file-size-error"><%= t('home.contact.file_size_error')%></p>
+        <div class="field_with_errors">
+      <% end %>
       <label class="custom-file-upload" data-label="<%= t('home.contact.attach') %>">
-          <input id="message_file" type="file"/>
+          <input id="message_file" type="file" name="message[file]"/>
           <span><%= t('home.contact.attach') %></span>
       </label>
+      <% if @message.errors[:file].any? %>
+        </div>
+      <% end %>
     </div>
 
     <div class="field" id="my-awesome-captcha">

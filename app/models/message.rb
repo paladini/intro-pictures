@@ -5,15 +5,14 @@ class Message
 	attr_accessor :name, :email, :subject, :content, :department, :file
 
 	validates :name, presence: true
-	validates :email, presence: true
+	validates :email, presence: true, format: { with: /\S+@\S+\.\S+/ix }
 	validates :subject, presence: true
 	validates :content, presence: true
 	validates :department, presence: true
-	# validate :testing, on: [:new]
+	validate :file_size_validation
 
 private
-	# def testing()
-	# 	puts "OLAARRR MUNDOOOOOOOOOOOOOOO"
-	# end
-
+	def file_size_validation
+    	errors[:file] << "Should be less than 5MB" if file.size > 5.megabytes
+  	end
 end
