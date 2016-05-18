@@ -481,10 +481,27 @@ footer {
   img {
     height: 100%;
   }
+
+  .footer-logo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
 }
+
+
 
 .footer-small {
   padding-top: 20px;
+
+  .footer-logo {
+    margin-top: 20px;
+  }
 }
 
 /* 
