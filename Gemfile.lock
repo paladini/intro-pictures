@@ -55,6 +55,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
@@ -88,6 +89,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    domain_name (0.5.20160310)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     eventmachine (1.2.0.1)
     execjs (2.6.0)
@@ -99,10 +102,15 @@ GEM
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
-    httparty (0.13.7)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
-    httpclient (2.7.1)
+    http (2.0.1)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    http-form_data (1.0.1)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
@@ -133,11 +141,8 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
-    multi_xml (0.5.5)
-    multipart-post (2.0.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    oauth (0.5.1)
     orm_adapter (0.5.0)
     pg (0.18.4)
     polyamorous (1.3.0)
@@ -221,14 +226,11 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     validates_email_format_of (1.6.3)
       i18n
-    vimeo (1.5.4)
-      httparty (>= 0.4.5)
-      httpclient (>= 2.1.5.2)
-      json (>= 1.1.9)
-      multipart-post (>= 1.0.1)
-      oauth (>= 0.4.3)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -246,6 +248,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  http
   jbuilder (~> 2.0)
   jquery-rails
   mail_form
@@ -262,7 +265,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   validates_email_format_of
-  vimeo
   web-console (~> 2.0)
 
 BUNDLED WITH

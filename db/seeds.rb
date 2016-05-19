@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+include OwnVimeo
 
 def seeds_production()
 	puts "Running seeds for production..."
@@ -45,12 +46,12 @@ def seeds_development()
 
 	# Creating jobs
 	## Job -1
-	v = Vimeo::Simple::Video.info("63694853")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("63694853")
+	Job.create!(video_id: 63694853,
+				video_url: "https://vimeo.com/" + 63694853.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2003",
 				title_en: "Breaking Bad",
 				title_pt: "Breaking Bad",
@@ -124,12 +125,12 @@ def seeds_development()
 	)
 
 	## Job 0
-	v = Vimeo::Simple::Video.info("104257521")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("104257521")
+	Job.create!(video_id: 104257521,
+				video_url: "https://vimeo.com/" + 104257521.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2014",
 				title_en: "True Detective",
 				title_pt: "True Detective",
@@ -198,12 +199,12 @@ def seeds_development()
 	)
 
 	## Job 1
-	v = Vimeo::Simple::Video.info("102584781")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("102584781")
+	Job.create!(video_id: 102584781,
+				video_url: "https://vimeo.com/" + 102584781.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2013",
 				title_en: "The Business",
 				title_pt: "O Negócio",
@@ -266,19 +267,19 @@ def seeds_development()
 	)
 
 	## Job 2
-	v = Vimeo::Simple::Video.info("161699904")
-	Job.create!(video_id: v[0]["id"],
+	v = get_vimeo_video("161699904")
+	Job.create!(video_id: 161699904,
 				video_url: "https://vimeo.com/channels/staffpicks/161699904",
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2011",
-				title_en: v[0]["title"],
-				title_pt: v[0]["title"],
-				title_es: v[0]["title"],
-				synopsis_en: v[0]["description"],
-				synopsis_pt: v[0]["description"],
-				synopsis_es: v[0]["description"],
+				title_en: v[:title],
+				title_pt: v[:title],
+				title_es: v[:title],
+				synopsis_en: v[:description],
+				synopsis_pt: v[:description],
+				synopsis_es: v[:description],
 				genre_en: "Horror",
 				genre_pt: "Horror",
 				genre_es: "Horror",
@@ -300,19 +301,19 @@ def seeds_development()
 	)
 	
 	## Job 3
-	v = Vimeo::Simple::Video.info("70642037")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("70642037")
+	Job.create!(video_id: 70642037,
+				video_url: "https://vimeo.com/" + 70642037.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2011",
-				title_en: v[0]["title"],
-				title_pt: v[0]["title"],
-				title_es: v[0]["title"],
-				synopsis_en: v[0]["description"],
-				synopsis_pt: v[0]["description"],
-				synopsis_es: v[0]["description"],
+				title_en: v[:title],
+				title_pt: v[:title],
+				title_es: v[:title],
+				synopsis_en: v[:description],
+				synopsis_pt: v[:description],
+				synopsis_es: v[:description],
 				genre_en: "Horror",
 				genre_pt: "Horror",
 				genre_es: "Horror",
@@ -334,19 +335,19 @@ def seeds_development()
 	)
 
 	## Job 4
-	v = Vimeo::Simple::Video.info("156412748")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("156412748")
+	Job.create!(video_id: 156412748,
+				video_url: "https://vimeo.com/" + 156412748.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2011",
-				title_en: v[0]["title"],
-				title_pt: v[0]["title"],
-				title_es: v[0]["title"],
-				synopsis_en: v[0]["description"],
-				synopsis_pt: v[0]["description"],
-				synopsis_es: v[0]["description"],
+				title_en: v[:title],
+				title_pt: v[:title],
+				title_es: v[:title],
+				synopsis_en: v[:description],
+				synopsis_pt: v[:description],
+				synopsis_es: v[:description],
 				genre_en: "Horror",
 				genre_pt: "Horror",
 				genre_es: "Horror",
@@ -368,19 +369,19 @@ def seeds_development()
 	)
 
 	## Job 5
-	v = Vimeo::Simple::Video.info("151401087")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("151401087")
+	Job.create!(video_id: 151401087,
+				video_url: "https://vimeo.com/" + 151401087.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2011",
-				title_en: v[0]["title"],
-				title_pt: v[0]["title"],
-				title_es: v[0]["title"],
-				synopsis_en: v[0]["description"],
-				synopsis_pt: v[0]["description"],
-				synopsis_es: v[0]["description"],
+				title_en: v[:title],
+				title_pt: v[:title],
+				title_es: v[:title],
+				synopsis_en: v[:description],
+				synopsis_pt: v[:description],
+				synopsis_es: v[:description],
 				genre_en: "Horror",
 				genre_pt: "Horror",
 				genre_es: "Horror",
@@ -402,20 +403,20 @@ def seeds_development()
 	)
 
 	## Job 6
-	v = Vimeo::Simple::Video.info("67042448")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("67042448")
+	Job.create!(video_id: 67042448,
+				video_url: "https://vimeo.com/" + 67042448.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2011",
 
-				title_en: v[0]["title"],
-				title_pt: v[0]["title"],
-				title_es: v[0]["title"],
-				synopsis_en: v[0]["description"],
-				synopsis_pt: v[0]["description"],
-				synopsis_es: v[0]["description"],
+				title_en: v[:title],
+				title_pt: v[:title],
+				title_es: v[:title],
+				synopsis_en: v[:description],
+				synopsis_pt: v[:description],
+				synopsis_es: v[:description],
 				genre_en: "Horror",
 				genre_pt: "Horror",
 				genre_es: "Horror",
@@ -437,20 +438,20 @@ def seeds_development()
 	)
 
 	## Job 7
-	v = Vimeo::Simple::Video.info("23291224")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("23291224")
+	Job.create!(video_id: 23291224,
+				video_url: "https://vimeo.com/" + 23291224.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2011",
 
-				title_en: v[0]["title"],
-				title_pt: v[0]["title"],
-				title_es: v[0]["title"],
-				synopsis_en: v[0]["description"],
-				synopsis_pt: v[0]["description"],
-				synopsis_es: v[0]["description"],
+				title_en: v[:title],
+				title_pt: v[:title],
+				title_es: v[:title],
+				synopsis_en: v[:description],
+				synopsis_pt: v[:description],
+				synopsis_es: v[:description],
 				genre_en: "Horror",
 				genre_pt: "Horror",
 				genre_es: "Horror",
@@ -472,19 +473,19 @@ def seeds_development()
 	)
 
 	## Job 8
-	v = Vimeo::Simple::Video.info("149800435")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("149800435")
+	Job.create!(video_id: 149800435,
+				video_url: "https://vimeo.com/" + 149800435.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				year: "2011",
-				title_en: v[0]["title"],
-				title_pt: v[0]["title"],
-				title_es: v[0]["title"],
-				synopsis_en: v[0]["description"],
-				synopsis_pt: v[0]["description"],
-				synopsis_es: v[0]["description"],
+				title_en: v[:title],
+				title_pt: v[:title],
+				title_es: v[:title],
+				synopsis_en: v[:description],
+				synopsis_pt: v[:description],
+				synopsis_es: v[:description],
 				genre_en: "Horror",
 				genre_pt: "Horror",
 				genre_es: "Horror",
@@ -506,12 +507,12 @@ def seeds_development()
 	)
 
 	## Job 9
-	v = Vimeo::Simple::Video.info("35982411")
-	Job.create!(video_id: v[0]["id"],
-				video_url: "https://vimeo.com/" + v[0]["id"].to_s,
-				video_thumb_small: v[0]["thumbnail_small"],
-				video_thumb_medium: v[0]["thumbnail_medium"],
-				video_thumb_large: v[0]["thumbnail_large"],
+	v = get_vimeo_video("35982411")
+	Job.create!(video_id: 35982411,
+				video_url: "https://vimeo.com/" + 35982411.to_s,
+				video_thumb_small: v[:thumbnail_small],
+				video_thumb_medium: v[:thumbnail_medium],
+				video_thumb_large: v[:thumbnail_large],
 				title_en: "Original Title",
 				title_pt: "Título Original",
 				title_es: "Título Original",
@@ -543,9 +544,9 @@ def seeds_development()
 				status_pt: "Status",
 				status_es: "Status",
 				player: "Atores",
-				synopsis_en: v[0]["description"],
-				synopsis_pt: v[0]["description"],
-				synopsis_es: v[0]["description"]
+				synopsis_en: v[:description],
+				synopsis_pt: v[:description],
+				synopsis_es: v[:description]
 	)
 
 end

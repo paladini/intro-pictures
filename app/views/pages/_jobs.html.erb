@@ -6,7 +6,7 @@
 		<% @jobs.each do |job| %>
 			<div class="col-xs-12 col-ms-6 col-sm-4 col-md-3 col-lg-2 job">
 				<%= link_to job_path(id: job), remote: true, class: "job-outer" do %>
-					<%= image_tag(job.video_thumb_large) %>
+					<%= image_tag(job.video_thumb_medium) %>
 					<p class="job-title">
 						<b>
 							<% if I18n.locale == :en %>

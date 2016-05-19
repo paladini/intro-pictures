@@ -2,9 +2,10 @@ class PagesController < ApplicationController
   def home
   	company = Company.first
   	@message = Message.new
-    @jobs = Job.order(category_id: :asc, year: :desc)
   	@email = company.email
   	@telephone = company.telephone
+
+    @jobs = Job.order('category_id ASC, case when year is null then -1 else year end DESC')
 
   	if I18n.locale == :en
   		@summary = company.summary_en

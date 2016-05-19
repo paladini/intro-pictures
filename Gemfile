@@ -5,7 +5,8 @@ ruby '2.3.0'
 gem 'rails', '4.2.5.1'
 gem 'thin'
 
-
+# gem 'httparty', '~> 0.13.7'
+gem "http"
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -31,7 +32,7 @@ gem 'remotipart', '~> 1.2' # Needed by "remote: true" form submit with input[typ
 
 # Models related
 gem 'validates_email_format_of'
-gem 'vimeo'
+# gem 'vimeo'
 
 # Tests
 # gem "rspec-rails", group: [:development, :test]

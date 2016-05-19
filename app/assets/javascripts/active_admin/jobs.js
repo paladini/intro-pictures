@@ -14,7 +14,7 @@ $(document).ready(function() {
 		hide_error();
 		var parent = $('#input_thumbnail').parent();
 		parent.find('img').remove();
-		parent.append('<img src="' + imgUrl + '" alt="A imagem é obtida automaticamente a partir da miniatura cadastrada no Vimeo." title="A imagem é obtida automaticamente a partir da miniatura cadastrada no Vimeo." />');
+		parent.append('<img src="' + imgUrl + '" style="width: auto; height: 300px;" alt="A imagem é obtida automaticamente a partir da miniatura cadastrada no Vimeo e está sendo exibida aqui de forma redimensionada." title="A imagem é obtida automaticamente a partir da miniatura cadastrada no Vimeo e está sendo exibida aqui de forma redimensionada." />');
 	}
 
 	function load_video() {
@@ -44,11 +44,26 @@ $(document).ready(function() {
 				if ($('#job_title_en').val().length == 0) {
 					$('#job_title_en').val(data["title"]);
 				}
+				if ($('#job_title_pt').val().length == 0) {
+					$('#job_title_pt').val(data["title"]);
+				}
+				if ($('#job_title_es').val().length == 0) {
+					$('#job_title_es').val(data["title"]);
+				}
 				if ($('#job_synopsis_en').val().length == 0) {
 					$('#job_synopsis_en').val(data["description"]);
 				}
+				if ($('#job_synopsis_pt').val().length == 0) {
+					$('#job_synopsis_pt').val(data["description"]);
+				}
+				if ($('#job_synopsis_es').val().length == 0) {
+					$('#job_synopsis_es').val(data["description"]);
+				}
 				if ($('#job_running_time_en').val().length == 0) {
 					$('#job_running_time_en, #job_running_time_es, #job_running_time_pt').val((Math.round(data["duration"] / 60)).toString() + " min");
+				}
+				if ($('#job_year').val().length == 0) {
+					$('#job_year').val(data["year"]);
 				}
 			}).error(function(error){
 				hide_error(error);

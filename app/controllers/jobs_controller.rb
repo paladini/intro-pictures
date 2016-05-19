@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+	include OwnVimeo
 
 	def show()
 		job = Job.find(params[:id])
@@ -43,26 +44,19 @@ class JobsController < ApplicationController
 	end
 
 	def load_vimeo_video()
-		id = params[:vimeo_id]
 
-		# [Vimeo] API keys
-		ck = "498c9e3b2e449282fc3bc60f00b708e375fdcd31" #consumer key
-		cs = "k4pk3U9vsrJH+0FCD4F9JczOVnTyAFDDMZjr0lYzFreHRGqpzAyOc+nKLWhY+yY6aplzx1f7NkMeLIPuEnMcmFzIv7RBs1TZCZQFyOBBeF36yEnK5gRnfno8wP+XVSXF" #consumer secret
-		# [Vimeo] Account token and secret
-		tk = "1a94b43e39b86265129d1a07d530a096" # token
-		#sc =  # secret
-		video = Vimeo::Advanced::Video.new(ck, cs, token: tk, secret: sc)
-		video.get_all("matthooks")
-		info = Vimeo::Simple::Video.info(id)
-		if (info and info.code == 200)
+		info = get_vimeo_video(params[:vimeo_id])
+
+		if (info)
 			render json: {
-				"id": info[0]["id"],
-				"title": info[0]["title"],
-				"description": info[0]["description"],
-				"thumbnail_small": info[0]["thumbnail_small"],
-				"thumbnail_medium": info[0]["thumbnail_medium"],
-				"thumbnail_large": info[0]["thumbnail_large"],
-				"duration": info[0]["duration"]
+				"id": params[:vimeo_id],
+				"title": info[:title],
+				"description": info[:description],
+				"thumbnail_small": info[:thumbnail_small],
+				"thumbnail_medium": info[:thumbnail_medium],
+				"thumbnail_large": info[:thumbnail_large],
+				"duration": info[:duration],
+				"year": info[:year]
 			}
 		else
 			render json: {}, status: 400
