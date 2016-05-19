@@ -1,4 +1,5 @@
 ActiveAdmin.register Job do
+	scope :all, :default => true
 
 	menu label: "Portfólio" , priority: 2
 	config.sort_order = 'created_at_desc'
@@ -8,7 +9,7 @@ ActiveAdmin.register Job do
 	              :status_en, :stauts_pt, :status_es,
 	              :player,
 				  :password,
-				  :category_id,
+				  # :category_id,
 				  :year,
 				  :title_pt, :title_en, :title_es,
 				  :genre_pt, :genre_en, :genre_es,
@@ -41,11 +42,15 @@ ActiveAdmin.register Job do
 		column "Privado", :password do |obj|
 			obj.password.blank? ? "Não" : "Sim"
 		end
-		column "Categoria", :category_id do |obj|
-			Category.find(obj.category_id).name
-		end
+		column "Categoria", :category, :sortable => 'categories.name'
 		column :year
 		actions
+	end
+
+	controller do
+	    def scoped_collection
+	      end_of_association_chain.includes(:category)
+	    end
 	end
 
 	# Custom form for translated labels
@@ -63,7 +68,7 @@ ActiveAdmin.register Job do
 		    input :title_en
 		    input :title_es
 		    input :year
-		    input :category_id, as: :select, :include_blank => false, collection: Category.all.map {|c| [c.name, c.id]}, hint: "As categorias não serão mostradas para o usuário, mas alterarão a forma com que os Jobs são organizados na página inicial."
+		    input :category, as: :select, :include_blank => false, collection: Category.all.map {|c| [c.name, c.id]}, hint: "As categorias não serão mostradas para o usuário, mas alterarão a forma com que os Jobs são organizados na página inicial."
 			input :password, as: :string, hint: "Se o campo 'Senha' for preenchido, o Job será exibido na página mas ficará privado, exigindo senha para ser visto."
 		end
 
@@ -138,7 +143,7 @@ ActiveAdmin.register Job do
 		        image_tag(job.video_thumb_large)
 			end
 	        row :year
-	        row :category_id
+	        row :category
 			row :password
 			row :genre_pt
 			row :genre_en

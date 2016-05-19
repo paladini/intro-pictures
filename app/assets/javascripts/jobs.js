@@ -21,7 +21,7 @@ var parseModal = function() {
 		$('#myModal').modal('show');
 		myOwnDelay(function(){
 			setModalHeight();
-	    }, 150);
+	    }, 350);
 	});
 
 	$("#myModal").on('hidden.bs.modal', function (e) {
@@ -32,7 +32,7 @@ var parseModal = function() {
 	$(window).resize(function() {
 	    myOwnDelay(function(){
 			setModalHeight();
-	    }, 150);
+	    }, 350);
 	});
 
 }
