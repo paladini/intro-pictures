@@ -40,6 +40,9 @@ ActiveAdmin.register Job do
 		column "Privado", :password do |obj|
 			obj.password.blank? ? "Não" : "Sim"
 		end
+		column "Categoria", :category_id do |obj|
+			Category.find(obj.category_id).name
+		end
 		column :year
 		actions
 	end
