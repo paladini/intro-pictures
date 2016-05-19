@@ -27,7 +27,6 @@ class MessagesController < ApplicationController
 			    }
 		    end
 	    else
-	    	puts @message.valid?
 	    	puts @message.errors.full_messages
 	      	respond_to do |format|
 		    	format.js { render :new }

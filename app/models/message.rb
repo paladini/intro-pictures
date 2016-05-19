@@ -13,6 +13,8 @@ class Message
 
 private
 	def file_size_validation
-    	errors[:file] << "Should be less than 5MB" if file.size > 5.megabytes
+		if file.present?
+    		errors[:file] << "Should be less than 5MB" if file.size > 5.megabytes
+    	end
   	end
 end

@@ -12,6 +12,7 @@ gem "http"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -29,6 +30,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'mail_form'
 gem "recaptcha", require: "recaptcha/rails" # captcha for anti-flood reasons
 gem 'remotipart', '~> 1.2' # Needed by "remote: true" form submit with input[type='file']
+gem 'mailgunner', '~> 2.4'
 
 # Models related
 gem 'validates_email_format_of'

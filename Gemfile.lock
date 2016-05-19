@@ -137,6 +137,7 @@ GEM
     mail_form (1.5.1)
       actionmailer (>= 3.2, < 5)
       activemodel (>= 3.2, < 5)
+    mailgunner (2.4.0)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -252,6 +253,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mail_form
+  mailgunner (~> 2.4)
   pg
   rails (= 4.2.5.1)
   rails_12factor
