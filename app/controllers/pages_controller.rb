@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   	@email = company.email
   	@telephone = company.telephone
 
-    @jobs = Job.order('category_id ASC, case when year is null then -1 else year end DESC')
+    @jobs = Job.order('category_id ASC, case when year is null then 1 else year end DESC')
 
   	if I18n.locale == :en
   		@summary = company.summary_en
