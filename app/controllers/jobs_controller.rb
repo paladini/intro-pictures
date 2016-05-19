@@ -8,6 +8,10 @@ class JobsController < ApplicationController
 		if (job.password.blank? or (params[:password] and job.password == params[:password]))
 			@job = job
 
+			if job.password.present?
+				flash.now[:correct_password] = true
+			end
+
 			respond_to do |format|
 			    format.html { redirect_to root_path }
 			    format.js { render 'show' }

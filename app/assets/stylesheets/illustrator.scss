@@ -733,6 +733,13 @@ footer {
   filter: alpha(opacity=80) !important;
 }
 
+.locked-body {
+  .col-video {
+    display: flex !important;
+    flex-direction: column;
+  }
+}
+
 .locked-video {
   margin: 50px auto;
   vertical-align: middle;

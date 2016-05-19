@@ -3,3 +3,9 @@
 <% else %>
 	$('#myModal').html("<%= j render('/jobs/modal')%>")
 <% end %>
+
+<% if flash.now[:correct_password] == true %>
+	myOwnDelay(function(){
+		setModalHeight();
+    }, 350);
+<% end %>
