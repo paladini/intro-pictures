@@ -33,13 +33,7 @@ class JobsController < ApplicationController
 		job = Job.find(params[:id])
 		@id = job.id
 		@year = job.year
-		if I18n.locale == :en
-			@title = job.title_en
-		elsif I18n.locale == :pt
-			@title = job.title_pt
-		elsif I18n.locale == :es
-			@title = job.title_es
-		end
+		@title = job.title()
 
 		respond_to do |format|
 		    format.html { redirect_to root_path }

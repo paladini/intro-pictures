@@ -11,14 +11,7 @@
 	          	<div class="row meta">
 	          		<div class="col-xs-10">
 	          			<p class="video-title">
-		          			<%= if I18n.locale == :en 
-		          					@job.title_en
-		          				elsif I18n.locale == :pt
-		          					@job.title_pt
-		          				elsif I18n.locale == :es 
-		          					@job.title_es
-		          				end
-		          			%>
+		          			<%= @job.title %>
 	          			</p>
 	          			<p class="video-year">
           					<% if @job.year.present? %>
@@ -39,25 +32,19 @@
 	          </div>
 
 	          <div class="col-xs-12 col-video-description">
-	          	<!-- <div class="row synopsis"> -->
-		          	<!-- Synopsis -->
 		          	<div class="row">
-		          		<div class="col-xs-12 col-sm-6 synopsis">
-		          			<p class="description-title">
-		          				<%= t('home.job.synopsis') %>
-		          			</p>
-		          			<p class="description-text">
-		          				<%= if I18n.locale == :en 
-		          						@job.synopsis_en
-		          					elsif I18n.locale == :pt 
-		          						@job.synopsis_pt
-		          					elsif I18n.locale == :es
-		          						@job.synopsis_es
-		          					end
-		          				%>
-		          			</p>
-		          		</div>
-			          	<!-- </div> -->
+		          		
+			          	<!-- Synopsis -->
+			          	<% if @job.synopsis? %>
+			          		<div class="col-xs-12 col-sm-6 synopsis">
+			          			<p class="description-title">
+			          				<%= t('home.job.synopsis') %>
+			          			</p>
+			          			<p class="description-text">
+			          				<%= @job.synopsis %>
+			          			</p>
+			          		</div>
+			          	<% end %>
 
 			          	<!-- Infos / Datasheet -->
 		          		<div class="col-xs-12 col-sm-6 datasheet">
@@ -65,171 +52,99 @@
 		          		<table class="table table-striped description-text table-hover"><tbody>
 
           					<!-- Title -->
-          					<% if @job.title? %>
-	          					<tr>
-	          						<td><%= t('home.job.title') %></td>
-	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.title_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.title_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.title_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
-	          						</td>
-	          					</tr>
-          					<% end %>
+          					<tr>
+          						<td><%= t('home.job.title') %></td>
+          						<td>
+          							<%= simple_format(@job.title, {}, wrapper_tag: "span")%>
+          						</td>
+          					</tr>
 
           					<!-- Format -->
-          					<% if @job.format_en.present? %>
+          					<% if @job.format?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.format') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.format_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.format_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.format_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.format(), {}, wrapper_tag: "span") %>
 	          						</td>
 	          					</tr>
 		          			<% end %>
 
 		          			<!-- Genre -->
-		          			<% if @job.genre_en.present? %>
+		          			<% if @job.genre?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.genre') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.genre_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.genre_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.genre_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.genre(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Subgenre -->
-	          				<% if @job.subgenre_en.present? %>
+	          				<% if @job.subgenre?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.subgenre') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.subgenre_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.subgenre_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.subgenre_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.subgenre(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Running Time -->
-	          				<% if @job.running_time_en.present? %>
+	          				<% if @job.running_time?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.running_time') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.running_time_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.running_time_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.running_time_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.running_time(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Target -->
-	          				<% if @job.target_en.present? %>
+	          				<% if @job.target?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.target') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.target_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.target_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.target_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.target(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Created By -->
-	          				<% if @job.created_by_en.present? %>
+	          				<% if @job.created_by?() %>
 	          					<tr> 
 	          						<td class="text-nowrap"><%= t('home.job.created_by') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.created_by_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.created_by_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.created_by_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.created_by(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Written By -->
-	          				<% if @job.written_by_en.present? %>
+	          				<% if @job.written_by?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.written_by') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.written_by_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.written_by_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.written_by_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.written_by(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 	          				
 	          				<!-- Directed By -->
-	          				<% if @job.directed_by_en.present? %>
+	          				<% if @job.directed_by?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.directed_by') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.directed_by_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.directed_by_pt, {},wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.directed_by_es, {},wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.directed_by(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Status -->
-	          				<% if @job.status_en.present? %>
+	          				<% if @job.status?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.status') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.status_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.status_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.status_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.status(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
@@ -264,14 +179,7 @@
 	          	<div class="row meta">
 	          		<div class="col-md-10">
 	          			<p class="video-title">
-	          				<%= if I18n.locale == :en 
-		          					@job.title_en
-		          				elsif I18n.locale == :pt
-		          					@job.title_pt
-		          				elsif I18n.locale == :es 
-		          					@job.title_es
-		          				end
-		          			%>
+	          				<%= @job.title %>
 	          			</p>
 	          			
           				<p class="video-year">
@@ -285,197 +193,120 @@
 	          		</div>
 	          	</div>
 
-		          	<!-- Synopsis -->
+	          	<!-- Synopsis -->
+	          	<% if @job.synopsis %>
 		          	<div class="row synopsis">
 		          		<div class="col-md-12">
 		          			<p class="description-title">
 		          				<%= t('home.job.synopsis') %>
 		          			</p>
 		          			<p class="description-text">
-		          				<%= if I18n.locale == :en 
-		          						@job.synopsis_en
-		          					elsif I18n.locale == :pt 
-		          						@job.synopsis_pt
-		          					elsif I18n.locale == :es
-		          						@job.synopsis_es
-		          					end
-		          				%>
+		          				<%= @job.synopsis %>
 		          			</p>
 		          		</div>
 		          	</div>
+	          	<% end %>
 
-		          	<!-- Infos / Datasheet -->
-		          	<div class="row datasheet">
-		          		<div class="col-md-12">
-		          		<p class="description-title"><%= t('home.job.info') %></p>
-		          		<table class="table table-striped description-text table-hover"><tbody>
+	          	<!-- Infos / Datasheet -->
+	          	<div class="row datasheet">
+	          		<div class="col-md-12">
+	          		<p class="description-title"><%= t('home.job.info') %></p>
+	          		<table class="table table-striped description-text table-hover"><tbody>
 
-		          			<!-- Title -->
-          					<% if @job.title? %>
-	          					<tr>
-	          						<td><%= t('home.job.title') %></td>
-	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.title_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.title_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.title_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
-	          						</td>
-	          					</tr>
-          					<% end %>
+	          			<!-- Title -->
+          					<tr>
+          						<td><%= t('home.job.title') %></td>
+          						<td>
+          							<%= simple_format(@job.title, {}, wrapper_tag: "span")%>
+          						</td>
+          					</tr>
 
           					<!-- Format -->
-          					<% if @job.format_en.present? %>
+          					<% if @job.format?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.format') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.format_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.format_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.format_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.format(), {}, wrapper_tag: "span") %>
 	          						</td>
 	          					</tr>
 		          			<% end %>
 
 		          			<!-- Genre -->
-		          			<% if @job.genre_en.present? %>
+		          			<% if @job.genre?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.genre') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.genre_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.genre_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.genre_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.genre(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Subgenre -->
-	          				<% if @job.subgenre_en.present? %>
+	          				<% if @job.subgenre?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.subgenre') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.subgenre_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.subgenre_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.subgenre_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.subgenre(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Running Time -->
-	          				<% if @job.running_time_en.present? %>
+	          				<% if @job.running_time?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.running_time') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.running_time_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.running_time_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.running_time_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.running_time(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Target -->
-	          				<% if @job.target_en.present? %>
+	          				<% if @job.target?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.target') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.target_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.target_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.target_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.target(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Created By -->
-	          				<% if @job.created_by_en.present? %>
+	          				<% if @job.created_by?() %>
 	          					<tr> 
 	          						<td class="text-nowrap"><%= t('home.job.created_by') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.created_by_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.created_by_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.created_by_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.created_by(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Written By -->
-	          				<% if @job.written_by_en.present? %>
+	          				<% if @job.written_by?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.written_by') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.written_by_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.written_by_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.written_by_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.written_by(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 	          				
 	          				<!-- Directed By -->
-	          				<% if @job.directed_by_en.present? %>
+	          				<% if @job.directed_by?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.directed_by') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.directed_by_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.directed_by_pt, {},wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.directed_by_es, {},wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.directed_by(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
 
 	          				<!-- Status -->
-	          				<% if @job.status_en.present? %>
+	          				<% if @job.status?() %>
 	          					<tr> 
 	          						<td><%= t('home.job.status') %></td>
 	          						<td>
-	          							<%= if I18n.locale == :en 
-	          									simple_format(@job.status_en, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :pt 
-		          								simple_format(@job.status_pt, {}, wrapper_tag: "span")
-		          							elsif I18n.locale == :es
-		          								simple_format(@job.status_es, {}, wrapper_tag: "span")
-		          							end
-	          							%>
+	          							<%= simple_format(@job.status(), {}, wrapper_tag: "span") %>
           							</td>
 	          					</tr>
 	          				<% end %>
@@ -488,9 +319,9 @@
 	          					</tr>
 	          				<% end %>
 
-		          		</tbody></table>
-		          		</div>
-					</div>
+	          		</tbody></table>
+	          		</div>
+				</div>
 	          </div>
 	        </div>
 	      </div>

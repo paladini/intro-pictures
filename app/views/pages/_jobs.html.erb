@@ -9,13 +9,7 @@
 					<%= image_tag(job.video_thumb_medium) %>
 					<p class="job-title">
 						<b>
-							<% if I18n.locale == :en %>
-								<%= job.title_en %>
-							<% elsif I18n.locale == :pt %>
-								<%= job.title_pt %>
-							<% elsif I18n.locale == :es %>
-								<%= job.title_es %>
-							<% end %>
+							<%= job.title %>
 						</b>
 						<% if job.year.present? %>
 							(<%= job.year %>)
