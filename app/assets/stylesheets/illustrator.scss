@@ -1172,7 +1172,7 @@ footer {
 // Large
 @media(min-width: $screen-lg-min){
   .jobs {
-    max-width: 1353px !important; // cuidado com isso
+    max-width: 1353px; // cuidado com isso
     // max-width: 1920px !important;
   }
     
@@ -1196,8 +1196,7 @@ footer {
 // Full HD
 @media(min-width: 1920px){
   .jobs {
-    // max-width: 1353px !important; // cuidado com isso
-    max-width: 1700px !important;
+    max-width: 1920px;
   }
     
   .nopadding {
@@ -1206,7 +1205,7 @@ footer {
   }
 
   .job {
-    width: 262px;
+    width: 272px;
 
     .job-outer {
       width: 242px;
@@ -1215,9 +1214,6 @@ footer {
         width: 242px;
       }
     }
-    margin: 0px 10px;
-    // padding-left: 0px !important;
-    // padding-right: 0px !important;
   }
 
   .job-modal .modal-dialog .modal-content {
