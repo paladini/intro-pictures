@@ -19,4 +19,5 @@
 //= require jquery.smooth-scroll.js
 //= require illustrator.js
 //= require jobs.js
+//= require analytics.js
 // require_tree .
