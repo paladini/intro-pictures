@@ -28,4 +28,9 @@ However, you must download several other ruby gems later (as you'll see later).
 picturesintro@gmail.com
 sucessodosite
 
-(...) to be continued.
+## Diagrams
+There's a lot of diagrams that describe the website structure. You can find all of them at doc/*.svg. 
+
+In order to regenerate all diagrams from this project, follow the [RailsRoady](http://railroady.prestonlee.com/) documentation. 
+
+
