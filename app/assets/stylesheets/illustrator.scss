@@ -1171,10 +1171,10 @@ footer {
 
 // Large
 @media(min-width: $screen-lg-min){
-  .jobs {
+  // .jobs {
     // max-width: 1353px; // cuidado com isso
     // max-width: 1920px !important;
-  }
+  // }
     
   .nopadding {
     padding-left: 0px !important;
@@ -1182,7 +1182,16 @@ footer {
   }
 
   // .job {
-  //   max-width: 242px;
+    // max-width: 270px !important;
+
+    // .job-outer {
+    //   max-width: 250px !important;
+
+    //   img {
+    //     max-width: 250px !important;
+    //   }
+    // }
+    // max-width: 300px;
   //   padding-left: 0px !important;
   //   padding-right: 0px !important;
   // }
@@ -1205,21 +1214,22 @@ footer {
   }
 
   .job {
-    width: 272px;
+    width: 270px !important;
 
     .job-outer {
-      width: 242px;
+      width: 250px !important;
 
       img {
-        width: 242px;
+        max-width: 250px !important;
+        width: 250px !important;
       }
     }
   }
 
-  .job-modal .modal-dialog .modal-content {
-    width: inherit;
-    max-width: $screen-lg-min;
-  }
+  // .job-modal .modal-dialog .modal-content {
+  //   width: inherit;
+  //   max-width: $screen-lg-min;
+  // }
 }
 
 // Recaptcha
@@ -1228,4 +1238,48 @@ footer {
   text-align: center;
   width: auto !important;
   height: auto !important;
+}
+
+// Col 5ths
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col-xs-5ths {
+  width: 20%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .col-sm-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1920px) {
+  .col-lg-5ths {
+    // width: 20%;
+    // float: left;
+  }
 }
