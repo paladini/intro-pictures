@@ -1019,10 +1019,18 @@ footer {
     margin-left: 5px !important;
   }
 
-  .locked-video {
-    margin: auto auto;
-  }
+  .locked-body {
 
+    .col-video {
+      height: 450px;
+      max-height: 450px;   
+    }
+
+    .locked-video {
+      margin: auto auto;
+    }
+  }
+  
   .info {
     .team {
       h4 {
