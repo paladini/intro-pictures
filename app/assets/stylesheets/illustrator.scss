@@ -1173,11 +1173,51 @@ footer {
 @media(min-width: $screen-lg-min){
   .jobs {
     max-width: 1353px !important; // cuidado com isso
+    // max-width: 1920px !important;
   }
     
   .nopadding {
     padding-left: 0px !important;
     margin-left: 5px !important;
+  }
+
+  // .job {
+  //   max-width: 242px;
+  //   padding-left: 0px !important;
+  //   padding-right: 0px !important;
+  // }
+
+  .job-modal .modal-dialog .modal-content {
+    width: inherit;
+    max-width: $screen-lg-min;
+  }
+}
+
+// Full HD
+@media(min-width: 1920px){
+  .jobs {
+    // max-width: 1353px !important; // cuidado com isso
+    max-width: 1700px !important;
+  }
+    
+  .nopadding {
+    padding-left: 0px !important;
+    margin-left: 5px !important;
+  }
+
+  .job {
+    width: 262px;
+
+    .job-outer {
+      width: 242px;
+
+      img {
+        width: 242px;
+      }
+    }
+    margin: 0px 10px;
+    // padding-left: 0px !important;
+    // padding-right: 0px !important;
   }
 
   .job-modal .modal-dialog .modal-content {
