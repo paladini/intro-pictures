@@ -26,12 +26,12 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Administrative portal
 gem 'devise' # manage admin user
-gem 'activeadmin', github: 'activeadmin' # manage administrative portal itself
+gem 'activeadmin', :github=>'activeadmin' # manage administrative portal itself
 gem 'active_skin' # awesome design
 
 # Contact Form
 gem 'mail_form'
-gem "recaptcha", require: "recaptcha/rails" # captcha for anti-flood reasons
+gem "recaptcha", :require=>"recaptcha/rails" # captcha for anti-flood reasons
 gem 'remotipart', '~> 1.2' # Needed by "remote: true" form submit with input[type='file']
 gem 'mailgunner', '~> 2.4' # Integration with MailGun
 
@@ -48,7 +48,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', '~> 0.4.0', :group=>:doc
 
 # Gems available only in Production environment.
 group :production do
