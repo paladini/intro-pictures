@@ -45,15 +45,6 @@ Rails.application.configure do
     domain: 'sandboxfe97c99e5ab344c697efe39ac7254650.mailgun.org',
     api_key: 'key-9c52a82025f6eb8f3f5ecac5bd833c79'
   }
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :authentication => :plain,
-  #   :address => "smtp.mailgun.org",
-  #   :port => 587,
-  #   :domain => "sandboxfe97c99e5ab344c697efe39ac7254650.mailgun.org",
-  #   :user_name => "test@sandboxfe97c99e5ab344c697efe39ac7254650.mailgun.org",
-  #   :password => "sucessodosite"
-  # }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

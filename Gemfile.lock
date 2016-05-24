@@ -39,6 +39,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_skin (0.0.12)
     activejob (4.2.5.1)
       activesupport (= 4.2.5.1)
       globalid (>= 0.3.0)
@@ -138,6 +139,8 @@ GEM
       actionmailer (>= 3.2, < 5)
       activemodel (>= 3.2, < 5)
     mailgunner (2.4.0)
+    meta-tags (2.1.0)
+      actionpack (>= 3.0.0)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -245,6 +248,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_skin
   activeadmin!
   bootstrap-sass (~> 3.3.6)
   byebug
@@ -255,6 +259,7 @@ DEPENDENCIES
   jquery-rails
   mail_form
   mailgunner (~> 2.4)
+  meta-tags
   pg
   railroady
   rails (= 4.2.5.1)
