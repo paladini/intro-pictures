@@ -20,12 +20,26 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# Works on Heroku
+# production:
+#   adapter: postgresql
+#   database: intro_pictures_db
+#   encoding: unicode
+#   pool: 5
+#   timeout: 5000
+
+# Locaweb
 production:
   adapter: postgresql
-  database: intro_pictures_db
-  encoding: unicode
+  encoding: utf8
+  reconnect: false
+  database: ioiofilmes4
   pool: 5
+  username: ioiofilmes4
+  password: iracema313
+  host: postgresql01.ioiofilmes.com
   timeout: 5000
+
 # production:
 #   <<: *default
 #   database: db/production.sqlite3
