@@ -26,6 +26,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Administrative portal
 gem 'devise' # manage admin user
+
 # gem 'activeadmin' #, :github=>'activeadmin' # manage administrative portal itself
 gem 'activeadmin', :git => 'git://github.com/activeadmin/activeadmin.git'
 gem 'active_skin' # awesome design
