@@ -12,7 +12,9 @@
 							<%= job.title %>
 						</b>
 						<% if job.year.present? %>
-							(<%= job.year %>)
+							(<%= job.category %> - <%= job.year %>)
+						<% else %>
+							(<%= job.category %>)
 						<% end %>
 					</p>
 				<% end %>
