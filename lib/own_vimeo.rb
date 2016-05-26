@@ -12,7 +12,7 @@ module OwnVimeo
 		end
 
 		# Make the request to Vimeo
-		video = HTTP.auth("Bearer 1a94b43e39b86265129d1a07d530a096").get('https://api.vimeo.com/videos/' + video_id.to_s)
+		video = HTTP.auth("Bearer 2917c5b600fd1a65ade9a5b38f017717").get('https://api.vimeo.com/videos/' + video_id.to_s)
 		
 		# Check the status of the request
 		if video.code == 200
