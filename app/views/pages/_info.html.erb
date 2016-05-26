@@ -39,7 +39,7 @@
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-3 text-center">
 				<h4><%= t('home.info.address') %></h4>
-				<p><%= simple_format(@address) %></p>
+				<p><%= link_to(simple_format(@address), "http://maps.google.com/?q=" + @address.gsub(/\n/, ' '), {target: "_blank"}) %></p>
 			</div>
 		</div>
 
