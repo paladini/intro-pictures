@@ -140,7 +140,7 @@ ActiveAdmin.register Job do
 			row :title_en
 			row :title_es
 	    	row "Miniatura" do
-		        image_tag(job.video_thumb_large)
+		        image_tag(job.video_thumb_large, height: "300")
 			end
 	        row :year
 	        row :category
