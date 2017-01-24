@@ -85,7 +85,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
-    domain: 'sandboxfe97c99e5ab344c697efe39ac7254650.mailgun.org',
+    domain: 'mg.intropictures.tv',
     api_key: 'key-9c52a82025f6eb8f3f5ecac5bd833c79'
   }
 
